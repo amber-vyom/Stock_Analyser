@@ -3,6 +3,9 @@
   "WorkspaceRootPath": "C:\\Workspace\\03_Projects\\01_Stock\\Stock_Analysis\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1EDDAAFB-A359-43CE-8BD1-4C80A5DEF992}|..\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj|c:\\workspace\\03_projects\\01_stock\\stock_analysis.engine\\nse\\extractzip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9E4118E7-B7C5-C4F5-F246-B923AC731BD3}|Stock_Analysis Web.csproj|c:\\workspace\\03_projects\\01_stock\\stock_analysis\\controllers\\testnsecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9E4118E7-B7C5-C4F5-F246-B923AC731BD3}|Stock_Analysis Web.csproj|solutionrelative:controllers\\testnsecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -45,11 +48,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "ExtractZip.cs",
+              "DocumentMoniker": "C:\\Workspace\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\NSE\\ExtractZip.cs",
+              "RelativeDocumentMoniker": "..\\Stock_Analysis.Engine\\NSE\\ExtractZip.cs",
+              "ToolTip": "C:\\Workspace\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\NSE\\ExtractZip.cs",
+              "RelativeToolTip": "..\\Stock_Analysis.Engine\\NSE\\ExtractZip.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-22T10:55:03.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "FindTradingDays.cs",
               "DocumentMoniker": "C:\\Workspace\\03_Projects\\01_Stock\\Stock_Analysis\\NSE\\FindTradingDays.cs",
               "RelativeDocumentMoniker": "NSE\\FindTradingDays.cs",
@@ -61,7 +77,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "NseMarketRecord.cs",
               "DocumentMoniker": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Models\\NseMarketRecord.cs",
               "ToolTip": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Models\\NseMarketRecord.cs",
@@ -71,7 +87,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Workspace\\03_Projects\\01_Stock\\Stock_Analysis\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -83,7 +99,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ExtractZip.cs",
               "DocumentMoniker": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\NSE\\ExtractZip.cs",
               "ToolTip": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\NSE\\ExtractZip.cs",
@@ -93,7 +109,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "NseDataProvider.cs",
               "DocumentMoniker": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\NSE\\NseDataProvider.cs",
               "ToolTip": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\NSE\\NseDataProvider.cs",
@@ -103,7 +119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "NseDownloader.cs",
               "DocumentMoniker": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\NSE\\NseDownloader.cs",
               "ToolTip": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\NSE\\NseDownloader.cs",
@@ -113,7 +129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "TestNseController.cs",
               "DocumentMoniker": "C:\\Workspace\\03_Projects\\01_Stock\\Stock_Analysis\\Controllers\\TestNseController.cs",
               "RelativeDocumentMoniker": "Controllers\\TestNseController.cs",
@@ -126,7 +142,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Stock_Analysis Web.csproj",
               "DocumentMoniker": "C:\\Workspace\\03_Projects\\01_Stock\\Stock_Analysis\\Stock_Analysis Web.csproj",
               "RelativeDocumentMoniker": "Stock_Analysis Web.csproj",
@@ -138,7 +154,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "NseParser.cs",
               "DocumentMoniker": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\NSE\\NseParser.cs",
               "ToolTip": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\NSE\\NseParser.cs",
@@ -148,7 +164,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "WeatherForecastController.cs",
               "DocumentMoniker": "C:\\Workspace\\03_Projects\\01_Stock\\Stock_Analysis\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "Controllers\\WeatherForecastController.cs",
