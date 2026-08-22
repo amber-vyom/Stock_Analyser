@@ -1,0 +1,168 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1EDDAAFB-A359-43CE-8BD1-4C80A5DEF992}|..\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj|a:\\01_vyom\\03_projects\\01_stock\\stock_analysis.engine\\nse\\nseparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E1F1A29-3D27-49E1-7848-1793BB1339C2}|Stock_Analysis Web.csproj|a:\\01_vyom\\03_projects\\01_stock\\stock_analysis\\controllers\\testnsecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E1F1A29-3D27-49E1-7848-1793BB1339C2}|Stock_Analysis Web.csproj|solutionrelative:controllers\\testnsecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EDDAAFB-A359-43CE-8BD1-4C80A5DEF992}|..\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj|a:\\01_vyom\\03_projects\\01_stock\\stock_analysis.engine\\models\\nsemarketrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E1F1A29-3D27-49E1-7848-1793BB1339C2}|Stock_Analysis Web.csproj|a:\\01_vyom\\03_projects\\01_stock\\stock_analysis\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E1F1A29-3D27-49E1-7848-1793BB1339C2}|Stock_Analysis Web.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E1F1A29-3D27-49E1-7848-1793BB1339C2}|Stock_Analysis Web.csproj|a:\\01_vyom\\03_projects\\01_stock\\stock_analysis\\stock_analysis web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{8E1F1A29-3D27-49E1-7848-1793BB1339C2}|Stock_Analysis Web.csproj|solutionrelative:stock_analysis web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EDDAAFB-A359-43CE-8BD1-4C80A5DEF992}|..\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj|a:\\01_vyom\\03_projects\\01_stock\\stock_analysis.engine\\nse\\extractzip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EDDAAFB-A359-43CE-8BD1-4C80A5DEF992}|..\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj|a:\\01_vyom\\03_projects\\01_stock\\stock_analysis.engine\\nse\\nsedataprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EDDAAFB-A359-43CE-8BD1-4C80A5DEF992}|..\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj|a:\\01_vyom\\03_projects\\01_stock\\stock_analysis.engine\\nse\\nsedownloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8E1F1A29-3D27-49E1-7848-1793BB1339C2}|Stock_Analysis Web.csproj|a:\\01_vyom\\03_projects\\01_stock\\stock_analysis\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8E1F1A29-3D27-49E1-7848-1793BB1339C2}|Stock_Analysis Web.csproj|solutionrelative:controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NseParser.cs",
+              "DocumentMoniker": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\NSE\\NseParser.cs",
+              "RelativeDocumentMoniker": "..\\Stock_Analysis.Engine\\NSE\\NseParser.cs",
+              "ToolTip": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\NSE\\NseParser.cs",
+              "RelativeToolTip": "..\\Stock_Analysis.Engine\\NSE\\NseParser.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwCQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-22T05:50:02.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TestNseController.cs",
+              "DocumentMoniker": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis\\Controllers\\TestNseController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TestNseController.cs",
+              "ToolTip": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis\\Controllers\\TestNseController.cs",
+              "RelativeToolTip": "Controllers\\TestNseController.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAuwFgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-22T06:03:57.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NseMarketRecord.cs",
+              "DocumentMoniker": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Models\\NseMarketRecord.cs",
+              "RelativeDocumentMoniker": "..\\Stock_Analysis.Engine\\Models\\NseMarketRecord.cs",
+              "ToolTip": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Models\\NseMarketRecord.cs",
+              "RelativeToolTip": "..\\Stock_Analysis.Engine\\Models\\NseMarketRecord.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAgwA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-22T05:52:56.329Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Stock_Analysis Web",
+              "DocumentMoniker": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis\\Stock_Analysis Web.csproj",
+              "RelativeDocumentMoniker": "Stock_Analysis Web.csproj",
+              "ToolTip": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis\\Stock_Analysis Web.csproj",
+              "RelativeToolTip": "Stock_Analysis Web.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-08-22T06:01:32.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-22T06:02:22.569Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ExtractZip.cs",
+              "DocumentMoniker": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\NSE\\ExtractZip.cs",
+              "RelativeDocumentMoniker": "..\\Stock_Analysis.Engine\\NSE\\ExtractZip.cs",
+              "ToolTip": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\NSE\\ExtractZip.cs",
+              "RelativeToolTip": "..\\Stock_Analysis.Engine\\NSE\\ExtractZip.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-22T06:00:39.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NseDataProvider.cs",
+              "DocumentMoniker": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\NSE\\NseDataProvider.cs",
+              "RelativeDocumentMoniker": "..\\Stock_Analysis.Engine\\NSE\\NseDataProvider.cs",
+              "ToolTip": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\NSE\\NseDataProvider.cs",
+              "RelativeToolTip": "..\\Stock_Analysis.Engine\\NSE\\NseDataProvider.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAUwBsAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-22T05:48:37.311Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "NseDownloader.cs",
+              "DocumentMoniker": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\NSE\\NseDownloader.cs",
+              "RelativeDocumentMoniker": "..\\Stock_Analysis.Engine\\NSE\\NseDownloader.cs",
+              "ToolTip": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\NSE\\NseDownloader.cs",
+              "RelativeToolTip": "..\\Stock_Analysis.Engine\\NSE\\NseDownloader.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAqwBQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-22T05:46:09.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "Controllers\\WeatherForecastController.cs",
+              "ToolTip": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-22T05:39:59.4Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
