@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis\\Stock_Analysis Web.csproj": {}
+    "C:\\Workspace\\03_Projects\\01_Stock\\Stock_Analysis\\Stock_Analysis Web.csproj": {}
   },
   "projects": {
-    "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj": {
+    "C:\\Workspace\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj",
+        "projectUniqueName": "C:\\Workspace\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj",
         "projectName": "Stock_Analysis.Engine",
-        "projectPath": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj",
-        "packagesPath": "C:\\Users\\vyom1\\.nuget\\packages\\",
-        "outputPath": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\obj\\",
+        "projectPath": "C:\\Workspace\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj",
+        "packagesPath": "C:\\Users\\Pooja Reddy\\.nuget\\packages\\",
+        "outputPath": "C:\\Workspace\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\vyom1\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Pooja Reddy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -351,21 +347,17 @@
         }
       }
     },
-    "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis\\Stock_Analysis Web.csproj": {
+    "C:\\Workspace\\03_Projects\\01_Stock\\Stock_Analysis\\Stock_Analysis Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis\\Stock_Analysis Web.csproj",
+        "projectUniqueName": "C:\\Workspace\\03_Projects\\01_Stock\\Stock_Analysis\\Stock_Analysis Web.csproj",
         "projectName": "Stock_Analysis Web",
-        "projectPath": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis\\Stock_Analysis Web.csproj",
-        "packagesPath": "C:\\Users\\vyom1\\.nuget\\packages\\",
-        "outputPath": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis\\obj\\",
+        "projectPath": "C:\\Workspace\\03_Projects\\01_Stock\\Stock_Analysis\\Stock_Analysis Web.csproj",
+        "packagesPath": "C:\\Users\\Pooja Reddy\\.nuget\\packages\\",
+        "outputPath": "C:\\Workspace\\03_Projects\\01_Stock\\Stock_Analysis\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\vyom1\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Pooja Reddy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -380,8 +372,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj": {
-                "projectPath": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj"
+              "C:\\Workspace\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj": {
+                "projectPath": "C:\\Workspace\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj"
               }
             }
           }

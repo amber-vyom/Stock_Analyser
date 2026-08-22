@@ -1,21 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "I5V/rHhnP/I=",
+  "dgSpecHash": "s3FUM/Cyvo0=",
   "success": true,
-  "projectFilePath": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis\\Stock_Analysis Web.csproj",
+  "projectFilePath": "C:\\Workspace\\03_Projects\\01_Stock\\Stock_Analysis\\Stock_Analysis Web.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\vyom1\\.nuget\\packages\\csvhelper\\33.1.0\\csvhelper.33.1.0.nupkg.sha512",
-    "C:\\Users\\vyom1\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.9\\microsoft.aspnetcore.openapi.10.0.9.nupkg.sha512",
-    "C:\\Users\\vyom1\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
+    "C:\\Users\\Pooja Reddy\\.nuget\\packages\\csvhelper\\33.1.0\\csvhelper.33.1.0.nupkg.sha512",
+    "C:\\Users\\Pooja Reddy\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.9\\microsoft.aspnetcore.openapi.10.0.9.nupkg.sha512",
+    "C:\\Users\\Pooja Reddy\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
   ],
   "logs": [
     {
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc",
-      "projectPath": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis\\Stock_Analysis Web.csproj",
+      "projectPath": "C:\\Workspace\\03_Projects\\01_Stock\\Stock_Analysis\\Stock_Analysis Web.csproj",
       "warningLevel": 1,
-      "filePath": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis\\Stock_Analysis Web.csproj",
+      "filePath": "C:\\Workspace\\03_Projects\\01_Stock\\Stock_Analysis\\Stock_Analysis Web.csproj",
       "libraryId": "Microsoft.OpenApi",
       "targetGraphs": [
         "net10.0"

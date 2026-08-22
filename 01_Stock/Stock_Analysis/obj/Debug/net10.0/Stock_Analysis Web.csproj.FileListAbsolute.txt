@@ -36,3 +36,41 @@ A:\01_Vyom\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\ref\Stock_Analy
 A:\01_Vyom\03_Projects\01_Stock\Stock_Analysis\bin\Debug\net10.0\Stock_Analysis.Engine.dll
 A:\01_Vyom\03_Projects\01_Stock\Stock_Analysis\bin\Debug\net10.0\Stock_Analysis.Engine.pdb
 A:\01_Vyom\03_Projects\01_Stock\Stock_Analysis\bin\Debug\net10.0\CsvHelper.dll
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\bin\Debug\net10.0\appsettings.Development.json
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\bin\Debug\net10.0\appsettings.json
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\bin\Debug\net10.0\Stock_Analysis Web.staticwebassets.endpoints.json
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\bin\Debug\net10.0\Stock_Analysis Web.exe
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\bin\Debug\net10.0\Stock_Analysis Web.deps.json
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\bin\Debug\net10.0\Stock_Analysis Web.runtimeconfig.json
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\bin\Debug\net10.0\Stock_Analysis Web.dll
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\bin\Debug\net10.0\Stock_Analysis Web.pdb
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\bin\Debug\net10.0\CsvHelper.dll
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\bin\Debug\net10.0\Microsoft.OpenApi.dll
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\bin\Debug\net10.0\Stock_Analysis.Engine.dll
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\bin\Debug\net10.0\Stock_Analysis.Engine.pdb
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\Stock_Analysis Web.csproj.AssemblyReference.cache
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\Stock_Analysis Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\Stock_Analysis Web.AssemblyInfoInputs.cache
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\Stock_Analysis Web.AssemblyInfo.cs
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\Stock_Analysis Web.csproj.CoreCompileInputs.cache
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\Stock_Analysis Web.MvcApplicationPartsAssemblyInfo.cs
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\Stock_Analysis Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\Stock_Analysis Web.sourcelink.json
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\rjimswa.dswa.cache.json
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\scopedcss\bundle\Stock_Analysis Web.styles.css
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\staticwebassets.build.json
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\staticwebassets.build.json.cache
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\staticwebassets.development.json
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\swae.build.ex.cache
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\Stock_An.FAB750FD.Up2Date
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\Stock_Analysis Web.dll
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\refint\Stock_Analysis Web.dll
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\Stock_Analysis Web.pdb
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\Stock_Analysis Web.genruntimeconfig.cache
+C:\Workspace\03_Projects\01_Stock\Stock_Analysis\obj\Debug\net10.0\ref\Stock_Analysis Web.dll
