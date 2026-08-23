@@ -18,17 +18,21 @@ public class NseParser
                 filePath);
         }
 
-        using var reader = new StreamReader(filePath);
+        using var reader =
+            new StreamReader(filePath);
 
-        var config = new CsvConfiguration(CultureInfo.InvariantCulture)
-        {
-            HasHeaderRecord = true,
-            MissingFieldFound = null,
-            HeaderValidated = null,
-            BadDataFound = null
-        };
+        var config =
+            new CsvConfiguration(
+                CultureInfo.InvariantCulture)
+            {
+                HasHeaderRecord = true,
+                MissingFieldFound = null,
+                HeaderValidated = null,
+                BadDataFound = null
+            };
 
-        using var csv = new CsvReader(reader, config);
+        using var csv =
+            new CsvReader(reader, config);
 
         csv.Read();
         csv.ReadHeader();
@@ -38,61 +42,92 @@ public class NseParser
             string tradeDateText =
                 csv.GetField("TradDt") ?? "";
 
-            DateTime tradeDate;
-
             if (!DateTime.TryParse(
                 tradeDateText,
-                out tradeDate))
+                CultureInfo.InvariantCulture,
+                DateTimeStyles.None,
+                out DateTime tradeDate))
             {
                 continue;
             }
 
-            var record = new NseMarketRecord
+            string symbol =
+                csv.GetField("TckrSymb") ?? "";
+
+            string series =
+                csv.GetField("SctySrs") ?? "";
+
+            // Ignore records without a symbol.
+            if (string.IsNullOrWhiteSpace(symbol))
             {
-                TradeDate = tradeDate,
+                continue;
+            }
 
-                Symbol =
-                    csv.GetField("TckrSymb") ?? "",
+            var record =
+                new NseMarketRecord
+                {
+                    TradeDate = tradeDate,
 
-                Series =
-                    csv.GetField("SctySrs") ?? "",
+                    Symbol = symbol,
 
-                Isin =
-                    csv.GetField("ISIN") ?? "",
+                    Series = series,
 
-                InstrumentType =
-                    csv.GetField("FinInstrmTp") ?? "",
+                    Isin =
+                        csv.GetField("ISIN") ?? "",
 
-                OpenPrice =
-                    GetDecimal(csv, "OpnPric"),
+                    InstrumentType =
+                        csv.GetField("FinInstrmTp") ?? "",
 
-                HighPrice =
-                    GetDecimal(csv, "HghPric"),
+                    OpenPrice =
+                        GetDecimal(
+                            csv,
+                            "OpnPric"),
 
-                LowPrice =
-                    GetDecimal(csv, "LwPric"),
+                    HighPrice =
+                        GetDecimal(
+                            csv,
+                            "HghPric"),
 
-                ClosePrice =
-                    GetDecimal(csv, "ClsPric"),
+                    LowPrice =
+                        GetDecimal(
+                            csv,
+                            "LwPric"),
 
-                LastPrice =
-                    GetDecimal(csv, "LastPric"),
+                    ClosePrice =
+                        GetDecimal(
+                            csv,
+                            "ClsPric"),
 
-                PreviousClose =
-                    GetDecimal(csv, "PrvsClsgPric"),
+                    LastPrice =
+                        GetDecimal(
+                            csv,
+                            "LastPric"),
 
-                SettlementPrice =
-                    GetDecimal(csv, "SttlmPric"),
+                    PreviousClose =
+                        GetDecimal(
+                            csv,
+                            "PrvsClsgPric"),
 
-                TradingVolume =
-                    GetLong(csv, "TtlTradgVol"),
+                    SettlementPrice =
+                        GetDecimal(
+                            csv,
+                            "SttlmPric"),
 
-                TradedValue =
-                    GetDecimal(csv, "TtlTrfVal"),
+                    TradingVolume =
+                        GetLong(
+                            csv,
+                            "TtlTradgVol"),
 
-                NumberOfTrades =
-                    GetLong(csv, "TtlNbOfTxsExctd")
-            };
+                    TradedValue =
+                        GetDecimal(
+                            csv,
+                            "TtlTrfVal"),
+
+                    NumberOfTrades =
+                        GetLong(
+                            csv,
+                            "TtlNbOfTxsExctd")
+                };
 
             records.Add(record);
         }

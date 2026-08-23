@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Desktop\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EE825482-073A-B5E0-CD5D-B3E1ACF489D6}|..\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj|a:\\01_vyom\\03_projects\\01_stock\\stock_analysis.engine\\analysis\\filters\\filter06volumeactivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Filter06VolumeActivity.cs",
+              "DocumentMoniker": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Analysis\\Filters\\Filter06VolumeActivity.cs",
+              "RelativeDocumentMoniker": "..\\Stock_Analysis.Engine\\Analysis\\Filters\\Filter06VolumeActivity.cs",
+              "ToolTip": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Analysis\\Filters\\Filter06VolumeActivity.cs",
+              "RelativeToolTip": "..\\Stock_Analysis.Engine\\Analysis\\Filters\\Filter06VolumeActivity.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAuwA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-23T15:59:21.299Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

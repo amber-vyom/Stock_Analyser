@@ -14,101 +14,79 @@ public class TestNseController : ControllerBase
         _downloader = downloader;
     }
 
-    // --------------------------------------------------
-    // TEST 1: DOWNLOAD ONE NSE FILE
-    // --------------------------------------------------
-
-    [HttpGet("download")]
-    public async Task<IActionResult> Download()
+    [HttpGet("download-7-days")]
+    public async Task<IActionResult> Download7Days()
     {
-        string date = "20260713";
+        // 1. Find the latest 7 trading days
+        var tradingDayFinder = new FindTradingDays();
 
-        string url =
-            $"https://nsearchives.nseindia.com/content/cm/" +
-            $"BhavCopy_NSE_CM_0_0_0_{date}_F_0000.csv.zip";
-
-        string rawFolder =
-            @"A:\01_Vyom\03_Projects\01_Stock\Stock_Data\NSE\Raw";
-
-        string fileName =
-            $"NSE_{date}.csv.zip";
-
-        string zipFile =
-            Path.Combine(rawFolder, fileName);
-
-        // 1. Download NSE file
-        string downloadedFile =
-            await _downloader.DownloadAsync(
-                url,
-                zipFile);
-
-        // 2. Extract ZIP
-        string extractedFolder =
-            @"A:\01_Vyom\03_Projects\01_Stock\Stock_Data\NSE\Extracted";
-
-        var extractor = new ExtractZip();
-
-        extractor.Extract(
-            downloadedFile,
-            extractedFolder);
-
-        // 3. Find extracted CSV
-        string[] csvFiles =
-            Directory.GetFiles(
-                extractedFolder,
-                "*.csv");
-
-        if (csvFiles.Length == 0)
-        {
-            return NotFound(
-                "No CSV file was found after extraction.");
-        }
-
-        string csvFile = csvFiles[0];
-
-        // 4. Read CSV
-        var parser = new NseParser();
-
-        var records =
-            parser.ReadData(csvFile);
-
-        // 5. Return result
-        return Ok(new
-        {
-            Message =
-                "NSE data downloaded and processed successfully.",
-
-            CsvFile = csvFile,
-
-            TotalRecords = records.Count,
-
-            FirstStock =
-                records.Count > 0
-                    ? records[0].Symbol
-                    : "",
-
-            LastStock =
-                records.Count > 0
-                    ? records[^1].Symbol
-                    : ""
-        });
-    }
-
-
-    // --------------------------------------------------
-    // TEST 2: FIND 7 TRADING DAYS
-    // --------------------------------------------------
-
-    [HttpGet("trading-days")]
-    public IActionResult GetTradingDays()
-    {
-        var finder = new FindTradingDays();
-
-        var days =
-            finder.GetDays(
+        var tradingDays =
+            tradingDayFinder.GetDays(
                 DateTime.Today,
                 7);
 
-        return Ok(days);
+        // 2. Permanent folders
+        string rawFolder =
+            @"A:\01_Vyom\03_Projects\01_Stock\Stock_Data\NSE\Raw";
+
+        string extractedFolder =
+            @"A:\01_Vyom\03_Projects\01_Stock\Stock_Data\NSE\Extracted";
+
+        Directory.CreateDirectory(rawFolder);
+        Directory.CreateDirectory(extractedFolder);
+
+        var downloadedFiles = new List<string>();
+        var extractedFiles = new List<string>();
+
+        // 3. Download and extract each trading day
+        foreach (var day in tradingDays)
+        {
+            string date =
+                day.ToString("yyyyMMdd");
+
+            string url =
+                $"https://nsearchives.nseindia.com/content/cm/" +
+                $"BhavCopy_NSE_CM_0_0_0_{date}_F_0000.csv.zip";
+
+            string zipFile =
+                Path.Combine(
+                    rawFolder,
+                    $"NSE_{date}.csv.zip");
+
+            // Download NSE file
+            string downloadedFile =
+                await _downloader.DownloadAsync(
+                    url,
+                    zipFile);
+
+            downloadedFiles.Add(downloadedFile);
+
+            // Extract NSE file
+            var extractor = new ExtractZip();
+
+            string extractedFile =
+                extractor.Extract(
+                    downloadedFile,
+                    extractedFolder);
+
+            extractedFiles.Add(extractedFile);
+        }
+
+        // 4. Return result
+        return Ok(new
+        {
+            Message =
+                "7 NSE trading days downloaded and extracted successfully.",
+
+            TradingDays =
+                tradingDays.Select(
+                    d => d.ToString("yyyy-MM-dd")),
+
+            DownloadedFiles =
+                downloadedFiles,
+
+            ExtractedFiles =
+                extractedFiles
+        });
     }
 }

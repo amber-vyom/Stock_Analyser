@@ -1,18 +1,8 @@
 [
   {
     "ContainingType": "Stock_Analysis.Web.Controllers.TestNseController",
-    "Method": "Download",
-    "RelativePath": "api/nse/download",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Stock_Analysis.Web.Controllers.TestNseController",
-    "Method": "GetTradingDays",
-    "RelativePath": "api/nse/trading-days",
+    "Method": "Download7Days",
+    "RelativePath": "api/nse/download-7-days",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

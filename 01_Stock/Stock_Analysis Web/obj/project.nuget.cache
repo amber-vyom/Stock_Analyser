@@ -1,21 +1,37 @@
 {
   "version": 2,
-  "dgSpecHash": "I5V/rHhnP/I=",
+  "dgSpecHash": "LdY019pz+XM=",
   "success": true,
-  "projectFilePath": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis\\Stock_Analysis Web.csproj",
+  "projectFilePath": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis Web\\Stock_Analysis Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vyom1\\.nuget\\packages\\csvhelper\\33.1.0\\csvhelper.33.1.0.nupkg.sha512",
     "C:\\Users\\vyom1\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.9\\microsoft.aspnetcore.openapi.10.0.9.nupkg.sha512",
-    "C:\\Users\\vyom1\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
+    "C:\\Users\\vyom1\\.nuget\\packages\\microsoft.bcl.cryptography\\9.0.13\\microsoft.bcl.cryptography.9.0.13.nupkg.sha512",
+    "C:\\Users\\vyom1\\.nuget\\packages\\microsoft.data.sqlclient\\7.0.2\\microsoft.data.sqlclient.7.0.2.nupkg.sha512",
+    "C:\\Users\\vyom1\\.nuget\\packages\\microsoft.data.sqlclient.extensions.abstractions\\7.0.2\\microsoft.data.sqlclient.extensions.abstractions.7.0.2.nupkg.sha512",
+    "C:\\Users\\vyom1\\.nuget\\packages\\microsoft.data.sqlclient.internal.logging\\7.0.2\\microsoft.data.sqlclient.internal.logging.7.0.2.nupkg.sha512",
+    "C:\\Users\\vyom1\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\6.0.2\\microsoft.data.sqlclient.sni.runtime.6.0.2.nupkg.sha512",
+    "C:\\Users\\vyom1\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.16.0\\microsoft.identitymodel.abstractions.8.16.0.nupkg.sha512",
+    "C:\\Users\\vyom1\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.16.0\\microsoft.identitymodel.jsonwebtokens.8.16.0.nupkg.sha512",
+    "C:\\Users\\vyom1\\.nuget\\packages\\microsoft.identitymodel.logging\\8.16.0\\microsoft.identitymodel.logging.8.16.0.nupkg.sha512",
+    "C:\\Users\\vyom1\\.nuget\\packages\\microsoft.identitymodel.protocols\\8.16.0\\microsoft.identitymodel.protocols.8.16.0.nupkg.sha512",
+    "C:\\Users\\vyom1\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\8.16.0\\microsoft.identitymodel.protocols.openidconnect.8.16.0.nupkg.sha512",
+    "C:\\Users\\vyom1\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.16.0\\microsoft.identitymodel.tokens.8.16.0.nupkg.sha512",
+    "C:\\Users\\vyom1\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512",
+    "C:\\Users\\vyom1\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
+    "C:\\Users\\vyom1\\.nuget\\packages\\system.configuration.configurationmanager\\9.0.13\\system.configuration.configurationmanager.9.0.13.nupkg.sha512",
+    "C:\\Users\\vyom1\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.16.0\\system.identitymodel.tokens.jwt.8.16.0.nupkg.sha512",
+    "C:\\Users\\vyom1\\.nuget\\packages\\system.security.cryptography.pkcs\\9.0.13\\system.security.cryptography.pkcs.9.0.13.nupkg.sha512",
+    "C:\\Users\\vyom1\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.13\\system.security.cryptography.protecteddata.9.0.13.nupkg.sha512"
   ],
   "logs": [
     {
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'Microsoft.OpenApi' 2.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-v5pm-xwqc-g5wc",
-      "projectPath": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis\\Stock_Analysis Web.csproj",
+      "projectPath": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis Web\\Stock_Analysis Web.csproj",
       "warningLevel": 1,
-      "filePath": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis\\Stock_Analysis Web.csproj",
+      "filePath": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis Web\\Stock_Analysis Web.csproj",
       "libraryId": "Microsoft.OpenApi",
       "targetGraphs": [
         "net10.0"

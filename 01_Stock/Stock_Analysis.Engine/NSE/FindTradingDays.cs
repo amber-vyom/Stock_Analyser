@@ -23,13 +23,11 @@ public class FindTradingDays
 
     private bool IsTradingDay(DateTime date)
     {
-        // Saturday
         if (date.DayOfWeek == DayOfWeek.Saturday)
         {
             return false;
         }
 
-        // Sunday
         if (date.DayOfWeek == DayOfWeek.Sunday)
         {
             return false;

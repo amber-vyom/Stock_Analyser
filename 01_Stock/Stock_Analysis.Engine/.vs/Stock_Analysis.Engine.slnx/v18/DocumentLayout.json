@@ -1,0 +1,185 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DA52AD48-6E36-8D92-A962-4A803165EC4E}|Stock_Analysis.Engine.csproj|a:\\01_vyom\\03_projects\\01_stock\\stock_analysis.engine\\stock_analysis.engine.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{DA52AD48-6E36-8D92-A962-4A803165EC4E}|Stock_Analysis.Engine.csproj|solutionrelative:stock_analysis.engine.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA52AD48-6E36-8D92-A962-4A803165EC4E}|Stock_Analysis.Engine.csproj|a:\\01_vyom\\03_projects\\01_stock\\stock_analysis.engine\\models\\processedstockdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA52AD48-6E36-8D92-A962-4A803165EC4E}|Stock_Analysis.Engine.csproj|solutionrelative:models\\processedstockdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA52AD48-6E36-8D92-A962-4A803165EC4E}|Stock_Analysis.Engine.csproj|a:\\01_vyom\\03_projects\\01_stock\\stock_analysis.engine\\models\\nsemarketrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA52AD48-6E36-8D92-A962-4A803165EC4E}|Stock_Analysis.Engine.csproj|solutionrelative:models\\nsemarketrecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4E08D64-4C1D-4E50-A1E8-1C1DA30C33DF}|..\\Stock_Analysis.Desktop\\Stock_Analysis.Desktop.csproj|a:\\01_vyom\\03_projects\\01_stock\\stock_analysis.desktop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4E08D64-4C1D-4E50-A1E8-1C1DA30C33DF}|..\\Stock_Analysis.Desktop\\Stock_Analysis.Desktop.csproj|a:\\01_vyom\\03_projects\\01_stock\\stock_analysis.desktop\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2666ED4F-2FDE-A2E0-BB69-2DD135396257}|..\\Stock_Analysis Web\\Stock_Analysis Web.csproj|a:\\01_vyom\\03_projects\\01_stock\\stock_analysis web\\controllers\\testnsecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA52AD48-6E36-8D92-A962-4A803165EC4E}|Stock_Analysis.Engine.csproj|a:\\01_vyom\\03_projects\\01_stock\\stock_analysis.engine\\nse\\findtradingdays.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA52AD48-6E36-8D92-A962-4A803165EC4E}|Stock_Analysis.Engine.csproj|solutionrelative:nse\\findtradingdays.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2666ED4F-2FDE-A2E0-BB69-2DD135396257}|..\\Stock_Analysis Web\\Stock_Analysis Web.csproj|a:\\01_vyom\\03_projects\\01_stock\\stock_analysis web\\stock_analysis.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2666ED4F-2FDE-A2E0-BB69-2DD135396257}|..\\Stock_Analysis Web\\Stock_Analysis Web.csproj|a:\\01_vyom\\03_projects\\01_stock\\stock_analysis web\\stock_analysis web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA52AD48-6E36-8D92-A962-4A803165EC4E}|Stock_Analysis.Engine.csproj|a:\\01_vyom\\03_projects\\01_stock\\stock_analysis.engine\\nse\\nseparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA52AD48-6E36-8D92-A962-4A803165EC4E}|Stock_Analysis.Engine.csproj|solutionrelative:nse\\nseparser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Stock_Analysis.Engine",
+              "DocumentMoniker": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj",
+              "RelativeDocumentMoniker": "Stock_Analysis.Engine.csproj",
+              "ToolTip": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj",
+              "RelativeToolTip": "Stock_Analysis.Engine.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-08-22T19:49:16.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProcessedStockData.cs",
+              "DocumentMoniker": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Models\\ProcessedStockData.cs",
+              "RelativeDocumentMoniker": "Models\\ProcessedStockData.cs",
+              "ToolTip": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Models\\ProcessedStockData.cs",
+              "RelativeToolTip": "Models\\ProcessedStockData.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAwwCAAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-22T19:35:53.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NseMarketRecord.cs",
+              "DocumentMoniker": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Models\\NseMarketRecord.cs",
+              "RelativeDocumentMoniker": "Models\\NseMarketRecord.cs",
+              "ToolTip": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Models\\NseMarketRecord.cs",
+              "RelativeToolTip": "Models\\NseMarketRecord.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAwwCUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-22T19:34:51.338Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Desktop\\Program.cs",
+              "RelativeDocumentMoniker": "..\\Stock_Analysis.Desktop\\Program.cs",
+              "ToolTip": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Desktop\\Program.cs",
+              "RelativeToolTip": "..\\Stock_Analysis.Desktop\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-22T16:59:19.014Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Desktop\\MainForm.cs",
+              "RelativeDocumentMoniker": "..\\Stock_Analysis.Desktop\\MainForm.cs",
+              "ToolTip": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Desktop\\MainForm.cs",
+              "RelativeToolTip": "..\\Stock_Analysis.Desktop\\MainForm.cs",
+              "ViewState": "AgIAALsAAAAAAAAAAAAiwMUAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-22T16:59:11.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FindTradingDays.cs",
+              "DocumentMoniker": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\NSE\\FindTradingDays.cs",
+              "RelativeDocumentMoniker": "NSE\\FindTradingDays.cs",
+              "ToolTip": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\NSE\\FindTradingDays.cs",
+              "RelativeToolTip": "NSE\\FindTradingDays.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAACUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-22T16:34:13.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Stock_Analysis.http",
+              "DocumentMoniker": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis Web\\Stock_Analysis.http",
+              "RelativeDocumentMoniker": "..\\Stock_Analysis Web\\Stock_Analysis.http",
+              "ToolTip": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis Web\\Stock_Analysis.http",
+              "RelativeToolTip": "..\\Stock_Analysis Web\\Stock_Analysis.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-08-22T16:11:45.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Stock_Analysis Web",
+              "DocumentMoniker": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis Web\\Stock_Analysis Web.csproj",
+              "RelativeDocumentMoniker": "..\\Stock_Analysis Web\\Stock_Analysis Web.csproj",
+              "ToolTip": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis Web\\Stock_Analysis Web.csproj",
+              "RelativeToolTip": "..\\Stock_Analysis Web\\Stock_Analysis Web.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-08-22T16:10:05.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TestNseController.cs",
+              "DocumentMoniker": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis Web\\Controllers\\TestNseController.cs",
+              "RelativeDocumentMoniker": "..\\Stock_Analysis Web\\Controllers\\TestNseController.cs",
+              "ToolTip": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis Web\\Controllers\\TestNseController.cs",
+              "RelativeToolTip": "..\\Stock_Analysis Web\\Controllers\\TestNseController.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAwFsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-22T16:08:33.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "NseParser.cs",
+              "DocumentMoniker": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\NSE\\NseParser.cs",
+              "RelativeDocumentMoniker": "NSE\\NseParser.cs",
+              "ToolTip": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\NSE\\NseParser.cs",
+              "RelativeToolTip": "NSE\\NseParser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-22T16:07:21.885Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

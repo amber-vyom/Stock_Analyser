@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="../Stock_Analysis.Desktop/Stock_Analysis.Desktop.csproj" />
   <Project Path="../Stock_Analysis.Engine/Stock_Analysis.Engine.csproj" Id="1eddaafb-a359-43ce-8bd1-4c80a5def992" />
   <Project Path="Stock_Analysis Web.csproj" />
 </Solution>

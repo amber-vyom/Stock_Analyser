@@ -52,19 +52,7 @@
         }
       }
     },
-    "/api/nse/download": {
-      "get": {
-        "tags": [
-          "TestNse"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/nse/trading-days": {
+    "/api/nse/download-7-days": {
       "get": {
         "tags": [
           "TestNse"
