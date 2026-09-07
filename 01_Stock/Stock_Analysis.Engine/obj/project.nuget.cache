@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "a7JFOMvunAk=",
+  "dgSpecHash": "w0tYvyo9PhI=",
   "success": true,
-  "projectFilePath": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj",
+  "projectFilePath": "A:\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vyom1\\.nuget\\packages\\csvhelper\\33.1.0\\csvhelper.33.1.0.nupkg.sha512",
     "C:\\Users\\vyom1\\.nuget\\packages\\microsoft.bcl.cryptography\\9.0.13\\microsoft.bcl.cryptography.9.0.13.nupkg.sha512",

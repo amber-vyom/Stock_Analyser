@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis Web\\Stock_Analysis Web.csproj": {}
+    "A:\\03_Projects\\01_Stock\\Stock_Analysis Web\\Stock_Analysis Web.csproj": {}
   },
   "projects": {
-    "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis Web\\Stock_Analysis Web.csproj": {
+    "A:\\03_Projects\\01_Stock\\Stock_Analysis Web\\Stock_Analysis Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis Web\\Stock_Analysis Web.csproj",
+        "projectUniqueName": "A:\\03_Projects\\01_Stock\\Stock_Analysis Web\\Stock_Analysis Web.csproj",
         "projectName": "Stock_Analysis Web",
-        "projectPath": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis Web\\Stock_Analysis Web.csproj",
+        "projectPath": "A:\\03_Projects\\01_Stock\\Stock_Analysis Web\\Stock_Analysis Web.csproj",
         "packagesPath": "C:\\Users\\vyom1\\.nuget\\packages\\",
-        "outputPath": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis Web\\obj\\",
+        "outputPath": "A:\\03_Projects\\01_Stock\\Stock_Analysis Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj": {
-                "projectPath": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj"
+              "A:\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj": {
+                "projectPath": "A:\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj"
               }
             }
           }
@@ -49,7 +49,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.300"
+        "SdkAnalysisLevel": "10.0.400"
       },
       "frameworks": {
         "net10.0": {
@@ -84,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
@@ -502,14 +502,14 @@
         }
       }
     },
-    "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj": {
+    "A:\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj",
+        "projectUniqueName": "A:\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj",
         "projectName": "Stock_Analysis.Engine",
-        "projectPath": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj",
+        "projectPath": "A:\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\Stock_Analysis.Engine.csproj",
         "packagesPath": "C:\\Users\\vyom1\\.nuget\\packages\\",
-        "outputPath": "A:\\01_Vyom\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\obj\\",
+        "outputPath": "A:\\03_Projects\\01_Stock\\Stock_Analysis.Engine\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -543,7 +543,7 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.300"
+        "SdkAnalysisLevel": "10.0.400"
       },
       "frameworks": {
         "net10.0": {
@@ -575,7 +575,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

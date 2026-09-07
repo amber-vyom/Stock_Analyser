@@ -13,6 +13,10 @@ public class ProcessedDataRepository
             new DatabaseConnection();
     }
 
+    // =========================================================
+    // INSERT PROCESSED DATA
+    // =========================================================
+
     public async Task<int> InsertRecordsAsync(
         List<SevenDayStockData> records)
     {
@@ -128,5 +132,103 @@ public class ProcessedDataRepository
         }
 
         return insertedCount;
+    }
+
+
+    // =========================================================
+    // READ ALL PROCESSED STOCK DATA
+    // =========================================================
+
+    public async Task<List<SevenDayStockData>>
+        GetAllRecordsAsync()
+    {
+        List<SevenDayStockData> records =
+            new List<SevenDayStockData>();
+
+        using SqlConnection connection =
+            new SqlConnection(
+                databaseConnection.ConnectionString);
+
+        await connection.OpenAsync();
+
+        string sql = @"
+            SELECT
+                Symbol,
+                TradingDays,
+                TotalVolume,
+                AverageDailyVolume,
+                AverageOpenPrice,
+                AverageClosePrice,
+                HighestPrice,
+                LowestPrice,
+                TotalTrades,
+                TotalTradedValue,
+                PriceChangePercentage,
+                VolumeConsistency
+            FROM dbo.ProcessedData
+            ORDER BY Symbol;";
+
+        using SqlCommand command =
+            new SqlCommand(sql, connection);
+
+        using SqlDataReader reader =
+            await command.ExecuteReaderAsync();
+
+        while (await reader.ReadAsync())
+        {
+            SevenDayStockData stock =
+                new SevenDayStockData();
+
+            stock.Symbol =
+                reader["Symbol"].ToString() ?? "";
+
+            stock.TradingDays =
+                Convert.ToInt32(
+                    reader["TradingDays"]);
+
+            stock.TotalVolume =
+                Convert.ToInt64(
+                    reader["TotalVolume"]);
+
+            stock.AverageDailyVolume =
+                Convert.ToInt64(
+                    reader["AverageDailyVolume"]);
+
+            stock.AverageOpenPrice =
+                Convert.ToDecimal(
+                    reader["AverageOpenPrice"]);
+
+            stock.AverageClosePrice =
+                Convert.ToDecimal(
+                    reader["AverageClosePrice"]);
+
+            stock.HighestPrice =
+                Convert.ToDecimal(
+                    reader["HighestPrice"]);
+
+            stock.LowestPrice =
+                Convert.ToDecimal(
+                    reader["LowestPrice"]);
+
+            stock.TotalTrades =
+                Convert.ToInt64(
+                    reader["TotalTrades"]);
+
+            stock.TotalTradedValue =
+                Convert.ToDecimal(
+                    reader["TotalTradedValue"]);
+
+            stock.PriceChangePercentage =
+                Convert.ToDecimal(
+                    reader["PriceChangePercentage"]);
+
+            stock.VolumeConsistency =
+                Convert.ToDecimal(
+                    reader["VolumeConsistency"]);
+
+            records.Add(stock);
+        }
+
+        return records;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using Stock_Analysis.Engine.Analysis;
 using Stock_Analysis.Engine.Database;
 using Stock_Analysis.Engine.Models;
 using Stock_Analysis.Engine.NSE;
@@ -7,15 +8,16 @@ namespace Stock_Analysis.Desktop;
 
 public class MainForm : Form
 {
-    private Button downloadButton;
-    private Button parserTestButton;
-    private Button sevenDayTestButton;
-    private Button databaseTestButton;
-    private Button moveRawDataButton;
-    private Button saveProcessedDataButton;
+    private Button downloadButton = null!;
+    private Button parserTestButton = null!;
+    private Button sevenDayTestButton = null!;
+    private Button databaseTestButton = null!;
+    private Button moveRawDataButton = null!;
+    private Button saveProcessedDataButton = null!;
+    private Button generateTopStocksButton = null!;
 
-    private Label statusLabel;
-    private ListView fileList;
+    private Label statusLabel = null!;
+    private ListView fileList = null!;
 
     private readonly NseDownloader downloader;
 
@@ -27,8 +29,9 @@ public class MainForm : Form
 
     public MainForm()
     {
-        downloader = new NseDownloader(
-            new HttpClient());
+        downloader =
+            new NseDownloader(
+                new HttpClient());
 
         CreateWindow();
     }
@@ -37,8 +40,8 @@ public class MainForm : Form
     {
         Text = "Stock Analysis System";
 
-        Width = 1200;
-        Height = 650;
+        Width = 1250;
+        Height = 700;
 
         StartPosition =
             FormStartPosition.CenterScreen;
@@ -116,7 +119,7 @@ public class MainForm : Form
 
         parserTestButton.Left = 260;
         parserTestButton.Top = 130;
-        parserTestButton.Width = 160;
+        parserTestButton.Width = 150;
         parserTestButton.Height = 45;
 
         parserTestButton.Click +=
@@ -133,9 +136,9 @@ public class MainForm : Form
         sevenDayTestButton.Text =
             "Test 7 Days";
 
-        sevenDayTestButton.Left = 430;
+        sevenDayTestButton.Left = 420;
         sevenDayTestButton.Top = 130;
-        sevenDayTestButton.Width = 140;
+        sevenDayTestButton.Width = 130;
         sevenDayTestButton.Height = 45;
 
         sevenDayTestButton.Click +=
@@ -152,7 +155,7 @@ public class MainForm : Form
         databaseTestButton.Text =
             "Test Database";
 
-        databaseTestButton.Left = 580;
+        databaseTestButton.Left = 560;
         databaseTestButton.Top = 130;
         databaseTestButton.Width = 140;
         databaseTestButton.Height = 45;
@@ -171,7 +174,7 @@ public class MainForm : Form
         moveRawDataButton.Text =
             "Move Raw Data to DB";
 
-        moveRawDataButton.Left = 735;
+        moveRawDataButton.Left = 710;
         moveRawDataButton.Top = 130;
         moveRawDataButton.Width = 170;
         moveRawDataButton.Height = 45;
@@ -190,7 +193,7 @@ public class MainForm : Form
         saveProcessedDataButton.Text =
             "Save Processed Data";
 
-        saveProcessedDataButton.Left = 915;
+        saveProcessedDataButton.Left = 890;
         saveProcessedDataButton.Top = 130;
         saveProcessedDataButton.Width = 170;
         saveProcessedDataButton.Height = 45;
@@ -199,6 +202,25 @@ public class MainForm : Form
             SaveProcessedDataButton_Click;
 
         Controls.Add(saveProcessedDataButton);
+
+        // ==========================================
+        // GENERATE TOP 10 BUTTON
+        // ==========================================
+
+        generateTopStocksButton = new Button();
+
+        generateTopStocksButton.Text =
+            "Generate Top 10";
+
+        generateTopStocksButton.Left = 1070;
+        generateTopStocksButton.Top = 130;
+        generateTopStocksButton.Width = 140;
+        generateTopStocksButton.Height = 45;
+
+        generateTopStocksButton.Click +=
+            GenerateTopStocksButton_Click;
+
+        Controls.Add(generateTopStocksButton);
 
         // ==========================================
         // STATUS
@@ -210,22 +232,22 @@ public class MainForm : Form
             "Status: Ready";
 
         statusLabel.Left = 30;
-        statusLabel.Top = 510;
-        statusLabel.Width = 1050;
+        statusLabel.Top = 190;
+        statusLabel.Width = 1150;
         statusLabel.Height = 30;
 
         Controls.Add(statusLabel);
 
         // ==========================================
-        // FILE LIST
+        // FILE / RESULT LIST
         // ==========================================
 
         fileList = new ListView();
 
         fileList.Left = 30;
-        fileList.Top = 200;
-        fileList.Width = 1100;
-        fileList.Height = 290;
+        fileList.Top = 230;
+        fileList.Width = 1180;
+        fileList.Height = 380;
 
         fileList.View =
             View.Details;
@@ -242,7 +264,7 @@ public class MainForm : Form
 
         fileList.Columns.Add(
             "File",
-            500);
+            600);
 
         fileList.Columns.Add(
             "Status",
@@ -267,6 +289,7 @@ public class MainForm : Form
             databaseTestButton.Enabled = false;
             moveRawDataButton.Enabled = false;
             saveProcessedDataButton.Enabled = false;
+            generateTopStocksButton.Enabled = false;
 
             fileList.Items.Clear();
 
@@ -287,10 +310,6 @@ public class MainForm : Form
             Directory.CreateDirectory(
                 extractedFolder);
 
-            // ==========================================
-            // REMOVE OLD EXTRACTED CSV FILES
-            // ==========================================
-
             foreach (string oldCsv in
                      Directory.GetFiles(
                          extractedFolder,
@@ -298,10 +317,6 @@ public class MainForm : Form
             {
                 File.Delete(oldCsv);
             }
-
-            // ==========================================
-            // DOWNLOAD CURRENT 7 TRADING DAYS
-            // ==========================================
 
             foreach (var day in tradingDays)
             {
@@ -366,6 +381,7 @@ public class MainForm : Form
             databaseTestButton.Enabled = true;
             moveRawDataButton.Enabled = true;
             saveProcessedDataButton.Enabled = true;
+            generateTopStocksButton.Enabled = true;
         }
     }
 
@@ -450,13 +466,12 @@ public class MainForm : Form
 
             MessageBox.Show(
                 message,
-                "NSE Parser Test",
+                "Parser Test",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
 
             statusLabel.Text =
-                $"Status: Parser successful - " +
-                $"{records.Count} records.";
+                "Status: Parser test completed.";
         }
         catch (Exception ex)
         {
@@ -465,7 +480,7 @@ public class MainForm : Form
 
             MessageBox.Show(
                 ex.Message,
-                "Parser Error",
+                "Parser Test Error",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
         }
@@ -484,20 +499,20 @@ public class MainForm : Form
             statusLabel.Text =
                 "Status: Processing 7 days...";
 
-            var test =
+            var sevenDayTest =
                 new Stock_Analysis.Engine.Tests.SevenDayTest();
 
             string result =
-                test.Run();
+                sevenDayTest.Run();
 
             MessageBox.Show(
                 result,
-                "7 Day NSE Test",
+                "7 Day Test",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
 
             statusLabel.Text =
-                "Status: 7 day processing completed.";
+                "Status: 7 day test completed.";
         }
         catch (Exception ex)
         {
@@ -760,6 +775,106 @@ public class MainForm : Form
         finally
         {
             saveProcessedDataButton.Enabled = true;
+        }
+    }
+
+    // ==================================================
+    // GENERATE TOP 10 STOCKS
+    // ==================================================
+
+    private async void GenerateTopStocksButton_Click(
+        object? sender,
+        EventArgs e)
+    {
+        try
+        {
+            generateTopStocksButton.Enabled = false;
+
+            statusLabel.Text =
+                "Status: Analysing stocks with 10 filters...";
+
+            var predictionService =
+                new StockPredictionService();
+
+            List<StockFilterResult> topStocks =
+                await predictionService.GetTopStocksAsync(10);
+
+            if (topStocks.Count == 0)
+            {
+                MessageBox.Show(
+                    "No processed stock data found.\n\n" +
+                    "Click 'Save Processed Data' first.",
+                    "No Data",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                statusLabel.Text =
+                    "Status: No processed data found.";
+
+                return;
+            }
+
+            fileList.Items.Clear();
+
+            fileList.Columns.Clear();
+
+            fileList.Columns.Add(
+                "Rank",
+                100);
+
+            fileList.Columns.Add(
+                "Symbol",
+                300);
+
+            fileList.Columns.Add(
+                "Score",
+                200);
+
+            fileList.Columns.Add(
+                "Filters Passed",
+                250);
+
+            int rank = 1;
+
+            foreach (
+                StockFilterResult stock
+                in topStocks)
+            {
+                ListViewItem item =
+                    new ListViewItem(
+                        rank.ToString());
+
+                item.SubItems.Add(
+                    stock.Symbol);
+
+                item.SubItems.Add(
+                    $"{stock.Score}/100");
+
+                item.SubItems.Add(
+                    $"{stock.PassedFilters}/10");
+
+                fileList.Items.Add(item);
+
+                rank++;
+            }
+
+            statusLabel.Text =
+                $"Status: Top {topStocks.Count} stocks generated successfully.";
+        }
+        catch (Exception ex)
+        {
+            statusLabel.Text =
+                "Status: Stock analysis failed.";
+
+            MessageBox.Show(
+                ex.Message,
+                "Stock Analysis Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+        }
+        finally
+        {
+            generateTopStocksButton.Enabled = true;
         }
     }
 }

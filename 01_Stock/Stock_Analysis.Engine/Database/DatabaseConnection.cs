@@ -7,10 +7,9 @@ public class DatabaseConnection
     public DatabaseConnection()
     {
         ConnectionString =
-            "Server=DESKTOP-59M1SPM\\AMBERDBE25;" +
+            "Server=INSPIRON1212\\AMBERDBE25;" +
             "Database=StockAnalysisDB;" +
-            "User Id=sa;" +
-            "Password=Shubh@1234;" +
+            "Integrated Security=True;" +
             "TrustServerCertificate=True;";
     }
 }
