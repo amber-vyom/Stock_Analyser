@@ -58,6 +58,25 @@ public class StocksController : ControllerBase
         return Ok(ranked.Select((r, i) => ToDto(r, bySymbol[r.Symbol], i + 1)));
     }
 
+    [HttpGet("snapshot")]
+    public async Task<IActionResult> GetSnapshot([FromQuery] int count = 200)
+    {
+        if (count < 1 || count > 1000)
+        {
+            return BadRequest(new { error = "count must be between 1 and 1000." });
+        }
+
+        var stocks = await repository.GetAllRecordsAsync();
+        var bySymbol = stocks.ToDictionary(s => s.Symbol);
+        var ranked = rankingService.RankAllWithMergeSort(stocks).Take(count).ToList();
+
+        return Ok(new
+        {
+            generatedAt = DateTime.UtcNow,
+            stocks = ranked.Select((r, i) => ToDto(r, bySymbol[r.Symbol], i + 1))
+        });
+    }
+
     [HttpGet("stocks/{symbol}")]
     public async Task<IActionResult> GetStock(string symbol)
     {

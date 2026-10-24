@@ -34,7 +34,9 @@ interface UpdateSummary {
   processedSaved: number
 }
 
-const num =(v: number, d = 2) =>
+const STATIC = import.meta.env.VITE_STATIC === 'true'
+
+const num = (v: number, d = 2) =>
   v.toLocaleString('en-IN', { maximumFractionDigits: d })
 
 async function getJson<T>(url: string): Promise<T> {
@@ -53,6 +55,7 @@ export default function App() {
   const [selected, setSelected] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [snapshotDate, setSnapshotDate] = useState<string | null>(null)
   const [updating, setUpdating] = useState(false)
   const [updateMsg, setUpdateMsg] = useState<string | null>(null)
 
@@ -60,7 +63,14 @@ export default function App() {
     setLoading(true)
     setError(null)
     try {
-      const data = await getJson<Stock[]>(`/api/stocks/top?count=${count}`)
+      let data: Stock[]
+      if (STATIC) {
+        const snapshot = await getJson<{ generatedAt: string; stocks: Stock[] }>('/snapshot.json')
+        data = snapshot.stocks.slice(0, count)
+        setSnapshotDate(snapshot.generatedAt)
+      } else {
+        data = await getJson<Stock[]>(`/api/stocks/top?count=${count}`)
+      }
       setStocks(data)
       setSelected(data[0]?.symbol ?? null)
     } catch (e) {
@@ -106,13 +116,22 @@ export default function App() {
       <header>
         <h1>Stock Analysis System</h1>
         <span>
-          <button onClick={updateData} disabled={updating || loading}>
-            {updating ? 'Updating data… (can take a few minutes)' : 'Update data from NSE'}
-          </button>{' '}
+          {!STATIC && (
+            <>
+              <button onClick={updateData} disabled={updating || loading}>
+                {updating ? 'Updating data… (can take a few minutes)' : 'Update data from NSE'}
+              </button>{' '}
+            </>
+          )}
           <button onClick={load} disabled={loading || updating}>Refresh</button>
         </span>
       </header>
       {updateMsg && <p className="note">{updateMsg}</p>}
+      {STATIC && snapshotDate && (
+        <p className="note">
+          Static snapshot generated {new Date(snapshotDate).toLocaleString()}. Live data is only available when the API runs locally.
+        </p>
+      )}
       <p className="note">
         Rule-based screening and ranking of NSE EQ stocks over the stored 7-day window.
         The score is not a forecast of future returns.

@@ -1,0 +1,8 @@
+[build]
+  base = "01_Stock/Stock_Analysis.Frontend"
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  VITE_STATIC = "true"

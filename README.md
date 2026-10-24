@@ -72,6 +72,24 @@ cd 01_Stock/Stock_Analysis.Frontend && npm install && npm run dev
 
 Open http://localhost:5173. The downloaded-report folder defaults to the path in `NseDataPaths.cs`; set the `STOCK_DATA_DIR` environment variable to override it.
 
+## Hosting (Netlify and Streamlit)
+
+Netlify and Streamlit Community Cloud cannot reach a SQL Server running on a personal computer, so the hosted versions show a static snapshot of the ranking instead of live data.
+
+1. Start the API locally, then export the snapshot:
+
+   ```bash
+   powershell -File 01_Stock/tools/export-snapshot.ps1
+   ```
+
+   This writes `snapshot.json` into `Stock_Analysis.Frontend/public` and `Stock_Analysis.Streamlit`. Commit and push both files.
+
+2. **Netlify:** import the GitHub repo. `netlify.toml` sets the base folder, build command and `VITE_STATIC=true`, so the site reads `snapshot.json` and hides the "Update data" button.
+
+3. **Streamlit Community Cloud:** create an app from the same repo with the main file `01_Stock/Stock_Analysis.Streamlit/streamlit_app.py`. Dependencies come from `requirements.txt` in that folder.
+
+To refresh the hosted sites, re-run the export and push again.
+
 ## Status and roadmap
 
 Done: download, parse, aggregate, store, filter, score, rank, desktop app, API, dashboard, unit tests for scoring, ranking, aggregation and report-file selection, and a GitHub Actions workflow.
