@@ -27,10 +27,10 @@ public class TestNseController : ControllerBase
 
         // 2. Permanent folders
         string rawFolder =
-            @"A:\01_Vyom\03_Projects\01_Stock\Stock_Data\NSE\Raw";
+        NseDataPaths.RawFolder;
 
         string extractedFolder =
-            @"A:\01_Vyom\03_Projects\01_Stock\Stock_Data\NSE\Extracted";
+        NseDataPaths.ExtractedFolder;
 
         Directory.CreateDirectory(rawFolder);
         Directory.CreateDirectory(extractedFolder);

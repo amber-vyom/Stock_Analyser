@@ -9,7 +9,7 @@ namespace Stock_Analysis.Engine.Tests;
 public class SevenDayTest
 {
     private readonly string extractedFolder =
-        @"A:\01_Vyom\03_Projects\01_Stock\Stock_Data\NSE\Extracted";
+        NseDataPaths.ExtractedFolder;
 
     // ==================================================
     // EXISTING 7 DAY TEST
@@ -187,50 +187,24 @@ public class SevenDayTest
         }
 
         // ==========================================
-        // FIND LATEST 7 TRADING DAYS
+        // USE THE LATEST 7 DOWNLOADED REPORTS
+        // (holiday-safe: based on files that exist)
         // ==========================================
 
-        var tradingDayFinder =
-            new FindTradingDays();
-
-        var tradingDays =
-            tradingDayFinder.GetDays(
-                DateTime.Today,
+        List<string> csvFiles =
+            NseReportFiles.GetLatestCsvFiles(
+                Directory.GetFiles(
+                    extractedFolder,
+                    "*.csv"),
                 7);
 
-        var requiredDates =
-            tradingDays
-                .Select(
-                    x => x.ToString("yyyyMMdd"))
-                .ToHashSet();
-
-        // ==========================================
-        // FIND ONLY REQUIRED 7 CSV FILES
-        // ==========================================
-
-        string[] allCsvFiles =
-            Directory.GetFiles(
-                extractedFolder,
-                "*.csv");
-
-        var csvFiles =
-            allCsvFiles
-                .Where(
-                    file =>
-                        requiredDates.Any(
-                            date =>
-                                Path.GetFileName(file)
-                                    .Contains(date)))
-                .OrderBy(file => file)
-                .ToArray();
-
         csvFileCount =
-            csvFiles.Length;
+            csvFiles.Count;
 
-        if (csvFiles.Length == 0)
+        if (csvFiles.Count == 0)
         {
             throw new FileNotFoundException(
-                "None of the current 7 trading-day CSV files were found.\n\n" +
+                "No NSE CSV files were found.\n\n" +
                 "Click 'Download Latest 7 Days' first.");
         }
 

@@ -24,10 +24,10 @@ public class MainForm : Form
     private readonly NseDownloader downloader;
 
     private readonly string rawFolder =
-        @"A:\01_Vyom\03_Projects\01_Stock\Stock_Data\NSE\Raw";
+        NseDataPaths.RawFolder;
 
     private readonly string extractedFolder =
-        @"A:\01_Vyom\03_Projects\01_Stock\Stock_Data\NSE\Extracted";
+        NseDataPaths.ExtractedFolder;
 
     public MainForm()
     {

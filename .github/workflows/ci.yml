@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  engine-and-api:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - name: Test engine
+        run: dotnet test 01_Stock/Stock_Analysis.Tests/Stock_Analysis.Tests.csproj
+      - name: Build web API
+        run: dotnet build "01_Stock/Stock_Analysis Web/Stock_Analysis Web.csproj"
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 01_Stock/Stock_Analysis.Frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: 01_Stock/Stock_Analysis.Frontend/package-lock.json
+      - run: npm ci
+      - run: npm run build
