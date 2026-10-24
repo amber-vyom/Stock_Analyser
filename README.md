@@ -13,7 +13,7 @@ This is a screening tool, not a prediction system. It does not use real-time dat
 - **Ten filters:** Completeness, positive return, strong return, close above open, price stability, volume activity, volume consistency, momentum, traded value and overall quality.
 - **Weighted score:** A configurable score out of 100 (`ScoringOptions`) that is separate from the pass/fail filters.
 - **Ranking:** A Priority Queue orders by score, then passed-filter count, then symbol. Stocks with fewer than seven trading days are excluded.
-- **Interfaces:** A Windows Forms desktop app, a read-only ASP.NET Core API and a React dashboard.
+- **Interfaces:** A React dashboard backed by an ASP.NET Core API. The "Update data from NSE" button runs the whole pipeline (download, raw data, processed data). The older Windows Forms app is still in the repo but is no longer the main interface.
 
 ## Architecture
 
@@ -23,7 +23,6 @@ NSE reports -> download + extract -> CSV parser -> RawData (SQL Server)
            -> ten filters -> weighted score -> Priority Queue -> Top N
 
 React dashboard -> ASP.NET Core API -> Stock_Analysis.Engine -> SQL Server
-Windows Forms app ----------------^
 ```
 
 ## Project structure
@@ -55,6 +54,7 @@ The heap-based Top-N and the Merge Sort full ranking use the same comparison (sc
 
 | Endpoint | Description |
 |---|---|
+| `POST /api/pipeline/run` | Downloads the latest reports, loads RawData and refreshes ProcessedData (one run at a time) |
 | `GET /api/health` | Database connectivity and stock count |
 | `GET /api/stocks?search=` | Processed seven-day metrics |
 | `GET /api/stocks/top?count=10` | Ranked stocks with score, filters and metrics |
