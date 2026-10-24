@@ -16,8 +16,11 @@ public class StockFilterEngine
     private readonly Filter09HighTradedValue filter09;
     private readonly Filter10OverallQuality filter10;
 
-    public StockFilterEngine()
+    private readonly StockScorer scorer;
+
+    public StockFilterEngine(ScoringOptions? scoringOptions = null)
     {
+        scorer = new StockScorer(scoringOptions);
         filter01 = new Filter01Completeness();
         filter02 = new Filter02PositiveReturn();
         filter03 = new Filter03StrongReturn();
@@ -72,7 +75,7 @@ public class StockFilterEngine
             CountPassedFilters(result);
 
         result.Score =
-            result.PassedFilters * 10;
+            scorer.Score(stock, result.PassedFilters);
 
         return result;
     }

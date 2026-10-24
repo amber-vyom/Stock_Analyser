@@ -1,4 +1,4 @@
-﻿using Stock_Analysis.Engine.Analysis;
+using Stock_Analysis.Engine.Analysis;
 using Stock_Analysis.Engine.Models;
 
 namespace Stock_Analysis.Engine.DSA;
@@ -7,9 +7,12 @@ public class StockRankingService
 {
     private readonly StockFilterEngine filterEngine;
 
-    public StockRankingService()
+    private readonly ScoringOptions options;
+
+    public StockRankingService(ScoringOptions? scoringOptions = null)
     {
-        filterEngine = new StockFilterEngine();
+        options = scoringOptions ?? new ScoringOptions();
+        filterEngine = new StockFilterEngine(options);
     }
 
     public List<StockFilterResult> RankStocks(
@@ -19,21 +22,23 @@ public class StockRankingService
         var priorityQueue =
             new PriorityQueue<
                 StockFilterResult,
-                int>();
+                (decimal ScorePriority, int FilterPriority, string Symbol)>(
+                new RankComparer());
 
         foreach (SevenDayStockData stock in stocks)
         {
+            if (stock == null ||
+                stock.TradingDays < options.MinimumTradingDaysToRank)
+            {
+                continue;
+            }
+
             StockFilterResult result =
                 filterEngine.Analyse(stock);
 
-            // Negative priority means:
-            // Higher score comes out first.
-            int priority =
-                -result.PassedFilters;
-
             priorityQueue.Enqueue(
                 result,
-                priority);
+                (-result.Score, -result.PassedFilters, result.Symbol));
         }
 
         var rankedStocks =
@@ -47,5 +52,22 @@ public class StockRankingService
         }
 
         return rankedStocks;
+    }
+
+    private sealed class RankComparer :
+        IComparer<(decimal ScorePriority, int FilterPriority, string Symbol)>
+    {
+        public int Compare(
+            (decimal ScorePriority, int FilterPriority, string Symbol) x,
+            (decimal ScorePriority, int FilterPriority, string Symbol) y)
+        {
+            int byScore = x.ScorePriority.CompareTo(y.ScorePriority);
+            if (byScore != 0) return byScore;
+
+            int byFilters = x.FilterPriority.CompareTo(y.FilterPriority);
+            if (byFilters != 0) return byFilters;
+
+            return string.CompareOrdinal(x.Symbol, y.Symbol);
+        }
     }
 }

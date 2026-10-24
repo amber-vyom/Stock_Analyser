@@ -25,17 +25,24 @@ public class ProcessedDataRepository
             return 0;
         }
 
-        int insertedCount = 0;
+        const string sql = @"
+            UPDATE dbo.ProcessedData
+            SET
+                TradingDays = @TradingDays,
+                TotalVolume = @TotalVolume,
+                AverageDailyVolume = @AverageDailyVolume,
+                AverageOpenPrice = @AverageOpenPrice,
+                AverageClosePrice = @AverageClosePrice,
+                HighestPrice = @HighestPrice,
+                LowestPrice = @LowestPrice,
+                TotalTrades = @TotalTrades,
+                TotalTradedValue = @TotalTradedValue,
+                PriceChangePercentage = @PriceChangePercentage,
+                VolumeConsistency = @VolumeConsistency
+            WHERE Symbol = @Symbol;
 
-        using SqlConnection connection =
-            new SqlConnection(
-                databaseConnection.ConnectionString);
-
-        await connection.OpenAsync();
-
-        foreach (SevenDayStockData record in records)
-        {
-            string sql = @"
+            IF @@ROWCOUNT = 0
+            BEGIN
                 INSERT INTO dbo.ProcessedData
                 (
                     Symbol,
@@ -51,7 +58,8 @@ public class ProcessedDataRepository
                     PriceChangePercentage,
                     VolumeConsistency
                 )
-                SELECT
+                VALUES
+                (
                     @Symbol,
                     @TradingDays,
                     @TotalVolume,
@@ -64,74 +72,75 @@ public class ProcessedDataRepository
                     @TotalTradedValue,
                     @PriceChangePercentage,
                     @VolumeConsistency
-                WHERE NOT EXISTS
-                (
-                    SELECT 1
-                    FROM dbo.ProcessedData
-                    WHERE Symbol = @Symbol
-                );";
+                );
+            END";
 
+        int savedCount = 0;
+
+        using SqlConnection connection =
+            new SqlConnection(
+                databaseConnection.ConnectionString);
+
+        await connection.OpenAsync();
+
+        using SqlTransaction transaction =
+            connection.BeginTransaction();
+
+        try
+        {
             using SqlCommand command =
-                new SqlCommand(sql, connection);
+                new SqlCommand(sql, connection, transaction);
 
-            command.Parameters.AddWithValue(
-                "@Symbol",
-                record.Symbol);
+            command.Parameters.Add("@Symbol", System.Data.SqlDbType.NVarChar, 50);
+            command.Parameters.Add("@TradingDays", System.Data.SqlDbType.Int);
+            command.Parameters.Add("@TotalVolume", System.Data.SqlDbType.BigInt);
+            command.Parameters.Add("@AverageDailyVolume", System.Data.SqlDbType.Decimal);
+            command.Parameters.Add("@AverageOpenPrice", System.Data.SqlDbType.Decimal);
+            command.Parameters.Add("@AverageClosePrice", System.Data.SqlDbType.Decimal);
+            command.Parameters.Add("@HighestPrice", System.Data.SqlDbType.Decimal);
+            command.Parameters.Add("@LowestPrice", System.Data.SqlDbType.Decimal);
+            command.Parameters.Add("@TotalTrades", System.Data.SqlDbType.BigInt);
+            command.Parameters.Add("@TotalTradedValue", System.Data.SqlDbType.Decimal);
+            command.Parameters.Add("@PriceChangePercentage", System.Data.SqlDbType.Decimal);
+            command.Parameters.Add("@VolumeConsistency", System.Data.SqlDbType.Decimal);
 
-            command.Parameters.AddWithValue(
-                "@TradingDays",
-                record.TradingDays);
-
-            command.Parameters.AddWithValue(
-                "@TotalVolume",
-                record.TotalVolume);
-
-            command.Parameters.AddWithValue(
-                "@AverageDailyVolume",
-                record.AverageDailyVolume);
-
-            command.Parameters.AddWithValue(
-                "@AverageOpenPrice",
-                record.AverageOpenPrice);
-
-            command.Parameters.AddWithValue(
-                "@AverageClosePrice",
-                record.AverageClosePrice);
-
-            command.Parameters.AddWithValue(
-                "@HighestPrice",
-                record.HighestPrice);
-
-            command.Parameters.AddWithValue(
-                "@LowestPrice",
-                record.LowestPrice);
-
-            command.Parameters.AddWithValue(
-                "@TotalTrades",
-                record.TotalTrades);
-
-            command.Parameters.AddWithValue(
-                "@TotalTradedValue",
-                record.TotalTradedValue);
-
-            command.Parameters.AddWithValue(
-                "@PriceChangePercentage",
-                record.PriceChangePercentage);
-
-            command.Parameters.AddWithValue(
-                "@VolumeConsistency",
-                record.VolumeConsistency);
-
-            int rowsAffected =
-                await command.ExecuteNonQueryAsync();
-
-            if (rowsAffected > 0)
+            foreach (var parameter in command.Parameters.Cast<SqlParameter>())
             {
-                insertedCount++;
+                if (parameter.SqlDbType == System.Data.SqlDbType.Decimal)
+                {
+                    parameter.Precision = 28;
+                    parameter.Scale = 6;
+                }
             }
+
+            foreach (SevenDayStockData record in records)
+            {
+                command.Parameters["@Symbol"].Value = record.Symbol;
+                command.Parameters["@TradingDays"].Value = record.TradingDays;
+                command.Parameters["@TotalVolume"].Value = record.TotalVolume;
+                command.Parameters["@AverageDailyVolume"].Value = record.AverageDailyVolume;
+                command.Parameters["@AverageOpenPrice"].Value = record.AverageOpenPrice;
+                command.Parameters["@AverageClosePrice"].Value = record.AverageClosePrice;
+                command.Parameters["@HighestPrice"].Value = record.HighestPrice;
+                command.Parameters["@LowestPrice"].Value = record.LowestPrice;
+                command.Parameters["@TotalTrades"].Value = record.TotalTrades;
+                command.Parameters["@TotalTradedValue"].Value = record.TotalTradedValue;
+                command.Parameters["@PriceChangePercentage"].Value = record.PriceChangePercentage;
+                command.Parameters["@VolumeConsistency"].Value = record.VolumeConsistency;
+
+                await command.ExecuteNonQueryAsync();
+                savedCount++;
+            }
+
+            await transaction.CommitAsync();
+        }
+        catch
+        {
+            await transaction.RollbackAsync();
+            throw;
         }
 
-        return insertedCount;
+        return savedCount;
     }
 
 
