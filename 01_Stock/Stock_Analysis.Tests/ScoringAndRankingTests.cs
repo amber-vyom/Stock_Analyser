@@ -71,6 +71,21 @@ public class ScoringAndRankingTests
     }
 
     [Fact]
+    public void Breakdown_SumsToScoreAndMaxPointsTotalHundred()
+    {
+        var stock = Stock("A", change: 7m);
+        var scorer = new StockScorer();
+        int passed = new StockFilterEngine().Analyse(stock).PassedFilters;
+
+        var breakdown = scorer.Breakdown(stock, passed);
+
+        Assert.Equal(10, breakdown.Count);
+        Assert.Equal(100m, breakdown.Sum(c => c.Max));
+        Assert.Equal(scorer.Score(stock, passed), Math.Round(breakdown.Sum(c => c.Points), 2));
+        Assert.All(breakdown, c => Assert.InRange(c.Points, 0m, c.Max));
+    }
+
+    [Fact]
     public void Score_WeightsAreConfigurable()
     {
         var options = new ScoringOptions

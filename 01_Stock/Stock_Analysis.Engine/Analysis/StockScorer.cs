@@ -2,6 +2,8 @@ using Stock_Analysis.Engine.Models;
 
 namespace Stock_Analysis.Engine.Analysis;
 
+public record ScoreComponent(string Name, decimal Points, decimal Max);
+
 public class StockScorer
 {
     private readonly ScoringOptions options;
@@ -13,24 +15,34 @@ public class StockScorer
 
     public decimal Score(SevenDayStockData stock, int passedFilters)
     {
-        if (stock == null)
-        {
-            return 0m;
-        }
-
-        decimal total =
-            options.CompletenessWeight * Ratio(stock.TradingDays, options.ExpectedTradingDays) +
-            options.PositiveReturnWeight * Ratio(stock.PriceChangePercentage, options.PositiveReturnFullPercent) +
-            options.StrongReturnWeight * Ratio(stock.PriceChangePercentage, options.StrongReturnFullPercent) +
-            options.CloseVersusOpenWeight * Ratio(CloseVersusOpenPercent(stock), options.CloseVersusOpenFullPercent) +
-            options.PriceStabilityWeight * Stability(stock) +
-            options.VolumeWeight * LogScale(stock.AverageDailyVolume, options.VolumeFloor, options.VolumeFull) +
-            options.VolumeConsistencyWeight * Clamp01(stock.VolumeConsistency / 100m) +
-            options.MomentumWeight * Ratio(stock.PriceChangePercentage, options.StrongReturnFullPercent) * Clamp01(stock.VolumeConsistency / 100m) +
-            options.TradedValueWeight * LogScale(stock.TotalTradedValue, options.TradedValueFloor, options.TradedValueFull) +
-            options.OverallQualityWeight * Clamp01(passedFilters / 10m);
+        decimal total = Breakdown(stock, passedFilters).Sum(c => c.Points);
 
         return Math.Round(total, 2);
+    }
+
+    public List<ScoreComponent> Breakdown(SevenDayStockData stock, int passedFilters)
+    {
+        if (stock == null)
+        {
+            return new List<ScoreComponent>();
+        }
+
+        decimal consistency = Clamp01(stock.VolumeConsistency / 100m);
+        decimal returnStrength = Ratio(stock.PriceChangePercentage, options.StrongReturnFullPercent);
+
+        return new List<ScoreComponent>
+        {
+            new("Data completeness", options.CompletenessWeight * Ratio(stock.TradingDays, options.ExpectedTradingDays), options.CompletenessWeight),
+            new("Positive return", options.PositiveReturnWeight * Ratio(stock.PriceChangePercentage, options.PositiveReturnFullPercent), options.PositiveReturnWeight),
+            new("Strong return", options.StrongReturnWeight * returnStrength, options.StrongReturnWeight),
+            new("Close vs open", options.CloseVersusOpenWeight * Ratio(CloseVersusOpenPercent(stock), options.CloseVersusOpenFullPercent), options.CloseVersusOpenWeight),
+            new("Price stability", options.PriceStabilityWeight * Stability(stock), options.PriceStabilityWeight),
+            new("Trading volume", options.VolumeWeight * LogScale(stock.AverageDailyVolume, options.VolumeFloor, options.VolumeFull), options.VolumeWeight),
+            new("Volume consistency", options.VolumeConsistencyWeight * consistency, options.VolumeConsistencyWeight),
+            new("Momentum with volume", options.MomentumWeight * returnStrength * consistency, options.MomentumWeight),
+            new("Traded value", options.TradedValueWeight * LogScale(stock.TotalTradedValue, options.TradedValueFloor, options.TradedValueFull), options.TradedValueWeight),
+            new("Overall quality", options.OverallQualityWeight * Clamp01(passedFilters / 10m), options.OverallQualityWeight)
+        };
     }
 
     private static decimal Clamp01(decimal value)

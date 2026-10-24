@@ -13,6 +13,7 @@ public class StocksController : ControllerBase
     private readonly ProcessedDataRepository repository = new();
     private readonly StockRankingService rankingService = new();
     private readonly StockFilterEngine filterEngine = new();
+    private static readonly StockScorer Scorer = new();
 
     [HttpGet("health")]
     public async Task<IActionResult> Health()
@@ -113,6 +114,8 @@ public class StocksController : ControllerBase
                 new { name = "High traded value", passed = r.Filter09Passed },
                 new { name = "Overall quality", passed = r.Filter10Passed }
             },
+            breakdown = Scorer.Breakdown(s, r.PassedFilters)
+                .Select(c => new { name = c.Name, points = Math.Round(c.Points, 2), max = c.Max }),
             metrics = s
         };
     }

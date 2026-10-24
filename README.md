@@ -2,6 +2,10 @@
 
 A rule-based NSE stock screening and ranking system built with C# and .NET. It downloads NSE BhavCopy reports, stores them in SQL Server, aggregates a rolling seven-trading-day window, applies ten screening filters, computes a weighted score out of 100, and ranks stocks with a Priority Queue.
 
+**Live demos (static snapshot):** [Netlify dashboard](https://stock-analyser-vyom.netlify.app/) · [Streamlit app](https://stock-analyser-vyom.streamlit.app/)
+
+![Dashboard](docs/dashboard.jpg)
+
 This is a screening tool, not a prediction system. It does not use real-time data, and the score has not been backtested, so it should not be read as a forecast of future returns.
 
 ## Features
@@ -11,7 +15,8 @@ This is a screening tool, not a prediction system. It does not use real-time dat
 - **Seven-day aggregation:** Groups records by symbol (dictionary) in date order and computes return, volume, traded value, price range and volume consistency. The window uses the latest seven downloaded reports.
 - **SQL Server storage:** Raw data and processed data tables. Saving processed data updates existing symbols in a single transaction.
 - **Ten filters:** Completeness, positive return, strong return, close above open, price stability, volume activity, volume consistency, momentum, traded value and overall quality.
-- **Weighted score:** A configurable score out of 100 (`ScoringOptions`) that is separate from the pass/fail filters.
+- **Weighted score:** A configurable score out of 100 (`ScoringOptions`) that is separate from the pass/fail filters. Every stock shows a per-component score breakdown.
+- **Dashboard:** Sortable table, symbol search, minimum-filters filter, summary cards, score distribution chart, per-stock detail panel and a "How it works" section.
 - **Ranking:** A Priority Queue orders by score, then passed-filter count, then symbol. Stocks with fewer than seven trading days are excluded.
 - **Interfaces:** A React dashboard backed by an ASP.NET Core API. The "Update data from NSE" button runs the whole pipeline (download, raw data, processed data). The older Windows Forms app is still in the repo but is no longer the main interface.
 

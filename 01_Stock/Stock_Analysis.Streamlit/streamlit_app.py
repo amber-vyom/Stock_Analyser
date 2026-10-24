@@ -95,6 +95,17 @@ with right:
             for f in stock["filters"]:
                 st.markdown(f"{':green[:material/check:]' if f['passed'] else ':red[:material/close:]'} {f['name']}")
             st.divider()
+            st.caption("Score breakdown (points earned out of the maximum)")
+            breakdown = pd.DataFrame(stock["breakdown"]).rename(columns={"name": "Component", "points": "Points", "max": "Max"})
+            st.dataframe(
+                breakdown,
+                hide_index=True,
+                column_config={
+                    "Points": st.column_config.ProgressColumn("Points", min_value=0, max_value=12, format="%.1f"),
+                },
+                alt="Score breakdown by component",
+            )
+            st.divider()
             st.write(f"Average open: {m['averageOpenPrice']:.2f}")
             st.write(f"Average close: {m['averageClosePrice']:.2f}")
             st.write(f"High / low: {m['highestPrice']:.2f} / {m['lowestPrice']:.2f}")
