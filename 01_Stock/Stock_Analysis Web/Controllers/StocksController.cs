@@ -62,8 +62,8 @@ public class StocksController : ControllerBase
     public async Task<IActionResult> GetStock(string symbol)
     {
         var stocks = await repository.GetAllRecordsAsync();
-        var stock = stocks.FirstOrDefault(
-            s => string.Equals(s.Symbol, symbol, StringComparison.OrdinalIgnoreCase));
+        var sorted = SymbolSearch.SortBySymbol(stocks);
+        var stock = SymbolSearch.BinarySearch(sorted, symbol);
 
         if (stock == null)
         {

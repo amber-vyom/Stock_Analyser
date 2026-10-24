@@ -38,6 +38,19 @@ Windows Forms app ----------------^
 `-- Stock_Data                downloaded NSE reports
 ```
 
+## Data structures and algorithms used
+
+| Concept | Where it is used | Complexity |
+|---|---|---|
+| List traversal | Reading and parsing daily records (`NseParser`, `SevenDayAggregator`) | O(n) |
+| Dictionary (hash table) | Grouping records by symbol in `SevenDayAggregator` | O(1) average per insert, O(n) total |
+| Sliding window | Only the latest 7 trading-day reports are analysed (`NseReportFiles.GetLatestCsvFiles`) | O(f log f) for f files |
+| Priority Queue (binary heap) | Top-N ranking in `StockRankingService.RankStocks` | O(n log n) overall, O(log n) per insert/remove |
+| Merge Sort | Full ranking (`RankAllWithMergeSort`) and sorting by symbol (`DSA/MergeSorter.cs`), stable | O(n log n) time, O(n) extra space |
+| Binary Search | Symbol lookup in the API (`DSA/SymbolSearch.cs`) | O(log n) on a sorted list |
+
+The heap-based Top-N and the Merge Sort full ranking use the same comparison (score, then passed filters, then symbol), and a unit test checks that they produce identical orderings.
+
 ## API
 
 | Endpoint | Description |

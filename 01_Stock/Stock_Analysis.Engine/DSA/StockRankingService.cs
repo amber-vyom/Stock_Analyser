@@ -9,6 +9,8 @@ public class StockRankingService
 
     private readonly ScoringOptions options;
 
+    private static readonly RankComparer Comparer = new();
+
     public StockRankingService(ScoringOptions? scoringOptions = null)
     {
         options = scoringOptions ?? new ScoringOptions();
@@ -52,6 +54,22 @@ public class StockRankingService
         }
 
         return rankedStocks;
+    }
+
+    public List<StockFilterResult> RankAllWithMergeSort(
+        List<SevenDayStockData> stocks)
+    {
+        var results = stocks
+            .Where(s => s != null &&
+                        s.TradingDays >= options.MinimumTradingDaysToRank)
+            .Select(filterEngine.Analyse)
+            .ToList();
+
+        return MergeSorter.Sort(
+            results,
+            (a, b) => Comparer.Compare(
+                (-a.Score, -a.PassedFilters, a.Symbol),
+                (-b.Score, -b.PassedFilters, b.Symbol)));
     }
 
     private sealed class RankComparer :
