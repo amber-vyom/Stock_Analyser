@@ -25,7 +25,16 @@ interface Stock {
   metrics: Metrics
 }
 
-const num = (v: number, d = 2) =>
+interface UpdateSummary {
+  downloads: { date: string; status: string }[]
+  csvFilesUsed: number
+  eqRecords: number
+  rawInserted: number
+  rawSkipped: number
+  processedSaved: number
+}
+
+const num =(v: number, d = 2) =>
   v.toLocaleString('en-IN', { maximumFractionDigits: d })
 
 async function getJson<T>(url: string): Promise<T> {
@@ -44,6 +53,8 @@ export default function App() {
   const [selected, setSelected] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [updating, setUpdating] = useState(false)
+  const [updateMsg, setUpdateMsg] = useState<string | null>(null)
 
   const load = useCallback(async () => {
     setLoading(true)
@@ -63,6 +74,27 @@ export default function App() {
     load()
   }, [load])
 
+  const updateData = async () => {
+    setUpdating(true)
+    setUpdateMsg(null)
+    try {
+      const res = await fetch('/api/pipeline/run', { method: 'POST' })
+      const body = await res.json().catch(() => null)
+      if (!res.ok) throw new Error(body?.error ?? `Request failed (${res.status})`)
+      const s = body as UpdateSummary
+      const ok = s.downloads.filter((d) => d.status === 'Downloaded').length
+      setUpdateMsg(
+        `Downloaded ${ok} reports, ${s.eqRecords.toLocaleString()} EQ records ` +
+          `(${s.rawInserted.toLocaleString()} new), ${s.processedSaved.toLocaleString()} stocks refreshed.`,
+      )
+      await load()
+    } catch (e) {
+      setUpdateMsg(`Update failed: ${e instanceof Error ? e.message : 'Unknown error'}`)
+    } finally {
+      setUpdating(false)
+    }
+  }
+
   const visible = useMemo(
     () => stocks.filter((s) => s.symbol.toLowerCase().includes(search.trim().toLowerCase())),
     [stocks, search],
@@ -73,8 +105,14 @@ export default function App() {
     <div className="page">
       <header>
         <h1>Stock Analysis System</h1>
-        <button onClick={load} disabled={loading}>Refresh</button>
+        <span>
+          <button onClick={updateData} disabled={updating || loading}>
+            {updating ? 'Updating data… (can take a few minutes)' : 'Update data from NSE'}
+          </button>{' '}
+          <button onClick={load} disabled={loading || updating}>Refresh</button>
+        </span>
       </header>
+      {updateMsg && <p className="note">{updateMsg}</p>}
       <p className="note">
         Rule-based screening and ranking of NSE EQ stocks over the stored 7-day window.
         The score is not a forecast of future returns.
