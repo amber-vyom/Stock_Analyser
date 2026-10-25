@@ -71,25 +71,6 @@ const CONTRIBUTORS = [
   { name: 'Y Pooja Reddy', regNo: '25MIS0194' },
 ]
 
-const ACCENTS = [
-  { id: 'blue', label: 'Blue' },
-  { id: 'emerald', label: 'Emerald' },
-  { id: 'rose', label: 'Rose' },
-  { id: 'amber', label: 'Amber' },
-] as const
-
-type Accent = (typeof ACCENTS)[number]['id']
-
-function initialAccent(): Accent {
-  try {
-    const saved = localStorage.getItem('accent')
-    if (ACCENTS.some((a) => a.id === saved)) return saved as Accent
-  } catch {
-    // storage may be unavailable
-  }
-  return 'blue'
-}
-
 const FILTER_GUIDE = [
   ['Completeness', 'The stock traded on all 7 days of the window.'],
   ['Positive return', 'Price at the end is higher than at the start.'],
@@ -207,7 +188,6 @@ export default function App() {
   const [updateMsg, setUpdateMsg] = useState<string | null>(null)
   const [theme, setTheme] = useState<Theme>(initialTheme)
   const [activeSection, setActiveSection] = useState('overview')
-  const [accent, setAccent] = useState<Accent>(initialAccent)
   const searchRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
@@ -223,15 +203,6 @@ export default function App() {
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [])
-
-  useEffect(() => {
-    document.documentElement.dataset.accent = accent
-    try {
-      localStorage.setItem('accent', accent)
-    } catch {
-      // ignore
-    }
-  }, [accent])
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme
@@ -401,18 +372,6 @@ export default function App() {
             ))}
           </div>
           <div className="nav-actions">
-            <div className="swatches" role="group" aria-label="Accent colour">
-              {ACCENTS.map((a) => (
-                <button
-                  key={a.id}
-                  className={`swatch swatch-${a.id} ${accent === a.id ? 'on' : ''}`}
-                  onClick={() => setAccent(a.id)}
-                  aria-label={`${a.label} accent`}
-                  aria-pressed={accent === a.id}
-                  title={`${a.label} accent`}
-                />
-              ))}
-            </div>
             <span className={`badge ${STATIC ? 'badge-snapshot' : 'badge-live'}`}>{STATIC ? 'Snapshot' : 'Live'}</span>
             <button
               className="icon-btn"
@@ -430,14 +389,14 @@ export default function App() {
       <main className="page" id="main">
         <section id="overview" className="section hero">
           <p className="eyebrow">NSE equity screener · rolling 7-trading-day window</p>
-          <h1>Which stocks looked strongest over the last 7 trading days?</h1>
+          <h1>NSE equity screening and ranking</h1>
           <p className="lead">
-            We download official NSE market data, run every stock through ten simple checks, give each one a score out
-            of 100, and rank them. Click any stock to see exactly why it scored the way it did.
+            Every NSE equity is evaluated against ten rule-based checks over the latest seven trading days and given
+            a weighted score out of 100. Select any stock to see how its score was built.
           </p>
           <div className="hero-actions">
             <button className="primary" onClick={() => goTo('rankings')}>See the rankings</button>
-            <button onClick={() => goTo('how')}>How does it work?</button>
+            <button onClick={() => goTo('how')}>Methodology</button>
             {!STATIC && (
               <button onClick={updateData} disabled={updating || loading}>
                 {updating ? 'Updating… (can take a few minutes)' : 'Update data from NSE'}
@@ -487,11 +446,11 @@ export default function App() {
                 </div>
               </div>
 
-              <h2 className="podium-title">Top 3 right now</h2>
+              <h2 className="podium-title">Highest ranked</h2>
               <div className="podium">
                 {podium.map((s, i) => (
                   <button key={s.symbol} className="podium-card" onClick={() => pickStock(s.symbol, true)}>
-                    <span className="medal">{['1st', '2nd', '3rd'][i]}</span>
+                    <span className="medal">#{i + 1}</span>
                     <ScoreRing score={s.score} />
                     <strong>{s.symbol}</strong>
                     <span className={s.metrics.priceChangePercentage >= 0 ? 'pos' : 'neg'}>
