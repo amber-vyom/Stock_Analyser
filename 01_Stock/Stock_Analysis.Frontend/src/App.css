@@ -67,3 +67,18 @@ dd { margin: 0; text-align: right; }
 .state.err { color: var(--bad); }
 .state button { margin-top: 8px; }
 footer { margin-top: 32px; text-align: center; color: var(--muted); font-size: 13px; }
+
+.experiments { margin-top: 24px; }
+.exp-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.exp-header p { margin: 2px 0 0; }
+.tabs { display: flex; gap: 8px; margin: 12px 0; }
+.tabs button.active { border-color: var(--accent); color: var(--accent); }
+.experiments .table-card { padding: 0; overflow-x: auto; margin-bottom: 8px; }
+.experiments tr.static-row { cursor: default; }
+.experiments tr.static-row:hover { background: none; }
+.muted-row td { color: var(--muted); }
+.tag { padding: 1px 10px; border-radius: 999px; font-size: 12px; border: 1px solid var(--line); }
+.tag-positive { color: var(--good); border-color: var(--good); }
+.tag-negative { color: var(--bad); border-color: var(--bad); }
+ul.headlines { margin: 6px 0 0; padding-left: 18px; max-width: 520px; white-space: normal; font-size: 13px; }
+details summary { cursor: pointer; }

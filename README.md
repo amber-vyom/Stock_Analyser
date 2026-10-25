@@ -92,6 +92,24 @@ Netlify cannot reach a SQL Server running on a personal computer, so the hosted 
 
 To refresh the hosted site, re-run the export and push again.
 
+## Experiments: ML and news sentiment
+
+These live in the `ml/` folder (Python) and appear in a separate "Experiments" section of the dashboard. They do **not** affect the ranking or scores.
+
+- **ML experiment (`ml/train.py`):** `ml/download_history.py` downloads about five months of NSE reports. For each stock and day, features come from the seven-day window (return, close vs open, price range, volume consistency, volume, traded value). The target is whether the close is higher five trading days later. A logistic regression written in NumPy is trained on the earlier dates and tested on later dates, with a five-day gap between them so targets do not overlap. Days affected by a one-day price jump over 25% are dropped, because prices are not adjusted for splits or bonuses. Results are compared with simple baselines. On the current data the model is barely better than guessing (ROC-AUC about 0.55) and does not beat the majority-class baseline on accuracy, and the dashboard says so.
+- **News sentiment (`ml/sentiment.py`):** Google News RSS headlines from the last 14 days are fetched for the top-ranked stocks and scored with VADER plus a small finance word list. The dashboard shows a positive/neutral/negative label, a score and a simple keyword-based emotion tag. Searching by ticker can match unrelated news, so treat it as a rough indicator.
+
+```bash
+cd ml
+pip install -r requirements.txt
+python download_history.py
+python train.py
+python sentiment.py
+python -m unittest test_ml
+```
+
+`train.py` and `sentiment.py` write JSON files into `01_Stock/Stock_Analysis.Frontend/public`. Commit and push them to update the hosted site. The downloaded history is not stored in git. scikit-learn is deliberately not used, because it can be blocked by Windows application control policies.
+
 ## Status and roadmap
 
 Done: download, parse, aggregate, store, filter, score, rank, API, dashboard, unit tests for scoring, ranking, aggregation and report-file selection, and a GitHub Actions workflow.

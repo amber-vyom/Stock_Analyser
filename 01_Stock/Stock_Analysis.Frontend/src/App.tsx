@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import './App.css'
+import Experiments from './Experiments'
 
 interface Metrics {
   symbol: string
@@ -385,6 +386,8 @@ export default function App() {
           </div>
         </>
       )}
+
+      {!loading && !error && stocks.length > 0 && <Experiments />}
 
       <footer>
         Educational project · Data: NSE BhavCopy · Not investment advice ·{' '}

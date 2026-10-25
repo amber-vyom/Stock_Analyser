@@ -1,0 +1,185 @@
+{
+  "generatedAt": "2026-10-25T08:10:17.029114+00:00",
+  "dataFrom": "2026-05-25",
+  "dataTo": "2026-10-23",
+  "tradingDays": 105,
+  "predictionDate": "2026-10-23",
+  "horizonTradingDays": 5,
+  "target": "Close in 5 trading days is higher than today's close",
+  "universe": "EQ stocks with price >= 10 and average daily traded value >= 1,000,000; windows with a one-day price jump over 25% are dropped because prices are not adjusted for splits or bonuses",
+  "split": {
+    "trainDates": "2026-06-03 to 2026-09-02",
+    "testDates": "2026-09-10 to 2026-10-15",
+    "trainRows": 131112,
+    "testRows": 50885,
+    "gapTradingDays": 5
+  },
+  "features": [
+    "ret7",
+    "ret3",
+    "ret1",
+    "close_vs_open",
+    "range7",
+    "vol_consistency",
+    "log_avg_vol",
+    "log_value7"
+  ],
+  "bestModel": "Logistic regression",
+  "models": [
+    {
+      "model": "Logistic regression",
+      "accuracy": 0.5304,
+      "precision": 0.3988,
+      "recall": 0.5587,
+      "rocAuc": 0.5486,
+      "topPicksAvgReturnPct": -1.278,
+      "allStocksAvgReturnPct": -1.026
+    },
+    {
+      "model": "Logistic regression (momentum only)",
+      "accuracy": 0.5645,
+      "precision": 0.4256,
+      "recall": 0.5446,
+      "rocAuc": 0.5746,
+      "topPicksAvgReturnPct": 1.372,
+      "allStocksAvgReturnPct": -1.026
+    }
+  ],
+  "baselines": [
+    {
+      "model": "Baseline: always predict the majority class",
+      "accuracy": 0.6342,
+      "rocAuc": 0.5
+    },
+    {
+      "model": "Baseline: 7-day return above zero",
+      "accuracy": 0.523,
+      "rocAuc": 0.444
+    }
+  ],
+  "topPicksEdgePct": -0.252,
+  "verdict": "ROC-AUC 0.549 is close to 0.5 (guessing), and the model's accuracy (53.0%) is below the majority-class baseline (63.4%). Its top-20 picks returned -1.28% versus -1.03% for all stocks over the test period. Treat this as an experiment with little or no predictive value.",
+  "picks": [
+    {
+      "symbol": "EMUDHRA",
+      "probUp": 0.6632,
+      "return7dPct": -35.81,
+      "price": 353.7
+    },
+    {
+      "symbol": "SPENCERS",
+      "probUp": 0.6331,
+      "return7dPct": -46.38,
+      "price": 14.8
+    },
+    {
+      "symbol": "SMLMAH",
+      "probUp": 0.6153,
+      "return7dPct": -21.52,
+      "price": 4843.5
+    },
+    {
+      "symbol": "ESDS",
+      "probUp": 0.6053,
+      "return7dPct": -21.5,
+      "price": 1231.7
+    },
+    {
+      "symbol": "JINDALSAW",
+      "probUp": 0.6027,
+      "return7dPct": -17.95,
+      "price": 232.15
+    },
+    {
+      "symbol": "SWIGGY",
+      "probUp": 0.5903,
+      "return7dPct": -24.46,
+      "price": 176.0
+    },
+    {
+      "symbol": "OMPOWER",
+      "probUp": 0.5778,
+      "return7dPct": -26.65,
+      "price": 119.87
+    },
+    {
+      "symbol": "HEROMOTORS",
+      "probUp": 0.5776,
+      "return7dPct": -31.2,
+      "price": 110.76
+    },
+    {
+      "symbol": "WAAREERTL",
+      "probUp": 0.5767,
+      "return7dPct": -16.08,
+      "price": 678.25
+    },
+    {
+      "symbol": "INNOVISION",
+      "probUp": 0.5735,
+      "return7dPct": -24.61,
+      "price": 189.65
+    },
+    {
+      "symbol": "TATVA",
+      "probUp": 0.5711,
+      "return7dPct": -14.77,
+      "price": 1569.3
+    },
+    {
+      "symbol": "KANOHAR",
+      "probUp": 0.5661,
+      "return7dPct": -18.83,
+      "price": 888.0
+    },
+    {
+      "symbol": "VINDHYATEL",
+      "probUp": 0.566,
+      "return7dPct": -12.95,
+      "price": 2476.5
+    },
+    {
+      "symbol": "INDORAMA",
+      "probUp": 0.5637,
+      "return7dPct": -18.32,
+      "price": 74.49
+    },
+    {
+      "symbol": "BIRLACABLE",
+      "probUp": 0.5612,
+      "return7dPct": -24.38,
+      "price": 282.05
+    },
+    {
+      "symbol": "HINDCOMPOS",
+      "probUp": 0.5609,
+      "return7dPct": -19.58,
+      "price": 360.2
+    },
+    {
+      "symbol": "AUGMONT",
+      "probUp": 0.5608,
+      "return7dPct": -11.24,
+      "price": 1096.3
+    },
+    {
+      "symbol": "ONEGLOBAL",
+      "probUp": 0.5595,
+      "return7dPct": -35.98,
+      "price": 359.75
+    },
+    {
+      "symbol": "HSCL",
+      "probUp": 0.5594,
+      "return7dPct": -25.57,
+      "price": 492.0
+    },
+    {
+      "symbol": "INDOKEM",
+      "probUp": 0.5576,
+      "return7dPct": -5.41,
+      "price": 618.6
+    }
+  ],
+  "disclaimer": "Experimental model trained on a few months of data. It is evaluated on a later time period than it was trained on, but the test period is short and results are not evidence that it predicts future returns. Not investment advice."
+}

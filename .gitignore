@@ -10,3 +10,4 @@ Stock_Data/
 __pycache__/
 *.pyc
 .venv/
+ml/output/
