@@ -96,6 +96,8 @@ Netlify cannot reach a SQL Server running on a personal computer, so the hosted 
 
 To refresh the hosted site, re-run the export and push again.
 
+**GitHub Pages (free alternative):** `.github/workflows/pages.yml` builds the same static site and publishes it on every push that touches the frontend. Enable it once under Settings, Pages, Source: GitHub Actions. The site is then served at `https://<user>.github.io/<repo>/`.
+
 ## Experiments: ML and news sentiment
 
 These live in the `ml/` folder (Python) and appear in a separate "Experiments" section of the dashboard. They do **not** affect the ranking or scores.

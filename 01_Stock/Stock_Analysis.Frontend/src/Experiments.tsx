@@ -151,7 +151,7 @@ function LineChart({ data }: { data: { date: string; picksPct: number; marketPct
 }
 
 function MlPanel() {
-  const { data, done } = useJson<MlOutput>('/ml_predictions.json')
+  const { data, done } = useJson<MlOutput>(`${import.meta.env.BASE_URL}ml_predictions.json`)
   const [showAll, setShowAll] = useState(false)
 
   if (!done) return <div className="state">Loading…</div>
@@ -290,7 +290,7 @@ type Filter = 'all' | 'positive' | 'neutral' | 'negative'
 type SortBy = 'score' | 'headlines' | 'symbol'
 
 function SentimentPanel() {
-  const { data, done } = useJson<SentimentOutput>('/sentiment.json')
+  const { data, done } = useJson<SentimentOutput>(`${import.meta.env.BASE_URL}sentiment.json`)
   const [filter, setFilter] = useState<Filter>('all')
   const [sortBy, setSortBy] = useState<SortBy>('score')
 

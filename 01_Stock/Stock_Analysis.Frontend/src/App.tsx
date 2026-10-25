@@ -219,7 +219,7 @@ export default function App() {
     try {
       let data: Stock[]
       if (STATIC) {
-        const snapshot = await getJson<{ generatedAt: string; stocks: Stock[] }>('/snapshot.json')
+        const snapshot = await getJson<{ generatedAt: string; stocks: Stock[] }>(`${import.meta.env.BASE_URL}snapshot.json`)
         data = snapshot.stocks.slice(0, count)
         setSnapshotDate(snapshot.generatedAt)
       } else {
