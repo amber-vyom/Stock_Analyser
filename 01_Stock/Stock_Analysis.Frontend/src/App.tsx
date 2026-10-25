@@ -1,7 +1,21 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import './App.css'
 import Experiments from './Experiments'
-import { Background, CountUp, Info, Reveal, ScoreRing } from './ui'
+import {
+  Background,
+  BackToTop,
+  CountUp,
+  DownloadIcon,
+  Info,
+  Logo,
+  MoonIcon,
+  Reveal,
+  ScoreRing,
+  SearchIcon,
+  Skeleton,
+  SunIcon,
+  Ticker,
+} from './ui'
 
 interface Metrics {
   symbol: string
@@ -194,6 +208,21 @@ export default function App() {
   const [theme, setTheme] = useState<Theme>(initialTheme)
   const [activeSection, setActiveSection] = useState('overview')
   const [accent, setAccent] = useState<Accent>(initialAccent)
+  const searchRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement | null
+      const typing = target && ['INPUT', 'SELECT', 'TEXTAREA'].includes(target.tagName)
+      if (e.key === '/' && !typing && searchRef.current) {
+        e.preventDefault()
+        document.getElementById('rankings')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        searchRef.current.focus({ preventScroll: true })
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
 
   useEffect(() => {
     document.documentElement.dataset.accent = accent
@@ -316,6 +345,29 @@ export default function App() {
   const podium = stocks.slice(0, 3)
   const ready = !loading && !error && stocks.length > 0
 
+  const exportCsv = () => {
+    const rows = [
+      ['Rank', 'Symbol', 'Score', 'Checks passed', '7-day change %', 'Avg daily volume', 'Traded value', 'Trading days'],
+      ...visible.map((s) => [
+        s.rank,
+        s.symbol,
+        s.score.toFixed(2),
+        s.passedFilters,
+        s.metrics.priceChangePercentage.toFixed(2),
+        Math.round(s.metrics.averageDailyVolume),
+        Math.round(s.metrics.totalTradedValue),
+        s.metrics.tradingDays,
+      ]),
+    ]
+    const csv = rows.map((r) => r.join(',')).join('\n')
+    const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }))
+    const link = document.createElement('a')
+    link.href = url
+    link.download = 'stock-rankings.csv'
+    link.click()
+    URL.revokeObjectURL(url)
+  }
+
   const header = (key: SortKey, label: string, hint?: string) => (
     <th aria-sort={sortKey === key ? (sortAsc ? 'ascending' : 'descending') : 'none'}>
       <button className="sort" onClick={() => changeSort(key)}>
@@ -328,12 +380,13 @@ export default function App() {
 
   return (
     <>
+      <a className="skip-link" href="#main">Skip to content</a>
       <Background />
 
       <nav className="nav">
         <div className="nav-inner">
           <a className="brand" href="#overview" onClick={(e) => { e.preventDefault(); goTo('overview') }}>
-            <span className="brand-mark">◈</span> Stock Analysis
+            <Logo /> <span>Stock Analysis</span>
           </a>
           <div className="nav-links" role="navigation" aria-label="Sections">
             {SECTIONS.map((s) => (
@@ -367,13 +420,14 @@ export default function App() {
               aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
               title="Toggle theme"
             >
-              {theme === 'dark' ? '☀' : '☾'}
+              {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
             </button>
           </div>
         </div>
+        {ready && <Ticker items={stocks.map((s) => ({ symbol: s.symbol, change: s.metrics.priceChangePercentage }))} />}
       </nav>
 
-      <main className="page">
+      <main className="page" id="main">
         <section id="overview" className="section hero">
           <p className="eyebrow">NSE equity screener · rolling 7-trading-day window</p>
           <h1>Which stocks looked strongest over the last 7 trading days?</h1>
@@ -398,7 +452,7 @@ export default function App() {
             </p>
           )}
 
-          {loading && <div className="state">Loading data…</div>}
+          {loading && <Skeleton />}
           {error && (
             <div className="state err" role="alert">
               Could not load stocks: {error}
@@ -461,12 +515,16 @@ export default function App() {
                 </p>
 
                 <div className="toolbar">
-                  <input
-                    placeholder="Search symbol, e.g. HFCL"
-                    aria-label="Search symbol"
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                  />
+                  <label className="search">
+                    <SearchIcon />
+                    <input
+                      ref={searchRef}
+                      placeholder="Search symbol (press /)"
+                      aria-label="Search symbol"
+                      value={search}
+                      onChange={(e) => setSearch(e.target.value)}
+                    />
+                  </label>
                   <select aria-label="Number of stocks" value={count} onChange={(e) => setCount(Number(e.target.value))}>
                     {[10, 25, 50, 100, 200].map((n) => (
                       <option key={n} value={n}>Top {n}</option>
@@ -483,6 +541,9 @@ export default function App() {
                     </button>
                   )}
                   <button onClick={load} disabled={loading || updating}>Refresh</button>
+                  <button onClick={exportCsv} disabled={visible.length === 0} className="with-icon">
+                    <DownloadIcon /> Export CSV
+                  </button>
                   <span className="muted">Showing {visible.length} of {stocks.length}</span>
                 </div>
 
@@ -686,10 +747,50 @@ export default function App() {
         </Reveal>
       </main>
 
-      <footer>
-        Built by {CONTRIBUTORS.map((c) => `${c.name} (${c.regNo})`).join(' and ')} · Educational project · Data: NSE BhavCopy · Not investment advice ·{' '}
-        <a href={REPO_URL} target="_blank" rel="noreferrer">GitHub</a>
+      <footer className="site-footer">
+        <div className="footer-grid">
+          <div>
+            <div className="footer-brand"><Logo /> Stock Analysis System</div>
+            <p className="muted">
+              A rule-based NSE stock screener built as a college data structures and algorithms project.
+            </p>
+          </div>
+          <div>
+            <h4>Explore</h4>
+            <ul>
+              {SECTIONS.map((s) => (
+                <li key={s.id}>
+                  <a href={`#${s.id}`} onClick={(e) => { e.preventDefault(); goTo(s.id) }}>{s.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h4>Built with</h4>
+            <ul className="plain-list">
+              <li>C# and .NET (engine and API)</li>
+              <li>SQL Server</li>
+              <li>React and TypeScript</li>
+              <li>Python (ML and sentiment)</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contributors</h4>
+            <ul className="plain-list">
+              {CONTRIBUTORS.map((c) => (
+                <li key={c.regNo}>{c.name} <span className="muted">({c.regNo})</span></li>
+              ))}
+            </ul>
+            <p><a href={REPO_URL} target="_blank" rel="noreferrer">Source code on GitHub</a></p>
+          </div>
+        </div>
+        <p className="footer-note">
+          Data: NSE BhavCopy reports. For education only. Nothing here is investment advice, and past price moves do
+          not predict future returns.
+        </p>
       </footer>
+
+      <BackToTop />
     </>
   )
 }

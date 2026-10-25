@@ -41,7 +41,9 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font: 15px/1.6 system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font: 15px/1.6 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'cv11', 'ss01';
   transition: background 0.3s ease, color 0.3s ease;
   overflow-x: clip;
 }
