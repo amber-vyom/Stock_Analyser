@@ -4,7 +4,9 @@ A rule-based NSE stock screening and ranking system built with C# and .NET. It d
 
 **Live demo (static snapshot):** [stock-analyser-vyom.netlify.app](https://stock-analyser-vyom.netlify.app/)
 
-![Dashboard](docs/dashboard.jpg)
+![Dashboard overview](docs/dashboard.jpg)
+
+![Rankings with stock details](docs/rankings.jpg)
 
 This is a screening tool, not a prediction system. It does not use real-time data, and the score has not been backtested, so it should not be read as a forecast of future returns.
 
@@ -16,7 +18,7 @@ This is a screening tool, not a prediction system. It does not use real-time dat
 - **SQL Server storage:** Raw data and processed data tables. Saving processed data updates existing symbols in a single transaction.
 - **Ten filters:** Completeness, positive return, strong return, close above open, price stability, volume activity, volume consistency, momentum, traded value and overall quality.
 - **Weighted score:** A configurable score out of 100 (`ScoringOptions`) that is separate from the pass/fail filters. Every stock shows a per-component score breakdown.
-- **Dashboard:** Sortable table, symbol search, minimum-filters filter, summary cards, score distribution chart, per-stock detail panel and a "How it works" section.
+- **Dashboard:** A sectioned single-page site (Overview, Rankings, Insights, How it works, Experiments) with an animated background, light/dark theme, animated stats and score rings, top-3 podium, sortable and filterable table, clickable score histogram, plain-language stock summaries, tooltips and a guide to the ten checks.
 - **Ranking:** A Priority Queue orders by score, then passed-filter count, then symbol. Stocks with fewer than seven trading days are excluded.
 - **Interfaces:** A React dashboard backed by an ASP.NET Core API. The "Update data from NSE" button runs the whole pipeline (download, raw data, processed data).
 

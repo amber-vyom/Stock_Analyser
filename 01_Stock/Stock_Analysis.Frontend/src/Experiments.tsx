@@ -198,36 +198,25 @@ function SentimentPanel({ enabled }: { enabled: boolean }) {
 }
 
 export default function Experiments() {
-  const [open, setOpen] = useState(false)
   const [tab, setTab] = useState<'ml' | 'sentiment'>('ml')
 
   return (
-    <section className="card experiments">
-      <div className="exp-header">
-        <div>
-          <h2>Experiments</h2>
-          <p className="muted">
-            Separate from the ranking above. These do not change any score or rank.
-          </p>
+    <section id="experiments" className="section">
+      <h2>Experiments</h2>
+      <p className="section-lead">
+        Two extra experiments, kept apart from the ranking above. They do not change any score or rank.
+      </p>
+      <div className="card">
+        <div className="tabs" role="tablist">
+          <button role="tab" aria-selected={tab === 'ml'} className={tab === 'ml' ? 'active' : ''} onClick={() => setTab('ml')}>
+            ML prediction
+          </button>
+          <button role="tab" aria-selected={tab === 'sentiment'} className={tab === 'sentiment' ? 'active' : ''} onClick={() => setTab('sentiment')}>
+            News sentiment
+          </button>
         </div>
-        <button onClick={() => setOpen(!open)} aria-expanded={open}>
-          {open ? 'Hide' : 'Show'}
-        </button>
+        {tab === 'ml' ? <MlPanel enabled /> : <SentimentPanel enabled />}
       </div>
-
-      {open && (
-        <>
-          <div className="tabs" role="tablist">
-            <button role="tab" aria-selected={tab === 'ml'} className={tab === 'ml' ? 'active' : ''} onClick={() => setTab('ml')}>
-              ML prediction
-            </button>
-            <button role="tab" aria-selected={tab === 'sentiment'} className={tab === 'sentiment' ? 'active' : ''} onClick={() => setTab('sentiment')}>
-              News sentiment
-            </button>
-          </div>
-          {tab === 'ml' ? <MlPanel enabled={open} /> : <SentimentPanel enabled={open} />}
-        </>
-      )}
     </section>
   )
 }
