@@ -1,5 +1,7 @@
 # Stock Analysis System
 
+**Contributors:** Vyom Gupta (25MIS0494) and Y Pooja Reddy (25MIS0194)
+
 A rule-based NSE stock screening and ranking system built with C# and .NET. It downloads NSE BhavCopy reports, stores them in SQL Server, aggregates a rolling seven-trading-day window, applies ten screening filters, computes a weighted score out of 100, and ranks stocks with a Priority Queue.
 
 **Live demo (static snapshot):** [stock-analyser-vyom.netlify.app](https://stock-analyser-vyom.netlify.app/)
@@ -18,7 +20,7 @@ This is a screening tool, not a prediction system. It does not use real-time dat
 - **SQL Server storage:** Raw data and processed data tables. Saving processed data updates existing symbols in a single transaction.
 - **Ten filters:** Completeness, positive return, strong return, close above open, price stability, volume activity, volume consistency, momentum, traded value and overall quality.
 - **Weighted score:** A configurable score out of 100 (`ScoringOptions`) that is separate from the pass/fail filters. Every stock shows a per-component score breakdown.
-- **Dashboard:** A sectioned single-page site (Overview, Rankings, Insights, How it works, Experiments) with an animated background, light/dark theme, animated stats and score rings, top-3 podium, sortable and filterable table, clickable score histogram, plain-language stock summaries, tooltips and a guide to the ten checks.
+- **Dashboard:** A sectioned single-page site (Overview, Rankings, Insights, How it works, Experiments) with an animated background, light/dark theme with four accent colours, a Team section, animated stats and score rings, top-3 podium, sortable and filterable table, clickable score histogram, plain-language stock summaries, tooltips and a guide to the ten checks.
 - **Ranking:** A Priority Queue orders by score, then passed-filter count, then symbol. Stocks with fewer than seven trading days are excluded.
 - **Interfaces:** A React dashboard backed by an ASP.NET Core API. The "Update data from NSE" button runs the whole pipeline (download, raw data, processed data).
 
@@ -99,7 +101,7 @@ To refresh the hosted site, re-run the export and push again.
 These live in the `ml/` folder (Python) and appear in a separate "Experiments" section of the dashboard. They do **not** affect the ranking or scores.
 
 - **ML experiment (`ml/train.py`):** `ml/download_history.py` downloads about five months of NSE reports. For each stock and day, features come from the seven-day window (return, close vs open, price range, volume consistency, volume, traded value). The target is whether the close is higher five trading days later. A logistic regression written in NumPy is trained on the earlier dates and tested on later dates, with a five-day gap between them so targets do not overlap. Days affected by a one-day price jump over 25% are dropped, because prices are not adjusted for splits or bonuses. Results are compared with simple baselines. On the current data the model is barely better than guessing (ROC-AUC about 0.55) and does not beat the majority-class baseline on accuracy, and the dashboard says so.
-- **News sentiment (`ml/sentiment.py`):** Google News RSS headlines from the last 14 days are fetched for the top-ranked stocks and scored with VADER plus a small finance word list. The dashboard shows a positive/neutral/negative label, a score and a simple keyword-based emotion tag. Searching by ticker can match unrelated news, so treat it as a rough indicator.
+- **News sentiment (`ml/sentiment.py`):** Google News RSS headlines from the last 14 days are fetched for the top-ranked stocks and scored with VADER plus a small finance word list. The dashboard shows a positive/neutral/negative label, a score, a simple keyword-based emotion tag, and for each article its source, date, sentiment and a short explanation of why it was labelled that way (the words that drove the score), with a link to the article. Searching by ticker can match unrelated news, so treat it as a rough indicator. The ML section also shows the model's weights, a chart of its picks versus all stocks over the test period, and the baselines it is compared against.
 
 ```bash
 cd ml

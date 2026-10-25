@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T08:08:58.296441+00:00",
+  "generatedAt": "2026-10-25T08:30:09.340135+00:00",
   "source": "Google News RSS headlines from the last 14 days",
   "method": "VADER sentiment with a small finance word list; emotion is a simple keyword count",
   "stocks": [
@@ -15,18 +15,87 @@
       "sample": [
         {
           "title": "HFCL\u2019s AI, data centre exposure drives Nuvama\u2019s Buy call; target implies 56% upside",
+          "source": "The Economic Times",
+          "published": "2026-10-16T07:00:00+00:00",
           "compound": 0.7,
+          "label": "positive",
+          "positiveWords": [
+            "buy",
+            "upside"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"buy\", \"upside\".",
           "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNa3o3LXFacWVlMWlhYmk5dXFmTHlMU0ZXWW9jbHRjLTgwbERsY1FUdFc1V0VFTlN0X3BSMmU0Z1UyaUctUXlUYmM1V214a0FaQ1hHdXVFVTZSeEZUaEJmTi1aaHo5dVVyWjRBdTZzSWw1VTNUU3VLWkRDVy1TZ1RkWHR5NVFwNU9ISHgyZ1FfLXF5V2l0U0ZZQ0JjWGFtWDc4ckJNdEZKclZEY21fZmxnT1ZLRWhuMmxONUZIcVdtV21XSzhVeWgyR3k5Sl9GalltVVRmc2FoMkxfUTB1alFYRFJGbGx2QjTSAewBQVVfeXFMTzIxMkZKUVF2cWxGYWFWWUJaT1VDdzBtVGtxdG15d1QtTHZ6NHBMVGNxZ2trcS1sd1dZSms2LUg5b1VrTmNZMGlIUFBJXzV2LTBxblVPd2VwcGREcGpxNkdobllNa01WSGpIdE81Z1lZSGM3ZUlXZU11M293LUhDNU5ST3UxOXlXbEZ3Sl9ZV3RLV3RzbWR0cEszWVJkRnVnYnlFT1pCUjBkT3RwTFpQdG5LM3ljbnRMajIwcVE2bDU1bGMxRHItc2NxUTJqNlpBNmN3bEV1eWU4VG1HaXNCZ2RGcFlHVGtSRHdpZTA?oc=5"
         },
         {
           "title": "HFCL (NSEI:HFCL) - Stock Analysis",
+          "source": "Simply Wall Street",
+          "published": "2026-10-16T07:00:00+00:00",
           "compound": 0.0,
+          "label": "neutral",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Reads as neutral: no strongly positive or negative wording was found.",
           "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBtaUozME94N0FkOWFweFp5aG9yUC1hTllUSmlUSzB5N1ZtWUlPRlQwTXQ0LTBfRVlVYzhVaVc1UVdQR1E1T1loYTlPWThlRzc2YnU2YTFIb0QyX3VQMUhxZkxjdEZMZFVPUzZZYg?oc=5"
         },
         {
           "title": "HFCL hits 5% upper circuit after 'best-ever' quarterly show; Q2 PAT up 448%",
+          "source": "Business Standard",
+          "published": "2026-10-19T07:44:23+00:00",
           "compound": 0.542,
+          "label": "positive",
+          "positiveWords": [
+            "best-ever"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"best-ever\".",
           "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOdDhPTXhuZ0lJVGdmMF8zZ3pyRTJtWWNBQjVyanZ1MjZKNUFqZGM0X3o2OHVhU2Y3Y1QzYWJTWHVyaGpvb3hzdE9UcWdGMi1KMlNoN05YeTl3alZFcHZjSnllSGZXMWxMdFpTYWtYSks0bU0zWHlGR1FGOGNFRkJFNWF2V20yYjZEN19kOTIwbG4xSWgxWXFGMlUzZU5mS2sxOXFGNG0zeExCek5kdV9xYU5wU1dRVk0yS1hqVnZmX3VuXzlsaC1TeU5TeVVjSlhzT29z0gHYAUFVX3lxTE9XVy1fOHdOWkdMNU9Ob2VLU3N1RTc4NWhaNkcxTDBLNnRFLXpCME02MzVaZGd2dTd6bW1ocFZhR1hMc0JtOUhXTjk2Nkp5dEc1ZkFMWUh1Rkk5QU04QUQ2ek5ZM01DaV9Zc2RYTWdzQVh3S3RCbjJuOTlUMVFmNnJSdDBGOGI2X0lKRExJWEpPXzR2a29jeG1LVkRUNzJkNWlSbmZvVmFVSkR5YlpKNVVLa0JDU0hkdk8zOGxUTEdUY3hwMjk2N1FFZ2tEdXlsYW1iQ0RfNzdjTA?oc=5"
+        },
+        {
+          "title": "HFCL Q2FY27 results: Net profit soars 5x to \u20b9394 crore; shares locked in 5% upper circuit",
+          "source": "Upstox",
+          "published": "2026-10-19T07:10:30+00:00",
+          "compound": 0.802,
+          "label": "positive",
+          "positiveWords": [
+            "profit",
+            "shares",
+            "soars"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"profit\", \"shares\", \"soars\".",
+          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQTFU2WWlIQzItUGlhQkpDaVJFazhZR0xJM1labzQySGVYamdZMFN1SG96c3NlbmpHZkF0cnZIZnFmQzEwZEs1LV9hMlJXWF94Zmg0cHIzRVFjd2dvV0JpVHY0NTdsRkVVSzhrcFR5R1FvQlc3Mm5obFN1cnRhOF9TUnRZZzE2NGR5dnB4UlJieUJRRVNwdHVFcUp5bnNPSkRzRE1lMmppLVFDMjdHVXZ5RWxBOHRhTHFERUZkRUZ2MnFKQ2JmU3ZhYjFsbHpWVlZtc0FveFVSaWRtV3pwRmVR?oc=5"
+        },
+        {
+          "title": "HFCL shares over surge 265% YTD; Nuvama initiates Buy",
+          "source": "Communications Today",
+          "published": "2026-10-19T02:58:07+00:00",
+          "compound": 0.818,
+          "label": "positive",
+          "positiveWords": [
+            "buy",
+            "shares",
+            "surge"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"buy\", \"shares\", \"surge\".",
+          "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQQmRHbWs5MlJiRVU0RUZRUEZvVGhOMEMydnl0VlotbzVaQ3VyRXRIaXdwWmhoQ0dRNDRaUElHeVJWdDZHUkRvX3hYNG9kVXZLS1VDb3NFeWFiTkVLWEdyRFVFNm5wYUFTSDNjLU45X25UYk1sMHkwU1BzdU5uV0lXWXVsVHdZUDkyUU15WjkxbFpmSW9U?oc=5"
+        },
+        {
+          "title": "Multibagger HFCL shares surge over 265% YTD; brokerage initiates 'Buy' ahead of Jio IPO",
+          "source": "Business Today",
+          "published": "2026-10-16T07:00:00+00:00",
+          "compound": 0.888,
+          "label": "positive",
+          "positiveWords": [
+            "buy",
+            "multibagger",
+            "shares",
+            "surge"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"buy\", \"multibagger\", \"shares\", \"surge\".",
+          "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOVTl0RXd6dnd0VGtXTEtPNHV0Wlowb25aUzViWkxLVlowcU1JRHowbWsyR2N2S0xrUzZJVWlVaFRpQW5VWmJWR3k3Wkxtc09mcDZkc252UmYxV0RQbmNaNkxlYVpYTVFpeDRURl85eXRaRXdPN052WHVXMlZIX1JpR3N3S1NXQWxtdThDZHgtaExYT3Z6WnQwY2FfZ19OUHZ4R0ZnaUdsUzk5a3JFWHBMVWdfc3lqeHhXanFka2NpQ2JuUGw1UGdSUHJWSU5PUFhNN3FUaE1LbTJDUDFZTnFaTTVUTmYzd9IB6wFBVV95cUxPTjlxR2kyaXgtZVVXNEFMQ2F1aVRxZ3lSSWpvZGNDM09BOFVDVVpJVXRubkM2RERTQ000U3oyc3NwU2FvOGZWOUViM3BVNzRSakhhcUliWVNpMWFYREVuenBTZVpXWHJtMHZPbldIdkxnLU16cDVpazJEbkM2VVpsWmJ3WEtYXzFoNEFlSEhLdUdqT1ZjLWMydkhMVjktODdRNE9aQXF3X1d4cGdzSFE2R1JEZlRiZ3ZxazlCRUtuRGFiOVh2LXhPRjRMcjNCX1NBd2dxZmxvWktVc1I5V0pSZmRaRHN1YXpyNTF3?oc=5"
         }
       ]
     },
@@ -42,25 +111,71 @@
       "sample": [
         {
           "title": "PVP Ventures (PVP.NS) Slips 3.03% to \u20b944.87 as Stock Retreats Toward Support Zone - Statistical Arbitrage",
+          "source": "https://www.siam.in/",
+          "published": "2026-10-16T07:32:41+00:00",
           "compound": 0.402,
+          "label": "positive",
+          "positiveWords": [
+            "support"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"support\".",
           "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNdmYxMGI0YkxZbHVadGc3VG1HQll4WjF0Ny1oZ1M3ZHJDWWZnSUU2ZnktcHNkektOQkl4bWw1dFcwQ1pucUhyRWJUU3RYMWpmM0VpQ0VRcHBlYjRDOGRoWnhtU0xRd3p3QlJHaWJUNEJ4ZmpBTW5KVlg2cDJYUXZIclY3RlRTNGRZaUxoUmFITEN4QzNRbDVIWGZBM0lZaWVLd3dzMHJ6emZWc3BCbnpCQnFpOVI0bklC?oc=5"
         },
         {
           "title": "Evervie Health (NSE:PVP): What Does Its Q2 FY27 Share Capital Audit Filing Mean?",
+          "source": "Kalkine India",
+          "published": "2026-10-15T06:19:00+00:00",
           "compound": 0.296,
+          "label": "positive",
+          "positiveWords": [
+            "share"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"share\".",
           "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxONlhVOU9iLW9kNm0yUjY3NlNxT2NlbWdHOEdrUV9fdDVfaEV2ZmtiMXFJbXZBUTBsdnRJYkVoR2RlTEtuRjVyZjA1Y0dabk9CX0dUaTRJS1F6RXZVQm5Ic1NyNnZ4WDNLRkNuMDV5LVlIdlRQR3g3RzJNMVB0d1dMT2Rta2hJWElkeFZRM21xcWR3WGd4RVRpcElzbUZVckFYOENQRkM4U2ZVSnFPRzZmZDI3WEJnT0VEcDRwOGxwT0M?oc=5"
         },
         {
           "title": "20 Best Stocks Under 50 Rs In India October 2026 For High Returns",
+          "source": "Samco",
+          "published": "2026-10-21T06:51:08+00:00",
           "compound": 0.637,
+          "label": "positive",
+          "positiveWords": [
+            "best"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"best\".",
           "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE92U3Fjd2lHOGFGOGZCWE1YTDJpVmo0TktIVk5LUkx5NkE2R3B5M0Y5VjBmZWRYS25aNjB3SlhWMVFVUVNrRVZQX3YzM2FiOHg4b0FhN3kwY1dkejdFWWtFd0dNNlEtRVh4TjNLQnVzRFJWa1ZO?oc=5"
+        },
+        {
+          "title": "Evervie Health NCD Disclosure: Rs 150 Crore at 18% Coupon",
+          "source": "Kalkine India",
+          "published": "2026-10-13T07:00:00+00:00",
+          "compound": 0.0,
+          "label": "neutral",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Reads as neutral: no strongly positive or negative wording was found.",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPRVU5ZkFpQVd0dGFKWE5nSkNpcWFzU05Ram9oWjBJLXNTck83TmpzR2pvNXhFUmFINUtWSlVIcU1sUWRMMm1GTWZZc3F6WjBCakRTdHhTanVRdy1vaFl3TzVjLXBWa2tid0poRFdBNFl2ZFlQaHNJcVVEYWk3Qy1lVVlYN3RKV0VXd3pRREdLUzhSZWJlelJHVTF6MU1fdHNGTDA4akJPajJHTHlCQkVrMk5vWFpfVzF1cU1hY3BpSWFkX3c?oc=5"
+        },
+        {
+          "title": "Evervie Health Signs LOI with Sweden\u2019s Elekta for $11\u201315 Million LINAC Procurement, Launches New Website",
+          "source": "EquityBulls",
+          "published": "2026-10-20T11:53:56+00:00",
+          "compound": 0.0,
+          "label": "neutral",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Reads as neutral: no strongly positive or negative wording was found.",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQTzVlNlJaS09GbFdsakZFdnNlenFFZUs1WXhZTzRnbzUtalFNSUg0eDNYYkpyRndKUlJCeHFTRlQwaTBBdFlmWUx1bWZPMTdDVllCT09UUjF5U3ptLUZmaG9UUjRZYlB2TThjUHFPcWtzZlZTN0U1dmZjS1dLemF4SDVCanhZYWFCRFpTZ21qdnJpZjZ5cHVuMjBSdnZqMEJDMW5ycjRCM3RGWW51cC16TmhWUnRuNTIyV3ZmQw?oc=5"
         }
       ]
     },
     {
       "symbol": "SAIL",
       "headlines": 10,
-      "avgCompound": 0.327,
+      "avgCompound": 0.316,
       "label": "positive",
       "positive": 8,
       "neutral": 2,
@@ -69,25 +184,86 @@
       "sample": [
         {
           "title": "SAIL Share Price",
+          "source": "Upstox",
+          "published": "2026-10-23T04:04:48+00:00",
           "compound": 0.296,
+          "label": "positive",
+          "positiveWords": [
+            "share"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"share\".",
           "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1wYVdTbk9fUzE4ay02aVBISkNxbTRoLVhPR2pQTW5Fa1ZLUFozOXg1OFM3SGJtejZPaFZ4alJ4aTBaS2p6cGZjdmlTWXVSQlBzS19HZDNNcC05dG9TZlhHdzVYcHc1VVRvV3NQZ09qaVg?oc=5"
         },
         {
           "title": "SAIL Share Price Today - Steel Authority of India on NSE/BSE",
+          "source": "scanx.trade",
+          "published": "2026-10-23T02:10:05+00:00",
           "compound": 0.361,
+          "label": "positive",
+          "positiveWords": [
+            "share"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"share\".",
           "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE44UlRzbURsdWYxYWVaZGhHTXVoRXpHUnNwM0tMUDllcmNrZG13VXBDY0g2d3pFWmJ0UjctUFhaRGFWQWlLSzZKczVyTzV0aEQxcTB0MlhRcGsxUG13VjVuZURjTjBPTnc?oc=5"
         },
         {
           "title": "Steel Authority of India (NSEI:SAIL) Stock Forecast & Analyst Predictions",
+          "source": "Simply Wall Street",
+          "published": "2026-10-13T07:00:00+00:00",
           "compound": 0.077,
+          "label": "neutral",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Reads as neutral: no strongly positive or negative wording was found.",
           "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOMFFrWlIwckZhZEhnazBkR3ZqbFBmWTVlNnZGMEtxd0RlNVF1cFdVcDFpNURfSm5ORG9qcGotNlU4Zi1vRW5ZSDZGUUpUS25BbmRBX1E4VkVKQTFRdEwzVlF5LUtLbjB0bmZEYnhjVlF2WW50SDJ4ZlVPei1uMHVTN1VBUWtXdzM4WFdyblUzVWNPX2s?oc=5"
+        },
+        {
+          "title": "National Steel Policy Draft Pulls Nifty Metal, Steel Stocks In Green",
+          "source": "Outlook Money",
+          "published": "2026-10-12T07:00:00+00:00",
+          "compound": 0.402,
+          "label": "positive",
+          "positiveWords": [
+            "nifty"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"nifty\".",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPbU1BTXdYRjNZOTNYaTBnbnpTUExuTktQazVhYzFYTlVFRlN2VmpFVXcxU3NiX0RqZGJ6Y2ZRWXRGZjlsNFRSb241aHVFOF83ZThTTXRRa0Y0SjF2eFFVLXMyWW02ZGJaQlBPSUtfaExiaVBTVE9NRC01SnJoR1VHem1EeDNOZTRBYTl4R3VTbXZPYjVpdi1tblExMERmSFlhZkIzRUVR0gGzAUFVX3lxTE5WOU1CZkliR1RFYkxPS0Jnbkxra1pDbk5yVk9fZGJmaWs0R1JOczhzRXFCREd3cnZmR3F3T1I0dFY2NHVlUGdrM2JjQ2dJMXNfSWZacGtEM3FCbXpyeElqYU4tM0JGLWtXM3oyc2FXakJGQlFEaWFrak9nQmhCZ3NUWWw0cnVaN0cwUjZaZ0o4MDdON2YzYzBPZEVPVFVoUmthdkJrNXY0ODZkaUFnNG9yZmlJ?oc=5"
+        },
+        {
+          "title": "Steel Authority Of India Ltd. (SAIL) Share Price Rise Streak: SAIL rises in second straight session",
+          "source": "Univest",
+          "published": "2026-10-12T07:00:00+00:00",
+          "compound": 0.527,
+          "label": "positive",
+          "positiveWords": [
+            "share"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"share\".",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPa3RMZUpIYUMzMDZnQWhwWTFKcGtUVERUUTdRaXRNNGpnQVY4Z29RclNSZ2dQZDZPbDdxVE91WTdJTHpjd1VzcmxhNC1rN3IzaGxaVjdSeE5ZeTZKLTdzRnNxRExOazh1QVg5ZzFrTTBkTjVzRGN2NWIzX3otM0R1N2RXdlF5Q2dtY2MyWUU4aTZ2U1IxR3c?oc=5"
+        },
+        {
+          "title": "SAIL among 4 F&O stocks with a sharp rise in futures open interest",
+          "source": "The Economic Times",
+          "published": "2026-10-12T07:00:00+00:00",
+          "compound": 0.459,
+          "label": "positive",
+          "positiveWords": [
+            "interest"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"interest\".",
+          "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOX0hKYWJiSWhBWXRQVjR3UlZIdE8zUElTaTAxTUY2Y3FvUVNvVnBfeEItMDZMMXlWcG8tZmpLMTdJTEJDSkFyV2dEazV5V2xWZzM1Q1F1V2hPdHBvQzlNUkd5ajZ0azg1WHpSM1F0OUNXVlJpLVFRZFhRY1RYSFJfbjl4UzctdnFBZGNsQWhtY09YeHE5VEVTb2h1LS1ra0FWWFktRnhweXBlMkpvTXRfcm1KUG93cTk1R24wTFJXejYySTVkRzYwZ2s1V1JacmJyOGhSdjN3cEtnMk9ZSUZSSXBrMHlkeDBLWjZ6TW1ycTBUTUk?oc=5"
         }
       ]
     },
     {
       "symbol": "MCX",
       "headlines": 10,
-      "avgCompound": 0.273,
+      "avgCompound": 0.31,
       "label": "positive",
       "positive": 6,
       "neutral": 4,
@@ -96,18 +272,76 @@
       "sample": [
         {
           "title": "Stock market holiday on Dussehra: Are NSE, BSE, MCX open or closed for trading on October 20",
+          "source": "The Times of India",
+          "published": "2026-10-20T02:42:00+00:00",
           "compound": 0.402,
+          "label": "positive",
+          "positiveWords": [
+            "holiday"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"holiday\".",
           "link": "https://news.google.com/rss/articles/CBMihgJBVV95cUxQV2lhaUhXMWt4MEVJYmc4bWNFLThDY25IaG1KeHRjOVJocFpQSGJ3RzFMZ0lwQ3RueEg1ajN4ZHdtQmw5U25RT2p3U3NXRkxSekcwbVNjZTlKamoyRC1sMkhIZXluV2VYNHd1UmtxNUthaldiZkdMQ29pRl92M3ZEdENMaDN0RFZ2cXBGRnAtNl96dmR5cXllTjFhQVFoR1EzTlgwUkNQSHVEOEhENi1NV0lFRFh3bHFoM2pjREZpcDM2TTZnMEgzcG1DY29kajlobV9HSHB0dW1iUTRPa2plcVU4S0NyemdCMGVrZVNmb3lKMGJwMEdHbzhuc3JCS2VUTXN1cG9B0gGLAkFVX3lxTE85RlNCSVRvN1NvZ0g2VnMwUzNISlBMcE1BUXM3X25jYVFxenlvdV9uT3p1dFJHMGtMUlhlekJnRWVJcWhGeVdHNzVRQUdzMDZyOE1rd05Tb242a2NYTVJyUUVTb3U4Mk5qME1MLW9Ka2V0OFlyaDJuQmxDcDBBQkItTEN4c2RxN09Yd0JhZXBVd0NKUFZZNWtEakF0Q3VCVVRTZE5YSEpKTWVuZ0tYMHZGSnZKWTFveEVRa3N1dnVaTlREd3RCUm03ZEM5NzgySDVmMFQyYkk3eTBzXzJ2VTM3Qmhlb2RlY1ZMd3VYMkc3YVBrRTJSRkhhZDM5U1pOSkNXZW9QczJPZ2lESQ?oc=5"
         },
         {
           "title": "Stock Market Holiday Today: Are NSE, BSE, Banks Open On October 20?",
+          "source": "NDTV",
+          "published": "2026-10-20T01:08:11+00:00",
           "compound": 0.402,
+          "label": "positive",
+          "positiveWords": [
+            "holiday"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"holiday\".",
           "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQajFWMUFtNV9YcE8xNmE0WFg3VXhiU19PV25ic1VjTmhfemhfZGFlZHRiaGcxSmYzd1JXamtncUhaSFlIYTdjWG5mckoyWEJ6cUVlVUZ4R0szMlppcHRPOUg3MDFGOHBERE96X19nY1VWd1g4RFpvWUYxd3N1dlRURlFIZTY1SDk2TFQ4WjRaeXJNd0taSnIwR3JCcUJ1aGFCNGNLS2xPeDcwbThjS1JLdTVHbW95SWo4UHBPQ0d30gHGAUFVX3lxTE9rdnVpOXM3cWRxWk5aWnUyRTNyb2NmUmNVeE40VWFiMmswOEZEMmJZQmRaZjVMeTlBWUJzT1k2UTRRLXNMVFA0ejJQaGVNMEpoR2ttMWoweTVNMjVwNXRqdV9FN2JmNUJIN0t3UWE0eHJsOHFMSDVEOEdKR0tKMjRsOTJRT3hqblJQVGdYbW5oOVJPaE5FTXhGTDlhM1RGaHctajg4aHBLcmFnQXNRNDVGR1pERFdxeEEwa2h6a25rU0NHdU5xQQ?oc=5"
         },
         {
           "title": "BSE, Angel One Fall Over 3% On SEBI CAS Changes; MCX, Groww, NSE Also Decline",
+          "source": "NDTV Profit",
+          "published": "2026-10-16T07:00:00+00:00",
           "compound": 0.0,
+          "label": "neutral",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Reads as neutral: no strongly positive or negative wording was found.",
           "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQN1BHUUNSODY4bFVZcVM1WFlWczF1OVBHcXR2VktvQ2ZLd3lDeVZuem9zM2Z2cDZrNndEb0tGZk9GUFhzaG5VYXU2QmFCUVFOYnFOdWw2VlJONE9ZOTJiZGpucm9lZFpZMzBKTk5idktwQ1hubXRQd1BSRW4tRlVSU3dlQWFXbmtFUVBKOTJDZ1JFSV9RWm1tMG5ES2Z1TmpCWk1NTzAydVNSY2hCRkd5QWZjVl94cWFhMm9nUFdYdHRMVzRVZ3NJaUNyaWFya1VWUzB3UFUxYzh0d1ZmNjVVcVJNYkk5dTBfa3hF0gHzAUFVX3lxTE9iUWtDSlVkOHZjRVhnOTVXY28tY2g1Qm5hMHlPZmZNc0hsVkJmMWMyekRCeHBad2pBd0FQU19EdDVMOW50d0FkRXdjUUR2aWI2YU83WENNb2RqUUhhOGZaa2VGRThnQWpEMVU4X2FBWEN3SWxvbjVkVzVRZjFHa2dCbFZibnlZUGxLU0FyMVl4X29EUU5LbmNpS1JYQ0JOSHN5STEwYjlGWVpUZHN2elhxWlRaN1kzTUNYOVQyODJKY1pXRks3NEVScEU5MFFJcURwTlhLUHNnUV9lLXcyNzVKck53cWVYSVdFUDNTM0VKVGNmWQ?oc=5"
+        },
+        {
+          "title": "Stock Market Holiday 2026: Are NSE, BSE closed on October 20 for Dussehra? Check remaining holidays for th",
+          "source": "The Economic Times",
+          "published": "2026-10-20T04:23:03+00:00",
+          "compound": 0.649,
+          "label": "positive",
+          "positiveWords": [
+            "holiday",
+            "holidays"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"holiday\", \"holidays\".",
+          "link": "https://news.google.com/rss/articles/CBMikAJBVV95cUxQX2FwTnMxbFUzUDVvWUdXcEZUY0Z3RjlzX3FOS1N2akpVS3Nfc2hpLWljeDlQX3FJeUFHVV92SkpnWWdQQmVsOTBJYUNyVDlpWkN1WlhUYjE3RWN4VTdydjI2NUl3aUJTUlY1djRtMlFxWTZoM1V4VG5iU1BZdlBPdHZTV1V5NHFFM280ZEpFMlRxLUNhVXd4Q1BXVUVQNGIwR1RrTThORGNPSnJOWEJtOGItR3BCRmItZGJFZnhHU3gwcGx0OTBvLVNrUlNSQ1pTNFRIdVdhN1dmN2t2c0t0SHpoZHRMdFZySjhEUUtkbk8weVpPWHhLS1Q4c2hLQ0x2Z1ZSdV96S0NZMkU5UzdLTNIBlgJBVV95cUxPb2RJU1g0c1ZCb2V3ckJHTFRZU1RNVmRGWXJOVjh6aGtjNDNVNGlwb0N2WnNMcnk4ZFg0T3BRNHpXNDR2R2hVc0RFVEVyZmM4enUzTG9KV3VjMHU3ZlRpN0ZUSjNNdWhxb1VIak5IUndGQWJ0QWxNcEpSeXZEMk1yYWdpaHRIc0ZLcXZXcUUzTFNyVy1SQ2puVkRzX2dsWWgtZ3drN2xCSnI1dElDVm4tM2Q3SktCVEhGdDR1VS1hXzc2NS1feVZKY21wVkt2bjNtTEZlNGl5NV9MSWJ2eDlvejNqcy1VRmVVR29Fd00yTFVCblVHZ1BjSnBvSi1DVVM5Ql9HYktydGZMYXd3c1ZaN1gxRmNkUQ?oc=5"
+        },
+        {
+          "title": "Trade Spotlight: How should you trade Gabriel India, Dr Reddys Labs, MCX India, Craftsman Automation,...",
+          "source": "Moneycontrol.com",
+          "published": "2026-10-13T07:00:00+00:00",
+          "compound": 0.0,
+          "label": "neutral",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Reads as neutral: no strongly positive or negative wording was found.",
+          "link": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxNS2huS2VhNkZfWmNuWFYtV0hnSFJqNVlCTXJQV0FaOHNaSUlydnJha2l0VTE1anFoZ3lBUXYzN0JHeEJ5TWs2cTdBeThHQ1lmck1pV1RSWk1fRFBZcE1OU0FhS0RYLWZsRDA1QlpudnIwX3ZhVDZqX2dpRG5DR3ZCUkNXMXE5WVBTU3FNZjlGYjEzRWVnYThKTWdOS2kxS3FlM1p3QktaLV9NdUM5MUw0TjN0SkNjcU1UNFpMMGRfZmhDdklxN0l6UlVrN0tueThESlBhNHpqbWFUZDRmNFRjVW9FcGF0Z0ZBeERKaUoxQXdDblg4SlpPaEdSN1l5amdxcGtUNzB5OHhLaEZ4TEN6Y0dFZTdiOGpyNEVmWTNhb0pxeG02a0dRaW9nWdIBsAJBVV95cUxPdktyS0xuYjROYUJSWVg1UjMyNjhwc2dYTG45WjZQbWRDcXJEZG5WU2tmUTNIeEFWYkljQ0V6M2pzbFlpdVRyc05QWU9EYWtkMHk1YWZxbFMyQ2tOWEtWMkU1d21hMXJpdXFBTVpDaVZwTWVza3NMczB4NWE1Vk9DVnZNRkxaekg0NmhWb2tQazFpY1hDNU1tQm1tdEN4MzNIcmMyRW41WE1JQzdVdnJrd3NfRDFiRk8xRDRzcDd1ZHlsNG1nbzFLSEl4a1RmUGs5TGRKN1hsQ2JrZFExMG5xQU9wNUZxNTlzMi1GeTR2Slc1OTdKeWo1c0tmMlRPNXVmMWZwTTlJeVpLdVVza3hnaDNDWmRYYl9DXzhDUXA5dldUSkVFbUpiWWJLOEpBOVR2?oc=5"
+        },
+        {
+          "title": "Multi Commodity Exchange of India (NSEI:MCX) Stock Forecast & Analyst Predictions",
+          "source": "Simply Wall Street",
+          "published": "2026-10-16T07:00:00+00:00",
+          "compound": 0.0,
+          "label": "neutral",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Reads as neutral: no strongly positive or negative wording was found.",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNalZuWkNQVjhRMGtneGdsbWFteGhXbUh3MGpGMFNLQVN4b25QeVNMNWJPeDdCcGMxamJaa1ZpbDVKRm41UWNvSDV5enFJb3lHcXJ1ZGlDNUhvSDkyWUl6RDZPaHdkaHR5YU16TXloZVRmV2R1UDd5c25hTUEzaFJpNDBGa21XWFgyaktodnhyTDZiQk45SVc5RVRhLTdzUTlUYkNCS01nVUtIZFNDWE9N?oc=5"
         }
       ]
     },
@@ -123,18 +357,79 @@
       "sample": [
         {
           "title": "Vedanta Limited (VEDL.NS) stock price, news, quote and history",
+          "source": "Yahoo Finance UK",
+          "published": "2026-10-20T11:58:28+00:00",
           "compound": -0.226,
+          "label": "negative",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Leans negative.",
           "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1Vcmh5QlpwR2ZGSnVZVTNMbmMxYnUzX09GZUQ2dVcyMmQ1dXgtYWxITDFDN05kaGJZS0s2ZWtXVHZ6NG41RGZnRWc1UUtGMmExM3NETGNB?oc=5"
         },
         {
           "title": "Upcoming dividend, bonus, stock split this week: Vedanta, Castrol India, PFC, Angel One among others in focus",
+          "source": "Upstox",
+          "published": "2026-10-13T07:00:00+00:00",
           "compound": 0.542,
+          "label": "positive",
+          "positiveWords": [
+            "bonus"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"bonus\".",
           "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxPdm1jUFFwcXhJQ0lMeVlfcnlFWkdCc1ZxV1lNN3hNUlg2a2IzcnVGTmJ5TVdMc29wQzdQaS11UDVsM1F3Uy1VQy0wbTJLWER2RjJJLWxGdV96TFE3eGVxSGljMmFDNllKamp0Ung0ZXBJWFh6OF9NQS0wY0RzZ3ZYVXdVNDRmaGptb3lFSVhubkFQc3pXdWhualJSNjFjdGJFWmotMkVoNVd4RDVFZ3dzcUJsRmZ0aS1jNnRscU1kREJWd0YxQU1ONkVlZjdnNG1KclRRdy1aOVp3RVBNajYyaUhOR2lUX09OdHpWUEtMQ1JmTjZU?oc=5"
         },
         {
           "title": "Vedanta dividend alert! Last day to buy shares of Anil Agarwal-led company for Rs 5/share dividend",
+          "source": "The Economic Times",
+          "published": "2026-10-13T07:00:00+00:00",
           "compound": 0.757,
+          "label": "positive",
+          "positiveWords": [
+            "alert",
+            "buy",
+            "shares"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"alert\", \"buy\", \"shares\".",
           "link": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQUXZISERfYXJBVFhKdFA0LUlWbHpzTXozdXB3NWtORFBySVhkeXNLdGJ1aUVGRmlYZ3dScEdmR21hU2VseGcwUExCRjEzVllYNHdhR1I5eGhqaGhnSWxoUC1ZOUNEcHRYZUVGZEJWdmxZcFp4Y2Y5bXVDRDBYU2xIOVcyMWh1a0twSFhiVGk4MkhVV0RzeGd4amZvb2cteFRqMGZHUnc5UEd5Q1hWajYwbENGLWswX2lOVTBqVmJia09NeTRzeTEwNUNhS0tXWi1aSTRaV0sxcXdFaWVoU3FZdHRpYW10dmhTYVdoTlBuMkc2VVhUTWU2WE9Ba3RuNW8z0gGGAkFVX3lxTFBmMWtRaFBmRjdQR09aaGpYd3FWMlJlY3BvdGN0SGgybnFOWDJKRjVPR3kxMjQxbmtQQnJzS1BCNlg1Q2s5WEdua2xIXzliRmd5OVQzcElSdk9QTHE2bHcxdGhDelJIdnVqYmFhRVpZMDVRLVdRU3Z3ZWRzcDFWMmJGVXVtMm5hamNZaTFNQkh3WVptQ2pRS01KaTJvbE5KcVZCZEFtWFJMbmJLZHZ5SUM0LXVzSFNwNTRsOUxtbG9GWG5EZW9oVVV1elBKMnV4ZlBGNjA4NUdXWUc3SnJzVV9hLW5LUW95cUtLMHl4RjEtd1U3ZVN0WEJiY0JjblZpU2d5V0lkOHc?oc=5"
+        },
+        {
+          "title": "Vedanta Demerger Update: When Will Vedanta\u2019s Four New Entities List In Stock Market? Here\u2019s What We Know",
+          "source": "Goodreturns",
+          "published": "2026-10-20T07:00:00+00:00",
+          "compound": 0.0,
+          "label": "neutral",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Reads as neutral: no strongly positive or negative wording was found.",
+          "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNQlUyRnNnUEhwcGVYSlpvLWFCY1NjWFQ5dU44enBCMXE0d29IR3p2c0RvQmJpQVJSU1JYTUEwWFpvQk1YOUd4dEVRZG5OOEc2RFFCb0dsUkNjSHBBSUxaR3k4WUdreFNraG9fdXFxTFc5MW5uOUxPcjlfem1XaE04WW5VcC1xMGN4LXN0SG1XUDNoMDByU3lVbzBpYVBQLWYybWVPaXJCdjZuNlNhekxYbkY0V2luUUlvOF9lN2x0UUotTlBTbHUtLWRZTkxuVXhaQUpLTFFPOVp4UQ?oc=5"
+        },
+        {
+          "title": "Vedanta NSE:VEDL Q2 FY27 Results Date and Investor Call",
+          "source": "Kalkine India",
+          "published": "2026-10-22T09:56:00+00:00",
+          "compound": 0.0,
+          "label": "neutral",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Reads as neutral: no strongly positive or negative wording was found.",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQV3BWSjRKZEFveVJSb2pvRF80dV82SXdDeW81cVJ6NFZiUkhsalhGVUYtMHAzZzhwdFFhbXhkVHZtV05BMjhMMm4yNEhYamdFd0tnTHFGMUs3aDlGbnNUMFVzNUtHREZTSDBMSGMxYXZ5YzZqRzNyVVV5SU1namd4cXB1VnE5cWR6ZDBhV1hQLWVpSXE3a0E4cXlaWDFMS1pTYXZ4WlZIcC1FdklHbURJVDRjN0Z5cHhkYUxvUXNXWmREUm5BUjBBeld0UjM?oc=5"
+        },
+        {
+          "title": "Vedanta, TCS dividend record date on October 14: Last opportunity to buy for payout",
+          "source": "Upstox",
+          "published": "2026-10-13T07:00:00+00:00",
+          "compound": 0.778,
+          "label": "positive",
+          "positiveWords": [
+            "buy",
+            "opportunity",
+            "record"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"buy\", \"opportunity\", \"record\".",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOR09MbWdvdUd0MFlCOG1MNUhqV0ZkTGJobmdOMDJoOHdWY2FLeDVlc3Q3SkJaM1NEZ09FaWI3ZkhWZTd3RFJ0R3hmM2h3WjFDS0I2NFRPbFpQcDZ4d0lZcnp1ZDhuaXZQVjh2czNNUGRVcFdaSUtBSFVkZ2Z5TW5NeFl6VjZ0OWFjWnU2U3g4OXNoRG0xalFrMFB4Qi1ONkhFS1Btc21xOWhBd0VlUENnX19NU1I3bGdYdlU1MVdQZzlvV0dSTkkyNVQ3a3k?oc=5"
         }
       ]
     },
@@ -150,18 +445,92 @@
       "sample": [
         {
           "title": "PC Jeweller share: 70% returns in 6 months! What is driving the stock? Experts give 3 reasons to buy | Target, stop-loss",
+          "source": "Livemint",
+          "published": "2026-10-16T07:00:00+00:00",
           "compound": 0.648,
+          "label": "positive",
+          "positiveWords": [
+            "buy",
+            "share"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"buy\", \"share\".",
           "link": "https://news.google.com/rss/articles/CBMijwJBVV95cUxOTi1VZEt6M0plYzlnVFhqdHJybTl6QmVEYTlfNmdjbmZRVlIyU192akEyU2dBeVlZZzdYUXZmUlV0T2FXOXE1SkN1NTlvaWEtdEtfY0MzQmFTX214NlVVV2dlWFdrT3JfTmhhOG9fVUFHMzJQU0QyTkIzcmc3LWFSSXBlNEZQYjlnZ2Zwa0RaTU1jRU1hQ1d0c2VoNENKclg1Q2hYR2dyMGNjeXJuR0E0Z0xXLWhtRzNnbU82eGhjOEk0d3RpNGJJUlFvMDV4TEt1emhhSjdaSWFqZXRmeUZnYWVoWDhHa1N4UXZWcWcweTFjSm5UbzZBcmJyUzJVb0RyM2hzQW9ySF9lMnJ5N1dj0gGUAkFVX3lxTE8xYmZrMW5NNHdnRVVETkpQejVnS0VnaFcxTjQtSEFfZER3ZWZ3ZmV0enRhdUtITWdzVFRpVHJSYm1IYzYyNDZkdWw1VEtwZ2Z0bkxIVWpabFNmS25zd1pHenRrMEF0R09NY3lfUTJSYjNUekp1WHBNeXZJLUFPS0pSNXJISFJwaWFfZkJ3RE5XNUFlMG5aTkV2YjFYQV9fZWF2NXdMQUlrNHNhVVJhNk5VNHZDcnBoSU9lVEFxYzBqakdIemIzb0xPUkZVeTgxMnRaeGNKbXp6Z2FMNjhfVmp2cjA5VVlOSmZjemRUVkVRU241R2M5Snp6ZE9SdEVaS2c2QWFkNjFFQTNIMHdEX0VMcVJZbA?oc=5"
         },
         {
           "title": "PC Jeweller Shares Rally 5%; Stock Gains 40% in Two Weeks as Q2 FY27 Revenue Rises 28%",
+          "source": "India Infoline",
+          "published": "2026-10-21T07:54:12+00:00",
           "compound": 0.791,
+          "label": "positive",
+          "positiveWords": [
+            "gains",
+            "rally",
+            "shares"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"gains\", \"rally\", \"shares\".",
           "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQczkxZkhjVzdOaW5VSXNCN0hOVFpBbEtyMk44WVVoZnlWbElNYk5RSFdPaVNhRWNDUmpvNGZSWFlyVUpoTi1mOXZZdVN2cFAyZ3dZRU05VkhmMEczdmJpNlBkUnJDOXdpbEI3OWJqeEFQSDN6U3k0dU8wbjlfRDcwcXZhS2EtNmVZajNta0tOcUlJQnVRUnRiaHpYUUM1ZU5aUzNtRXM1ZDdqZVVTZ05tVGsxdTBQVGxwVjhPZ1VSaGhPRzZOZFE?oc=5"
         },
         {
           "title": "PC Jeweller shares jump 5% to fresh 52-week high, market value swells by Rs 2,500 crore in 4 sessions",
+          "source": "The Economic Times",
+          "published": "2026-10-12T07:00:00+00:00",
           "compound": 0.827,
+          "label": "positive",
+          "positiveWords": [
+            "fresh",
+            "jump",
+            "shares",
+            "value"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"fresh\", \"jump\", \"shares\", \"value\".",
           "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNSXpQaEpHbGNxMmNTSGJSc1F6SEFkYXVHdVl0SFlIUjFFdU05LVRCOExVbXpjUmVubnVRdmtkUHNYOWRHZFNJN3RfVDRNWTI1MmJoQlRiRlBSWXhzVFB1eTA1ZDNObjRhWlFIVUhiWnFJWWpFVk04ZmJiNzJ1MmhkY0ZfVGVRdUxCTTRTd2VuMjM1RlZxcEVob3Fwb1J5SmVYV0JHdGNKeVhUVzlPRjRyUC00MHpkcHhtbTl4WXZFNUZPa04wNEZkdUU3LWJWYzViQXpvZzhxYm1iTVhoNWtiUzBMYll1UktlT1ZhcUJDMG5ldVFNS0NzbnNLb1RUdm1HaGfSAYcCQVVfeXFMUDI4cXk1QURYTnpReVJyOFUwMUV1Sks5YU5icDRGZDFGYVJxN3BGWjN4Q253d29nNDN2VmlGNHNxZVJId1U0OWNzVGo0T1ZBR3ZKZS05ODFLdEVFN2xKdDc4WnBSbjNaeDNJbHVuS3lTNVZMNjhkd1ZfQWRMTTB1blRKdVV0VzF5OUdKNXFvZF9QQlNrbVZtUVJjSFJWN3I4UkNoM0dINEdGWmsxU0ZQS2pjdmE2c3d5MnBKM0N3RDRCUE0wU1IteklCSk1WcC14WXhtbGZnLWNHZlBRdFpiSFRqVFMxVDZSdnF5MXZ6MVlmVXV4RGdETENVV0F3T3hGNFdnMHUtVzg?oc=5"
+        },
+        {
+          "title": "Up 38% in a month! PC Jeweller share price rallies 9% despite weak trend on D-Street | Check target price, stop loss",
+          "source": "TradingView",
+          "published": "2026-10-19T07:38:21+00:00",
+          "compound": 0.494,
+          "label": "positive",
+          "positiveWords": [
+            "rallies",
+            "share"
+          ],
+          "negativeWords": [
+            "loss",
+            "stop",
+            "weak"
+          ],
+          "description": "Leans positive because of words like \"rallies\", \"share\".",
+          "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxOS2FjOHloOURNczQxQkw1cmdSbGRCT0ttRDdHRVZrVlVqN2IzcFE2akFJdEZqT1pEUDVBb0EtTmpoMWRrTHFkRklOU2RNOERPVGVTZnVzUkZ2TjlnRl84Q00zWGZSYUNiNmhRdDRFZXFwc1FvbHdGUjNTWjBXTDE2TGFrQzNOc2FDUnNidU5WTF94NGl0MDNDaV9RVjNYdExpcmtaOXRwOUN5WEJzbkJIU1I4QkUtSm5STTBjbTRudmVpTUJqaGpXSERFLXFzVktoWFdDZUtManBSVFFyQXA3akRtR0IzRFc2cWwxb182YkNGWjBoNXNOQnM5WQ?oc=5"
+        },
+        {
+          "title": "PC Jeweller Share Price Today: Why This Jewellery Stock Under Rs 10 Will Be in Focus on Monday?",
+          "source": "Goodreturns",
+          "published": "2026-10-17T11:10:27+00:00",
+          "compound": 0.296,
+          "label": "positive",
+          "positiveWords": [
+            "share"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"share\".",
+          "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPNXJEWkk5RjZUdGtJZzExNzNHcE80Wm1ORXJBQ3paaEZQd3VJeE84d01BVEd5cTY5MWZmQlRTTE03WjVsdGZ0M0p6UnJ4NU9XN0JfRW1pc2VMV212Ynk1d0p2N2JlRjZsN25PTW9PdGZtVHV6M3QxemdOODdvZzVtenF5RUNzVlctdW52a19GM3ctVTYxNG9nMGl3cnZFN1l4YmdkdXdUUUl5R0stZTVlS3RSa2hjYUVyTmsxTkpjVmhTZzJxd3pYa25RUDBMNjdJS29DOWYyY3BNMDA?oc=5"
+        },
+        {
+          "title": "Why PC Jeweller Share Price is Rising",
+          "source": "Equitymaster",
+          "published": "2026-10-19T09:24:19+00:00",
+          "compound": 0.296,
+          "label": "positive",
+          "positiveWords": [
+            "share"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"share\".",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNcnRyYmdudEVlVTIyYXNwZlhfMEk1cnpxQklnS3NUOEVpSkZwLVhVNEQ0U3dtZG54UDFMcHJReUFKZlI0eDFQckZjVUxxcTF4ekV6Q0tpWmRRUGk5Yy1KUUMwSHFOTHZHbmRiZWNFWWc2d21Vc2djMXdVSVNLLWFHU1RZdlFBT1ExdE5zMjZBRWtPWUxXTE1YYUxONXRWUmtTSzJXcFJoYTV5U1E?oc=5"
         }
       ]
     },
@@ -177,18 +546,76 @@
       "sample": [
         {
           "title": "Why are Kotak Mahindra Bank shares up 3.7%? strong Q2 loan, deposit data",
+          "source": "BusinessLine",
+          "published": "2026-10-15T07:00:00+00:00",
           "compound": 0.67,
+          "label": "positive",
+          "positiveWords": [
+            "shares",
+            "strong"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"shares\", \"strong\".",
           "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQalNnYWVnZngyWmp4YURxeFdERmlIMDkwVVozTHdETmdtOU9QNy02c1prU3lmYXFqXzhOTU4xLXB3dkdmckdpRmVHU3RvWHd1bExyRTFjUlQyX2FWVkNHWVpTb3FXMXFSTk5GMXpJTGZJbEliTHA4cHhkOVNFTk40aURqU0QxSjJSNzVUVUw4blVhaTBObWxOOXdKUURScU96aVdUUmhmVHJ6SGVFNVFIN2Z4Y0ZzWTI5bDUyUE52Uk4xZ3kyWmtETUhwZzNLR09oU1dEbDBRNDPSAd8BQVVfeXFMUE1Bd2UyanNDVUJrbE0zM0FwdFNYRXhWVWdRSU40cTB4b0NDYkJFRndNM3JlOFkwQ21PeVBCNjFUaUNtTHo2T2lVX0NIZzBoODJMaWJ3S3YzNzZzMmlONjdfZUlma2RMY0hlampKLUhpeEU4Zjhfd3ZPOGRqTnJGbE5zcGp4dVRzUEw5cVQ0SERlQVJ4OFZjNTBKc0l1aTB2d3VQcWtJZTNFeUxraTFhOVRTTG1rX2RoMHRwQWR6UGlILWhzQVlhR2hpTjVfQkp4bXZtN1A0ZUxUZGJNaUdObw?oc=5"
         },
         {
           "title": "Kotak Mahindra Bank Limited Estimates \u2013 NSE:KOTAKBANK",
+          "source": "TradingView",
+          "published": "2026-10-23T20:12:38+00:00",
           "compound": -0.226,
+          "label": "negative",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Leans negative.",
           "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5BWDJJOFUzUHVnMWlWdU1qZHNJT3lwNFg0TWktdUZFa1dpWnkzNmZ0WkJKTHl4NThuOXVoZGtsaXVvcTlzaWRocnVOdjJtOHA0WWZFc045NDJXYTdtRUM3bURYU0xtbExRb1RtYjVkOXIzcHZ5QzFaQmJNSQ?oc=5"
         },
         {
           "title": "Kotak Bank Q2 FY27: Profit Rises 29.5%; NIM Slips; F&O Rollover 64.3%",
+          "source": "NiftyTrader",
+          "published": "2026-10-24T09:46:51+00:00",
           "compound": 0.361,
+          "label": "positive",
+          "positiveWords": [
+            "profit"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"profit\".",
           "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOTWJwVEQxQnhLb1J6Mmt6a0FlRTB6c0FrRlAzTlNoS3Y0eTRnUUtLZjRHLTJyS01mbWpwWDk5aldyeEJ3Z3E5Wjg0cWhTNVdMNzFWdjRwQk0zWkhwWFBTYmVrTlNjb0EtdlZQVjBlSjUwRUhuV2hIYUhIV3FNMXpfVg?oc=5"
+        },
+        {
+          "title": "Stocks to Watch for October 26: RIL, Infosys, BPCL, Kotak Mahindra Bank, Torrent Pharma and more",
+          "source": "CNBC TV18",
+          "published": "2026-10-25T07:36:32+00:00",
+          "compound": 0.0,
+          "label": "neutral",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Reads as neutral: no strongly positive or negative wording was found.",
+          "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNUk4yem1XVlhFWXhRc2hhUHFkcHEtdHlza1YwLVZiN0VaSEVtenVubWVtUFY1ckxUQjYzM2Vrc3ZCMjBpaS1vQ3pKMnFlNHYwUUhwY25sS0x0UjkxNkpwUC1Yc0hlckQ5X1RfNlVEUHVPbFFveml2cDVPWDJPcjNYTHBlMzdTZjYyaGhuWjRrVkp1Q0ItQk5DMEVZTXo2akhnbURSQmQ0MU80QjlEZUdYcW9kM2pwc1RtcE1NaUh5MGRFR1JDMU9fbmxKTklxLWExMUpZWUxoVmRKaUFhbnROUThqejRqVFRtUFlXeVhjWURsaGhN0gH6AUFVX3lxTE1MUm8yMXgwMVZ0amtBZFoyMzNOaTJFZHUwWXhibUtqemhVUXFSRFdQVGF1T2tIbDZIdWVtTVBzT1VkWHc1OHFSTV9tckI0VGJSMlpLWnVUcDNkb2JBSE13S19fUFlZUm4zNHV5VkFmQk83WXpkRFRrZGVsMU5nb181WE9wRVkxbVE2M2tTX29qeVNRUUtCMXJ1ZFI0RnpfdmJqcHBPZ2pPT2pDMXRTVmc0QXdGZmx4VUVoYW1Dc2lEQlZMR3JERndwd2tKakJ1Z0UyS2FNenVIVGdKSkFfdDRZWUh5Wjl1NldLalBIN0VCZlRid29kdWlrbHc?oc=5"
+        },
+        {
+          "title": "KOTIC.NS (KOTIC) Share Price Today, Live Chart & News",
+          "source": "TechGraph",
+          "published": "2026-10-24T02:37:19+00:00",
+          "compound": 0.296,
+          "label": "positive",
+          "positiveWords": [
+            "share"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"share\".",
+          "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5wTDZ6WHlBSnVwYUJIVlFqa0NWM25iSGtWVUNiQ1VsZnFCMjl2ZGVoQTZFVkVCdjRyUGw5WExQUTlwOUtidEZRMVFoYjVrazZkYmhhdlZBM205WjVUWnc?oc=5"
+        },
+        {
+          "title": "Weekly Recap: Kotak Mahindra Bank Jio IPO lead and PMJDY accounts rise",
+          "source": "TradingView",
+          "published": "2026-10-19T01:00:00+00:00",
+          "compound": 0.0,
+          "label": "neutral",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Reads as neutral: no strongly positive or negative wording was found.",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNenJnLUpNQlFsUHZ3VC1sM1RpMzZDTTZOUURlejY3VmdDMHBRd0EteDN2MXh0VGN3bUJMUTFpajlPWHN2ZHRFZTFQcnNzT0xMblRsdGJXRjRCb1duZUFRcHh4TEdFeEUzckQtdHZNMzI0VlZ3dWh2RlhyYWNodjhsZFU4aDY5YTQwVFRHWFh4TUV3YXN4ZGlIc0JwZkQwUmtRSWpGY3VrUGdJZTB6WmE3R0NWWDZCbmNnZW5iUzMzTTh1TWlETkdQRnZCTQ?oc=5"
         }
       ]
     },
@@ -204,18 +631,55 @@
       "sample": [
         {
           "title": "SBC Exports vs Nifty 50: 1Y Return +174.42% vs -10.93%",
+          "source": "Univest",
+          "published": "2026-10-12T07:26:00+00:00",
           "compound": 0.402,
+          "label": "positive",
+          "positiveWords": [
+            "nifty"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"nifty\".",
           "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5XazUtU204eVZCX3JLekZGV3BBU20tMXJFbWtJX2YzYi05VlVqYm5hSDRNbWhSczk5U2kxMlo4djRWLUs5YWR1WEVPU2VHeW1Cdlp6bW9DaUhpRkVTRnZUam5oZ1hOTWRrTzRHM3FwWTdlZlJCU3BMcXlKSHo?oc=5"
         },
         {
           "title": "20 Best Stocks Under 50 Rs In India October 2026 For High Returns",
+          "source": "Samco",
+          "published": "2026-10-21T06:51:08+00:00",
           "compound": 0.637,
+          "label": "positive",
+          "positiveWords": [
+            "best"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"best\".",
           "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE92U3Fjd2lHOGFGOGZCWE1YTDJpVmo0TktIVk5LUkx5NkE2R3B5M0Y5VjBmZWRYS25aNjB3SlhWMVFVUVNrRVZQX3YzM2FiOHg4b0FhN3kwY1dkejdFWWtFd0dNNlEtRVh4TjNLQnVzRFJWa1ZO?oc=5"
         },
         {
           "title": "SBC Share Price Today Near 52-Week High and Rs 3,013.33 Cr",
+          "source": "Univest",
+          "published": "2026-10-19T07:00:00+00:00",
           "compound": 0.296,
+          "label": "positive",
+          "positiveWords": [
+            "share"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"share\".",
           "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQclNJYks1M0xGR0o2aUNqbEM0ZHg0SzhPclphcmUtRjNwR3JRVHVLcGY3bG91RkZZWXkyODZvdW5CcEk1UFlPRllEOGk4cEY0LXpZR3cxTmVkb0g0TEotM0lEM241a2hnM0dpbDdVSkdrZ21KT29PZ1RIaWFzRUU5aTBWVnBXRzVPclpTa01n?oc=5"
+        },
+        {
+          "title": "ARVIND Share Price Today - Arvind on NSE/BSE",
+          "source": "scanx.trade",
+          "published": "2026-10-20T13:31:37+00:00",
+          "compound": 0.296,
+          "label": "positive",
+          "positiveWords": [
+            "share"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"share\".",
+          "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBMN09QbUdGN3ZlR083Y3RiQ0JFU0loVXFwaTVxektaLXlnSG1TNm9LZXZERl9Iak1nd3BCUWxPTDhkY09YTE9VZUpWR1ZQNHc?oc=5"
         }
       ]
     },
@@ -231,18 +695,64 @@
       "sample": [
         {
           "title": "Jyoti CNC Automation (NSEI:JYOTICNC) Stock Forecast & Analyst Predictions",
+          "source": "Simply Wall Street",
+          "published": "2026-10-12T07:00:00+00:00",
           "compound": 0.0,
+          "label": "neutral",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Reads as neutral: no strongly positive or negative wording was found.",
           "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPQWc4X3l4Tk00bGdIVTZqcjdIbXNKSFhBWmE1U0U0WVdKYTFCS2RkZkdrSGdvVGJkRDRWU3laeTRDQlVDR1JaN0FzVUlaanplV2hiemp6QkpTN2IzS0UtQVpWWm1nVms2VTJRbE91ZXBqaG13OHZ3cE82TjVCXzg4NWVONE90TGNDRGcwNnNDQWhyVjQzaW9CWQ?oc=5"
         },
         {
           "title": "INDO-MIM LIMITED Share Price",
+          "source": "Upstox",
+          "published": "2026-10-23T07:00:00+00:00",
           "compound": -0.111,
+          "label": "neutral",
+          "positiveWords": [
+            "share"
+          ],
+          "negativeWords": [],
+          "description": "Reads as neutral: no strongly positive or negative wording was found.",
           "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE0zX2xoLUxFV0F5V1dPUnFqUXB2UGZQcDlrZkZST2R5ZEotRFdkX3BsdnJWcHE5SDBWT1ROSDlSd0ptUnlmVm14b3MwSEhQd0VwQWE4Qkg5RTJsNTAxYTF0azBPN2tlZw?oc=5"
         },
         {
           "title": "CarTrade Tech Yearly results, Financial Summary",
+          "source": "The Economic Times",
+          "published": "2026-10-21T17:42:28+00:00",
           "compound": 0.0,
+          "label": "neutral",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Reads as neutral: no strongly positive or negative wording was found.",
           "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNbEhVaXFLU1ZWT012TkltUVBpT2U5eV9YZDFiamxBRldPM1FDeDVSMnhjOTR1aTAyRjNTcFVOQURHbEtUUWNQOS1oZllLYURWZDNwQk1Db2lPcFZiaHVZTmpiemd6VkhTUFhoZVRNd25SRjlybFZvaXJhd1ZVbjJXNTcwdHI1aHo0T0RBbjhB?oc=5"
+        },
+        {
+          "title": "Jyoti CNC Automation CRISIL Rating Assigned A+ Stable",
+          "source": "Kalkine India",
+          "published": "2026-10-17T11:11:00+00:00",
+          "compound": 0.296,
+          "label": "positive",
+          "positiveWords": [
+            "stable"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"stable\".",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPQnI4dkNaeDd5OC1pYzdNMTZOQzRna3p0WEduVmhQaUI3RHpBVGxFYl9lZFdBM0wtcDdqa3BnSXJhQXJVLWJ0cVA2VlhlcFZhQ19ITmk1Z0dWNlJ6X29YcW5aclR5VUtfbXNleHdlbzNaWndRSFJEbHBXS2RkdWhRR0Y1alBfc0pXNDdmbWg3SUZlMXpPY05udi1qUmFEUVBsSUZaYmVYWXJ2OFhjRXRxOUlrMlpzbmtDMXhlTVRwdnc5dElxekh2QWJlYzQ?oc=5"
+        },
+        {
+          "title": "OMNITECH ENGINEERING LTD Share Price",
+          "source": "Upstox",
+          "published": "2026-10-23T07:00:00+00:00",
+          "compound": 0.296,
+          "label": "positive",
+          "positiveWords": [
+            "share"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"share\".",
+          "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE41VkVjRFNad2VTLVB3bjJFUldYdWZKNHhWZllFdFlZWGpZTEZ0RkhseVYwcWs0NGpBZFNtclNFSjBiNkRGWU41UmlaeEQ0YzhaUmlCN196MGlrWWdnMi1jbHdtTTlVTEY2dXZzNHRUVEM?oc=5"
         }
       ]
     },
@@ -258,17 +768,45 @@
       "sample": [
         {
           "title": "VOGL Share Price Today - MALCO Energy Ltd. Stock Price Live NSE/BSE",
+          "source": "Univest",
+          "published": "2026-10-24T07:48:57+00:00",
           "compound": 0.511,
+          "label": "positive",
+          "positiveWords": [
+            "energy",
+            "share"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"energy\", \"share\".",
           "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBJZWs1RWF4LXJpRERiVnJHNGdoS2RjSHhFNm53THUwY0J1Q21oQlN5Z1JMQ3kzNXZhYWU5a2M2TmhRS21CQnBhdEYzUE55dW5PdjNzUF92Y3BnaGlQTUdJalRCRWp1Q3VWTWtXV3VfdmVUcU0?oc=5"
         },
         {
           "title": "MALCO Energy 52 Week Low Streak: Second Straight Session",
+          "source": "Univest",
+          "published": "2026-10-22T07:40:48+00:00",
           "compound": 0.226,
+          "label": "positive",
+          "positiveWords": [
+            "energy"
+          ],
+          "negativeWords": [
+            "low"
+          ],
+          "description": "Leans positive because of words like \"energy\".",
           "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxORExQSXhzUm9jSVFYUDhtZmtCYkFrTUI3YmwxdWVwbHNwcWkyT0F0T0pfejExSGgyZDdaSTVFTUY2ZFpSQ184YmptQkRBTWgxbjY2WkhqdGdGUVVWMmtuVnRwZ3lZT1U5c3NIRDZ5UjNzRG40ZkV2MnJpLWhjOUdOb2k2akxhWUptQzMycU1n?oc=5"
         },
         {
           "title": "MALCO Energy Share Price Today: Fundamentals and Sector",
+          "source": "Univest",
+          "published": "2026-10-14T07:00:00+00:00",
           "compound": 0.511,
+          "label": "positive",
+          "positiveWords": [
+            "energy",
+            "share"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"energy\", \"share\".",
           "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9MOThRV0NQeEowREN1czJxM2FQNUJPX0pORHdNaEV6S1NOamFxU0l0d1hwNWctOEFGN3o1VHlmNkpJY2ZieEdPVEc5U0g2cXllTmRDakM5aU16SC1TZlI1Rm5aNlUtVmx0RVNrYTVuYkV1RFpLTUlyRzY5V3VuZw?oc=5"
         }
       ]
@@ -285,18 +823,96 @@
       "sample": [
         {
           "title": "Hindustan Zinc shares pare gains after 4% rally on strong Q2; what are the headwinds ahead?",
+          "source": "Upstox",
+          "published": "2026-10-21T05:24:49+00:00",
           "compound": 0.883,
+          "label": "positive",
+          "positiveWords": [
+            "gains",
+            "rally",
+            "shares",
+            "strong"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"gains\", \"rally\", \"shares\", \"strong\".",
           "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPTHg1RXBRV2Rja0RRckVXdlJLeWp4dEJXYUpVanplOG5ZNFQtcmFucWdYYkFFSnlYbDRQTFVrYnlKS2FpMVBpMjRERC04NmhQUVRWS1lDMnRXWG41Uzg5UHg0a1NiUXRKMVpFTER5ZXNHQ3BnUlFhYVo0QXZHaHgxRWJlRGp0dkxGU1BPcGZ0SG4xZjRzQ1l1YjQxUzNTNXpMNnFPRFpEX0hKYkJ5N2ZvU05PVHlNUkJDZ0UwYnlCZ0N0cjFSOTRMNWRRQjF1MmFsODV5QWFDVmduQ0VuQ2NGYQ?oc=5"
         },
         {
           "title": "Hindustan Zinc share jumps 4% after strong Q2 results 2026 | Should you buy Vedanta Group stock? Target, stop loss",
+          "source": "TradingView",
+          "published": "2026-10-21T08:57:20+00:00",
           "compound": 0.727,
+          "label": "positive",
+          "positiveWords": [
+            "buy",
+            "jumps",
+            "share",
+            "strong"
+          ],
+          "negativeWords": [
+            "loss",
+            "stop"
+          ],
+          "description": "Leans positive because of words like \"buy\", \"jumps\", \"share\", \"strong\".",
           "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxPSnVtd2ZhckhPeU45TEJxQ2NGaTNZc1pObWRRamxNNi1kWHE2WHhuczNxRERpeExoRkZMaFhabkNzZ3B2VGtJaExpajM3c3J0LVo2NWl0LVI0dEJzelhsUzZrYW5VME9KRDFwR1ZnWXp3WjVMZ2lhZlZVVmhtWnJrOGIzaTBzVHhZNnlGTXNhaXc3X2VxRDk0NW9FX2FycE5SSDEwMEVkSnNQQzZxZmIxZ1BRVTFfOWgyM3ZuTFNuTW9JNTg2Nm5OM2RTb3ljWTdVSGdOTDlhdFZZZzQ4R1hwbk9DdE9uNjEtVHBrRm9ZVFFaVkdUaTc1bnh3?oc=5"
         },
         {
           "title": "Hindustan Zinc shares drop 4% as India allows large silver imports despite weak demand",
+          "source": "The Economic Times",
+          "published": "2026-10-23T05:23:20+00:00",
           "compound": 0.436,
+          "label": "positive",
+          "positiveWords": [
+            "shares"
+          ],
+          "negativeWords": [
+            "drop",
+            "weak"
+          ],
+          "description": "Leans positive because of words like \"shares\".",
           "link": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxQcVY4Yjd5S3Rwc2w4UV9VZmVtekR0MnJyOHZQbEx2U1YxekZjZG9JWURlUUpmaGVvSFF1c2xYNnRGVnpvU2tveURZQjdWbmRqZllobHRKb3Q5SmxVVHctdGthOFB2RFkzVnBla1JETTlUdFBHQTZjZWNuQkc3ekg1b1V5Y1pPeWlrQTRxTnRiLU5BUE1VeTFpcGZQRDkyaU9yNWhTNGN4M2g2eHN3aGRCMWZlMkZnSjVoZGtYX00xeS14bjdBUFJ4U3pkOTMydERlMFJQY0Z3ejYwbFF4dzRDM1JNUUxJWU9UcF9rM2VoX3hqaFY2YjlwRWN5MUvSAfYBQVVfeXFMTno2NGJkQmpLa0tJcjBnUEJVT205Zkt0YW50eFhWQ0JhYXJsMk5hSmlUUnZDV3A0Mklfd1REYWp3dm0waWtuNWJVeVhJNWZZSmxSLWZpdjBCT21tdGxKcWtmYTJVTXZUMzdJazR1OWtGY242TE1JRUozNzhGbkJzWGRTLVhQU0xZeVN4SElHTHZnYlBYMUlwdFc0M0REdkFZSElzaWVoMU1EMmtPNjd0SVZBMEhxR2ZCMW8ya2NkX21aWktJWUVxVFNxSFkzTnN3dzNuWkthcmZDOEZMR2NVaEJSMHhzYTlpbkxUWEQyd3MyX0swdHdn?oc=5"
+        },
+        {
+          "title": "Hindustan Zinc share jumps 4% after strong Q2 results 2026 | Check target price, stop loss",
+          "source": "Livemint",
+          "published": "2026-10-21T05:15:00+00:00",
+          "compound": 0.511,
+          "label": "positive",
+          "positiveWords": [
+            "jumps",
+            "share",
+            "strong"
+          ],
+          "negativeWords": [
+            "loss",
+            "stop"
+          ],
+          "description": "Leans positive because of words like \"jumps\", \"share\", \"strong\".",
+          "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPUFN2Uk52M2RPR2o1RGZ2Q0c2bi1nZGVGSnRvM2RpNUhqUmhhZ29NZjhPR3NxNWFxMWY5WklzYlduX1JCRmZDdktxS0s5eDlQTnRIenVwdUprZVJZQXVCLWxkVEM1OURkcS1FR1VqQ0hMNS1DeWJpcXBoZU83WGl0ZmRMeGN3dVJoWE9kWldDY004RS11cV9JWUZoWmRkZTZSOUNPOHkyeXh0RkVtWUtIQXluSnZtTUc0Um1IVklLV0UtcU5GblIweHM4ZFQ1QXFqRmdOWTczMGFyZm9sLVBkMjBSM1dqSzFEYkM5RdIB8gFBVV95cUxPdldPSWotS2pGdEFWdkswaGJJTDFTQ3dmRnJrXzNLX2E4ZF9xUlV6MVRfWDJQVnhoaldGNWlZSWllcDEzWHRCNC1LQkJ3RTRRT3k3V3pnZkx1ZFJNRU9WQ19UMjYyOS10SFZlTGd2R09iN0lNUU1qcjFETXFMaE1Idm9ZTVEweEcxSnY4MERUU3Q3OGh1Q3lDWkE2NU5MZkdudHlNOUp1TjNkczZUdFpvLVlDYVlNOWpxcm01ZzR0OGVHMDhPZ2cwTGtGOWZoZ0lrTDBmRzVjLWN4UzdoTkNpeHhsbHJmUnlmai0zbWlEVmRrZw?oc=5"
+        },
+        {
+          "title": "Hindustan Zinc (NSEI:HINDZINC) - Stock Analysis",
+          "source": "Simply Wall Street",
+          "published": "2026-10-20T07:00:00+00:00",
+          "compound": 0.0,
+          "label": "neutral",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Reads as neutral: no strongly positive or negative wording was found.",
+          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPZlhvZHVfMm1pWXo2YmVfSGt0bi1VWmNpNmhuSHRzUGhRQVIySldHRWZZMVNJWnlCakNMb0RzR3dmV2hNMDZhVFo1Qmk0NENuMS1UOExQSDY3V1lMNkRrMHQ0RDNIcXNyN2JTVjQybUttTFlIZERvVFpidTJ5aWVCT05R?oc=5"
+        },
+        {
+          "title": "Hindustan Zinc shares fall 3% post-Q2 results; Motilal Oswal gives 'neutral' rating for Vedanta group...",
+          "source": "Moneycontrol.com",
+          "published": "2026-10-21T09:48:41+00:00",
+          "compound": 0.296,
+          "label": "positive",
+          "positiveWords": [
+            "shares"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"shares\".",
+          "link": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxOUUprc2pRbVdQMHh0UXBmUl9RZVp4TEhHblZISEk3LXBPTnhOUFp3cWQxZDdwUkJCT0VtY25BdVNHWUpVTDVKdmVkd1dLV1ZlMjlOc2Fwd3JhNGlrWFZIMzRjbUJKS09lR2VOc3A5MVBocWpLMXNiZmMxZ29RSTdaV2lZbXN2RFNzMmFoQzFwb1E3b1BmY3FMR3BlYTRJd21fakZoVmF3VFBvakxlVkZnc1ZaYlVOY04zZDhrTjFvTFJWMWRfOWdyVzVwRy1vRUo5TDlIVXVjMzd4WlRkYlZVRUJVY0w2WlVsOGt4MTF3WmJvSGxDWnU2T2V3OTfSAYICQVVfeXFMUEJKMmpoSF9kQWRXOEM5aVlwWGpHQ3AtelNIRXdmdzBTdWluWVpEU2V2YkNNR0JQTlIwV2ZVMFB0VVhqdlRFUG5mMnFRTm1DZkQySWlmLUJRdzZYSndFZnc3c240TVhicW8yLVNMUk1HazN1TVlFa2tpbjMtd2R1cS11Z1RMakxnRzJfZE12cVUyNmZFOTRzMnZPSHU5WURZa21lRDF1SVpUSmEzOG9iNUYzNGRtOE9JbWZURVdYNDZmSlVFTG5qdkpMR2lBXzVyZmN6YUNRUUltLU1WSDBfREl0Yi1NREIteUlFRjgtOHNDSmRtOXYwMnRRX3o3MkJNTnRn?oc=5"
         }
       ]
     },
@@ -312,40 +928,89 @@
       "sample": [
         {
           "title": "Motilal Oswal Financial Services (MOTILALOFS) Share Price rises 2.21% today",
+          "source": "Univest",
+          "published": "2026-10-15T07:00:00+00:00",
           "compound": 0.296,
+          "label": "positive",
+          "positiveWords": [
+            "share"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"share\".",
           "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPZXJkOTZGdnN0TWk0bGNFSTc0RWlDOEJGcVJTUGt4RjZ2NzYtWlktUUZYU2xfaEVHSDNzZkk2OVIyT2ZLd1BvR3NhSUQ1eHozc05qeXFEczVqZldseUxBSmpWMjhkV3hCalhDbzVQVlN2dDliV0JzSVFyRWlzUFpnQi1lZldJRVRuVXZySDBnQ0toekYtVk52eQ?oc=5"
         },
         {
           "title": "Motilal Oswal Financial Services (NSE:MOTILALOFS): What Is the Q2/H1 FY27 Earnings Call?",
+          "source": "Kalkine India",
+          "published": "2026-10-23T14:19:00+00:00",
           "compound": 0.0,
+          "label": "neutral",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Reads as neutral: no strongly positive or negative wording was found.",
           "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQUHFJZUVCdjRjYnc3MnVnbEl4MjVfWWdJaDA4dWxxUU16S3c4RE9PSkN5endmWVNXamJnaGVjd002MmFhcjg0UUstNzZLanhMeHRvSDZzRjQ3WjBSUktxd19NamZuek5QOS1DZ01Gdk9SV2N5T1FkVndUZU5sdERmYXBsMjd3Z2FsREhpVU5iOEowd3FMYllHUU5Xa241aUFiS0pDc3NaM1lPOUU1X1huWUtJVHk3VDRlYkt4eVR3Tm52eTlHMVhSOTNB?oc=5"
         }
       ]
     },
     {
       "symbol": "GLENMARK",
-      "headlines": 5,
-      "avgCompound": 0.282,
+      "headlines": 4,
+      "avgCompound": 0.353,
       "label": "positive",
       "positive": 3,
-      "neutral": 2,
+      "neutral": 1,
       "negative": 0,
       "emotion": "neutral",
       "sample": [
         {
           "title": "Top 14 Pharma Stocks To Buy In India October 2026",
+          "source": "Samco",
+          "published": "2026-10-21T06:50:58+00:00",
           "compound": 0.557,
+          "label": "positive",
+          "positiveWords": [
+            "buy"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"buy\".",
           "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNSmxaNUxpT2wtdzdBOEMwZ18tbzhmM3NVOXN1RXlaTy1wR1N2SmZRb0RKSlZPSUpvRnhxaTlHQnBpYXV5X2RhNHNlYnEtYjctblphSkpUbWJHRDRoRWZwY3ZXMmMwRlBYZWR2TFhMcUhHU0lOd19VVmY4a0pxYUF2djNyOWp0TE9Rc0E?oc=5"
         },
         {
           "title": "Glenmark Pharmaceuticals - Positive Breakout: These 11 stocks cross above their 200 DMAs",
+          "source": "The Economic Times",
+          "published": "2026-10-12T07:00:00+00:00",
           "compound": 0.557,
+          "label": "positive",
+          "positiveWords": [
+            "positive"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"positive\".",
           "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOcWJUb2dRa1NVYzZROTlUQ3VlTU1Gb0VneWRLSEpCWF9ndlFOSFN6Wk1teG9kVmpMMmxkS2FXVmlxczhKQUJvbGtNN25TRGZSU2owc3cwTTVLMkpHT3FVb041NFZKX2VOU0lCa3N3a2Vlb1BEcUxoTEh4bVd3aldXWk9pNDNhM3AweTZCSFdrUTRFd3o1TWxwazdWQzlSdU5YMXV0ZndOQ1RGQWFwYmhzOHhsWFpMM0hBbTBjNGxCX0JHQlhDZ1hsNDQyWXVPUUI4b2dZMndUWmJqUTRRSjBmQUo1TEkwWWd2VE5VYmpn?oc=5"
         },
         {
           "title": "GAIL Share Price",
+          "source": "Upstox",
+          "published": "2026-10-23T07:00:00+00:00",
           "compound": 0.296,
+          "label": "positive",
+          "positiveWords": [
+            "share"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"share\".",
           "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFB1amVaR3NxZDVGeEJycEl5T1JCeDlkWF8tblVMMXdGRXZkdVZkMC1QR0pLWUE0dERLTVRYR2VUMEE1RkZ5OHNGVUlwNXVIYWFUV29pQnJXbmJxRHlZU0Y3OEhFdw?oc=5"
+        },
+        {
+          "title": "Glenmark launches US dermatology packs: what it means for Glenmark stock",
+          "source": "ad-hoc-news.de",
+          "published": "2026-10-19T22:49:08+00:00",
+          "compound": 0.0,
+          "label": "neutral",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Reads as neutral: no strongly positive or negative wording was found.",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPVTFJTHdXSE51Zzk1ZWNPNTk1ZzZ4MVhOc1J6d3dtekRSdi1ISXRWY2kyY0ViMGFtdjRiOGdxX3hzVUJuQ09SY0pHZ2QyY2ZYc2hpVHh6TnIxd0xwS3otdmY5ZnB5cWlRNVRJem1NN2ptTEhEeWsydS02Y0hBdTV5bFJXTG5mSUhPbTV1YnpJSXJ1QVpseHR6bUlwRzFrcjM0TnVzUHRlTjBXQ1lRQUI0bi1VZE5hQ1FmMjh2bFZEUEFMdmc2LWNlamxB?oc=5"
         }
       ]
     },
@@ -361,18 +1026,47 @@
       "sample": [
         {
           "title": "How Wakefit Innovations Limited (NSE: WAKEFIT) is betting on its own stores while raw material costs bite",
+          "source": "Kalkine India",
+          "published": "2026-10-19T14:08:00+00:00",
           "compound": -0.226,
+          "label": "negative",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Leans negative.",
           "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQVExoQWRjMkFLQThNMW96QUhPbUZ0RmtqU2N0dy04NWRGMUhCR0FPdl9ISnVTVlpJaU5VX0JsS0Y0MVNBY3hHUFNYQkpJbHdiOFcyLTM4WnVsRW13U01LTFMxc19HLVdkVjJvSHJkME9nNVpPRVhGSzR3ZEhIaEhWbk9SbTBNa0ZadlU4MjRST1R5cDZHLVZuSGxSTWJ3MjlraElBaW9HN2UxejkyVEs2UDdQWG5CRHctc2E3WUZ4WFR3M21tcHNLRzd5dUpZejVXamViQlhXRnQybnc?oc=5"
         },
         {
           "title": "Indian Startup IPO Tracker 2026",
+          "source": "Inc42",
+          "published": "2026-10-18T07:00:00+00:00",
           "compound": 0.0,
+          "label": "neutral",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Reads as neutral: no strongly positive or negative wording was found.",
           "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBnS183TEQzMHI1QjlKSDhLSmhWSWhMLTBYanJITEFPYU9wSEJDYTZTMXhMUDAtV1hQYnZETzBCLWJGYTV4aVhUcDUyQ2xDbU5BMnBfWVNSN0YxNVhmakQ1U0tNLXgzOUxhbkJN?oc=5"
         },
         {
           "title": "Wakefit Q1 FY27: Revenue Rs 404.9 Crore, 27 New Stores",
+          "source": "Kalkine India",
+          "published": "2026-10-12T12:19:00+00:00",
           "compound": 0.0,
+          "label": "neutral",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Reads as neutral: no strongly positive or negative wording was found.",
           "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPV3IzSldZb2pjNDJoUTBxakp5V0FDd3ZNWldUYlZGZFhHT05mYnNyNlNrWm1fUFVzbVdhU2k0TEFmX0s0RF9jTWJrVzNadzhwaTh3YVhsa2Ywc1ltOERFYlpkU2tjMkRJd1cwN3FzVlhJeDBFdmRhMkhLc29vSmloRDdVaDJWdERIYjI3S1E3Rjc5cGZfQ0k4VC01ajBDcTltdnJWa0VqOUhDZVd0bkRDWGVmWDRpQkNPcnBHbVBDN196VUw1X0lLNEFrZWhQUWV2ZFA2ZWRweU9pX3ZpeVEyQUZXcFpjVzBJNWdmNG9n?oc=5"
+        },
+        {
+          "title": "Wakefit Innovations Limited (NSE:WAKEFIT): How Mattress Retail and Furniture Expansion Shape Its Business",
+          "source": "Kalkine India",
+          "published": "2026-10-12T14:42:00+00:00",
+          "compound": -0.226,
+          "label": "negative",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Leans negative.",
+          "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPUFYtSWRGVUZtT1lpREk0NGxvWlR5aUhoWE1uTmVTWlk2QUhzTzJiRllOblQ2TFFUVVZTWXZUUy1OTm1JNXI2TEREZUhCV0lwYWFLemdTU2RWOG1xd1M4TXlfYUNwcFpPbTlZRkFSRko1V0Z2MDBmUjJVMnM1QkV3Sm5IeUdmOERkTkVqMUZLcjRCNUJiWnlQUjA3X3VzYnY0UHdiSE9Bbm1mY01zYkJLcjRLdXZxY1BjMTlGVTlkaVBpUFQtd3RsREswVDdkVkFURFJGQ3BCMFRFUQ?oc=5"
         }
       ]
     },
@@ -388,12 +1082,26 @@
       "sample": [
         {
           "title": "Morepen Laboratories GST Notice Quashed by Himachal Pradesh HC",
+          "source": "Kalkine India",
+          "published": "2026-10-14T07:00:00+00:00",
           "compound": 0.0,
+          "label": "neutral",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Reads as neutral: no strongly positive or negative wording was found.",
           "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOTDBDaTZOWW9JT0RyMFV3ZVRQTkk5S3lIV21rVEk4YmFyMnFjNVQya2hNUzlnVUxnUC1rVzJQb0tVWEE2R0F4b2pfOWZOVk9VMWhmTjB3bFhxbVp5T2NjZEl0ZTJ1SWd2Qm1kbVQ0Sk40S05BaUhxMU0wVUJXYklnRm43cmRXYUJNSnRab3dWX0pJZGw0T2wwdEVrMlgtb1gzTGZicHNIdDBuNXJyaGRjMk5NQlBpTXhQaTVfNEJucw?oc=5"
         },
         {
           "title": "Why Are Morepen Laboratories Shares Down 18% in Four Sessions? Explained",
+          "source": "Business Upturn",
+          "published": "2026-10-13T07:00:00+00:00",
           "compound": 0.296,
+          "label": "positive",
+          "positiveWords": [
+            "shares"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"shares\".",
           "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNTjNQbm05ZXRQZWdxOGRaRFYxRjZWTl9ZZnRsOElkalcxY2I0UFBDRml0QTVYQ3ZRbTA1WmRERWlQZXJXUGgyVXh6T3lvWkRtR1JVTTVqNklFVUxlcWJXSVIxS3dndzdBSGljakdqSWxhS0hOZW55aW9ndTdySzRPRkVEMUx5WUx6Y1I4eWlocjhudHJ2NDlwOThObVVsUC1zYzlnNHVTeWRzOEd2V2ctVFB2QlM4Y3BxQkE4?oc=5"
         }
       ]
@@ -410,40 +1118,115 @@
       "sample": [
         {
           "title": "Marsons Limited (MARSONS.NS) Ticks Up 0.88% to \u20b9123.81, Holding Firm Above \u20b9117.62 Support - Percent Above MA",
+          "source": "https://www.siam.in/",
+          "published": "2026-10-20T01:46:26+00:00",
           "compound": 0.202,
+          "label": "positive",
+          "positiveWords": [
+            "support"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"support\".",
           "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPVXQtcjhtNVFzalNvNTVWUk5ycnBZbFR6WVl4RDNEQXFWWXRSTk5UcmI3LTE4aFc5UDFBd3ZBNm0tTXhmWjZOVkJKSUJyMjJOTnlSZ1ZDSWwyMHJLMkJmd0VZdGdqeGJWU2YxUUxPbUJoM1JySkVLSU5NYUFVbnpHQVlYSjJIMmhoV1plNVFhN3Q4YVVBcmlQeEMwdkV3M2dEdlZERnZtVHUteUFIY1BHa3ZuWHBBV2JaekQ4bW5rUWo?oc=5"
         },
         {
           "title": "Alpex Solar vs Marsons vs Modison: Which Stock Should You Track",
+          "source": "Univest",
+          "published": "2026-10-13T07:00:00+00:00",
           "compound": 0.0,
+          "label": "neutral",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Reads as neutral: no strongly positive or negative wording was found.",
           "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5RSjBvZ1AtdnlrN3RHMWJRV3p4VnBjUEpLQmFocDZTUkdXbkFEMjZuQVgyZmUzUzJKMUpwTzJYSFN5YWFIdExlLXJrTHdUWVE1SXpKZ3dUSVoxQ2ZNYVlOR29tanNLV0xaQ3c?oc=5"
         }
       ]
     },
     {
       "symbol": "LICHSGFIN",
-      "headlines": 6,
-      "avgCompound": 0.318,
+      "headlines": 7,
+      "avgCompound": 0.315,
       "label": "positive",
-      "positive": 5,
+      "positive": 6,
       "neutral": 1,
       "negative": 0,
       "emotion": "neutral",
       "sample": [
         {
           "title": "BAJAJHFL Share Price Today - Bajaj Housing Finance on NSE/BSE",
+          "source": "scanx.trade",
+          "published": "2026-10-24T09:39:22+00:00",
           "compound": 0.296,
+          "label": "positive",
+          "positiveWords": [
+            "share"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"share\".",
           "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5PTTRTUWdiQU1Pdy1BQ2R1OXYzQ1BUMW5EZDB6WGF0VGRobU12ams0N2F5UjQwZU5nTDdiRGZWVXl5SGhqTlZJTXlJTEpZS09vY0trbW1QN1FfblR0VGJQNmlsSQ?oc=5"
         },
         {
           "title": "LIC Housing Finance Share Price and Technical Outlook",
+          "source": "Kalkine India",
+          "published": "2026-10-14T10:27:00+00:00",
           "compound": 0.382,
+          "label": "positive",
+          "positiveWords": [
+            "share"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"share\".",
           "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQX0JXSEZ3a3Rnck5PM3JVUUQyaHpRMjNmMDVVdjVSTkFjd2hhTVZqWTIzZDFXY3RUcmNLT1hZaG9pZmVsNkJnWFBJVFljV1hUSVhRTUtVVGNST0VMVVpZWG42SW5xN2lhTlBRcXZtUm1JRk9tWkVrczFUYjEwVWFkb1RkRE1lOVQtSUsxU2hDaHF5ek51dzlXaEg5TDdvdmZmWlRRMDBSbWdfRHZnV0QxMVVsN3ZGd0stV2xHNGN2d00?oc=5"
         },
         {
           "title": "LIC Housing Finance Ltd. Share Price Rise Streak: Peer View",
+          "source": "Univest",
+          "published": "2026-10-12T07:00:00+00:00",
           "compound": 0.296,
+          "label": "positive",
+          "positiveWords": [
+            "share"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"share\".",
           "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNaG5FTjAtN0RWZHJqUWYwVnhjZzdtX3dWWWtZaXpiVnd3WnVjYlJUeW50ZXBfdXNEVGtMS3oyN2NpLWNmcHFsSExiLTZpdl9YWk5IeUdQZDdGQXpSNHViQl9iZnpjTS1VZ0RqUXJLdDNEbG1HdUh0a2hTYk94VnJNcXl2NEp4SWdJbDJMdndXTQ?oc=5"
+        },
+        {
+          "title": "SAMMAANCAP Share Price Today - Sammaan Capital on NSE/BSE",
+          "source": "scanx.trade",
+          "published": "2026-10-23T14:39:00+00:00",
+          "compound": 0.296,
+          "label": "positive",
+          "positiveWords": [
+            "share"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"share\".",
+          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE93dTluZU1uNHhzZ2FfX3p1bzlqaEhLOVd1S0RRMnBJVy1Nb1FvRDZyRGIzdW52Y0RJcjFNcVpYQWtrbWN3UjM4LWJBLUVDbHRHZUZBSkNlTWR3bGFUN0l4Z1pBN1ZrTGt0NUE?oc=5"
+        },
+        {
+          "title": "LIC Housing Finance Share Price Today: Sector and Peers",
+          "source": "Univest",
+          "published": "2026-10-16T07:00:00+00:00",
+          "compound": 0.296,
+          "label": "positive",
+          "positiveWords": [
+            "share"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"share\".",
+          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQVndobnVKQWdocHhkTW5iWDEtWG9Gd1lWbEl2aXZOVVBBVUxKZUVIb2hyckxJOTJiU3NnWFNhdGxGUFJIRXZuWlZoTGlGQld3a0RmQTVocXd5N3JZOGl5QXd0a3YtektaLUJfUS1GV0dkc3ZhSThNRUxncXpoajd6MU93?oc=5"
+        },
+        {
+          "title": "LIC Housing Finance LICHSGFIN MD CEO Postal Ballot Result",
+          "source": "Kalkine India",
+          "published": "2026-10-23T12:52:00+00:00",
+          "compound": 0.0,
+          "label": "neutral",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Reads as neutral: no strongly positive or negative wording was found.",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOQTdzbWUwVVdLREFtdEg1V3gyWUpIUGkzWmtqYWp4VDBWWDhQMlF0MDJyZS1vcFh1OGhKVkRoUTFCRWxxc2NxN1o1cGNHcGJQTDB1US1PVjNwMnl2ZmtlMEp2RHZOVXAyZkVHQzBMN01zdlctOFJVMkxYZndQSE8zTWhlcXp6U2V3NzNIOTVQcVZKRGd4bjdiTmJwLVVJenN5WHg4d29BQ3gyNjh0WlRGNm5FMVNUa2RzaVdteFRGb0NPZw?oc=5"
         }
       ]
     },
@@ -459,18 +1242,52 @@
       "sample": [
         {
           "title": "Atal Realtech Lower Circuit Today: Price, Data and Peers",
+          "source": "Univest",
+          "published": "2026-10-19T07:00:00+00:00",
           "compound": -0.296,
+          "label": "negative",
+          "positiveWords": [],
+          "negativeWords": [
+            "lower"
+          ],
+          "description": "Leans negative because of words like \"lower\".",
           "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1HdW5WdG5Fc3F5NDVEQWZDejBQbW1ucU94b0pkaDRzdjR3WkxpeTAyazhfNkMxNWJSLTFrTGxtODN4S1hUakZoZVBZQUVNcWlFdEt1SE9DZjV4c1h2RlhKcU9pQW1iRERUc19rQjBHekZGeHYtdS10R2Y4VzY5WTQ?oc=5"
         },
         {
           "title": "Atal Realtech (NSE:ATALREAL): What Does the Reg 74(5) Certificate Mean for Q2 FY27?",
+          "source": "Kalkine India",
+          "published": "2026-10-12T07:30:00+00:00",
           "compound": 0.0,
+          "label": "neutral",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Reads as neutral: no strongly positive or negative wording was found.",
           "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPX2dpOWRPZUE0WU96Ulp6aXBWSENJeHBITElwLW8xUWRweFJ1WjZmUGFVUTBOd2FWZjJlSnVYSjVqRERYaVQ3MGpfMFZZejlSUG1zUDVEMFVQMzhXRG93aFhpZDRncUp3d296Z1Z2UW5pNkdGVVppSFB3YnBWX3pJcHdlUGN2czRwbS1oOUJHUGJBSWpjYU02VEhySXpaQ0xjMFhFRjNTalpBQjk5SEdOcDE5cTFGQUF5OHlBMEFKZHRTQQ?oc=5"
         },
         {
           "title": "Atal Realtech Upper Circuit Streak: Day 2 Price and Data",
+          "source": "Univest",
+          "published": "2026-10-14T09:04:00+00:00",
           "compound": 0.0,
+          "label": "neutral",
+          "positiveWords": [],
+          "negativeWords": [],
+          "description": "Reads as neutral: no strongly positive or negative wording was found.",
           "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBhUGdpcWc3WWVxOWhrb2ZObm52d2VHbm9TNnk4THo2aTc2a2duTzM2Si1SZDNqSjNqVmFuQkRxdXozSHZQc2YzRVFmQllRQlh3YkwxWFBQNE5telFvNk01dmRqVnVxT2xGWUxlcE1NemwtcHE2akFraW1PbnBSc2c?oc=5"
+        },
+        {
+          "title": "Atal Realtech Share Price Today: support and fundamentals",
+          "source": "Univest",
+          "published": "2026-10-13T07:00:00+00:00",
+          "compound": 0.599,
+          "label": "positive",
+          "positiveWords": [
+            "share",
+            "support"
+          ],
+          "negativeWords": [],
+          "description": "Leans positive because of words like \"share\", \"support\".",
+          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOVWxCajJTZ21xYVpjNWJpRllqTXJibURVbENYMUJxZG1LYk0wWXYyZURmYTVsTGhYU0dIdnl5MTBteDc2ak9tdXVEclBrSEItX2RfRnFlZEZjTF9RalVTcmo3bkxSMi1pT3RRS0lTZnc4aGVTUk5QMm5Lc280N3ZCOHdldTgweUV3bnRjMlJ6cw?oc=5"
         }
       ]
     }

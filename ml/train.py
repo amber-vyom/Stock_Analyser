@@ -174,6 +174,18 @@ def main():
         model.fit(train[columns[name]], train["target"])
         prob = model.predict_proba(test[columns[name]])
         results.append(evaluate(name, test["target"], prob, test))
+        if name == "Logistic regression":
+            main_prob = prob
+
+    scored_test = test.assign(prob=main_prob)
+    picks_daily = scored_test.groupby("date").apply(
+        lambda g: g.nlargest(TOP_K, "prob")["fwd_return"].mean(), include_groups=False)
+    market_daily = scored_test.groupby("date")["fwd_return"].mean()
+    daily_test = [
+        {"date": str(pd.Timestamp(d).date()), "picksPct": round(float(picks_daily[d] * 100), 3),
+         "marketPct": round(float(market_daily[d] * 100), 3)}
+        for d in picks_daily.index
+    ]
 
     y_test = test["target"].to_numpy()
     majority = int(train["target"].mean() >= 0.5)
@@ -223,6 +235,18 @@ def main():
         "models": results,
         "baselines": baselines,
         "topPicksEdgePct": round(edge, 3),
+        "dailyTest": daily_test,
+        "featureWeights": sorted(
+            [{"feature": f, "weight": round(float(w), 4)} for f, w in zip(final_columns, final_model.weights[1:])],
+            key=lambda item: -abs(item["weight"]),
+        ),
+        "dataStats": {
+            "labelledRows": int(len(labelled)),
+            "stocks": int(labelled["symbol"].nunique()),
+            "upShare": round(float(labelled["target"].mean()), 4),
+            "trainUpShare": round(float(train["target"].mean()), 4),
+            "testUpShare": round(float(test["target"].mean()), 4),
+        },
         "verdict": (
             f"ROC-AUC {best['rocAuc']:.3f} is close to 0.5 (guessing), and the model's accuracy "
             f"({best['accuracy']:.1%}) is {'below' if best['accuracy'] < baselines[0]['accuracy'] else 'above'} the "

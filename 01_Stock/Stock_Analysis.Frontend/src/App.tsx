@@ -49,7 +49,32 @@ const SECTIONS = [
   { id: 'insights', label: 'Insights' },
   { id: 'how', label: 'How it works' },
   { id: 'experiments', label: 'Experiments' },
+  { id: 'team', label: 'Team' },
 ]
+
+const CONTRIBUTORS = [
+  { name: 'Vyom Gupta', regNo: '25MIS0494' },
+  { name: 'Y Pooja Reddy', regNo: '25MIS0194' },
+]
+
+const ACCENTS = [
+  { id: 'blue', label: 'Blue' },
+  { id: 'emerald', label: 'Emerald' },
+  { id: 'rose', label: 'Rose' },
+  { id: 'amber', label: 'Amber' },
+] as const
+
+type Accent = (typeof ACCENTS)[number]['id']
+
+function initialAccent(): Accent {
+  try {
+    const saved = localStorage.getItem('accent')
+    if (ACCENTS.some((a) => a.id === saved)) return saved as Accent
+  } catch {
+    // storage may be unavailable
+  }
+  return 'blue'
+}
 
 const FILTER_GUIDE = [
   ['Completeness', 'The stock traded on all 7 days of the window.'],
@@ -168,6 +193,16 @@ export default function App() {
   const [updateMsg, setUpdateMsg] = useState<string | null>(null)
   const [theme, setTheme] = useState<Theme>(initialTheme)
   const [activeSection, setActiveSection] = useState('overview')
+  const [accent, setAccent] = useState<Accent>(initialAccent)
+
+  useEffect(() => {
+    document.documentElement.dataset.accent = accent
+    try {
+      localStorage.setItem('accent', accent)
+    } catch {
+      // ignore
+    }
+  }, [accent])
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme
@@ -313,6 +348,18 @@ export default function App() {
             ))}
           </div>
           <div className="nav-actions">
+            <div className="swatches" role="group" aria-label="Accent colour">
+              {ACCENTS.map((a) => (
+                <button
+                  key={a.id}
+                  className={`swatch swatch-${a.id} ${accent === a.id ? 'on' : ''}`}
+                  onClick={() => setAccent(a.id)}
+                  aria-label={`${a.label} accent`}
+                  aria-pressed={accent === a.id}
+                  title={`${a.label} accent`}
+                />
+              ))}
+            </div>
             <span className={`badge ${STATIC ? 'badge-snapshot' : 'badge-live'}`}>{STATIC ? 'Snapshot' : 'Live'}</span>
             <button
               className="icon-btn"
@@ -618,10 +665,29 @@ export default function App() {
             <Experiments />
           </Reveal>
         )}
+        <Reveal>
+          <section id="team" className="section">
+            <h2>Team</h2>
+            <p className="section-lead">This project was designed and built by:</p>
+            <div className="team">
+              {CONTRIBUTORS.map((c) => (
+                <div key={c.regNo} className="card member">
+                  <span className="avatar" aria-hidden="true">
+                    {c.name.split(' ').map((w) => w[0]).slice(0, 2).join('')}
+                  </span>
+                  <div>
+                    <strong>{c.name}</strong>
+                    <p className="muted">Reg. no. {c.regNo}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        </Reveal>
       </main>
 
       <footer>
-        Educational project · Data: NSE BhavCopy · Not investment advice ·{' '}
+        Built by {CONTRIBUTORS.map((c) => `${c.name} (${c.regNo})`).join(' and ')} · Educational project · Data: NSE BhavCopy · Not investment advice ·{' '}
         <a href={REPO_URL} target="_blank" rel="noreferrer">GitHub</a>
       </footer>
     </>

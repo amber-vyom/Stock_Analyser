@@ -3,6 +3,7 @@ import json
 import time
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 from pathlib import Path
 from urllib.parse import quote_plus
 
@@ -37,6 +38,39 @@ EMOTIONS = {
 }
 
 
+def parse_date(text):
+    if not text:
+        return ""
+    try:
+        return parsedate_to_datetime(text).astimezone(timezone.utc).isoformat()
+    except (TypeError, ValueError):
+        return ""
+
+
+def explain(title: str, compound: float, analyzer):
+    words = [w.strip(".,:;!?'\"()-").lower() for w in title.split()]
+    positive = sorted({w for w in words if analyzer.lexicon.get(w, 0) >= 1.0})[:4]
+    negative = sorted({w for w in words if analyzer.lexicon.get(w, 0) <= -1.0})[:4]
+    label = label_for(compound)
+
+    if label == "positive":
+        reason = "Leans positive"
+        if positive:
+            reason += " because of words like " + ", ".join(f'"{w}"' for w in positive) + "."
+        else:
+            reason += "."
+    elif label == "negative":
+        reason = "Leans negative"
+        if negative:
+            reason += " because of words like " + ", ".join(f'"{w}"' for w in negative) + "."
+        else:
+            reason += "."
+    else:
+        reason = "Reads as neutral: no strongly positive or negative wording was found."
+
+    return positive, negative, reason
+
+
 def fetch_headlines(symbol: str, limit: int):
     query = quote_plus(f"{symbol} share NSE when:14d")
     response = requests.get(RSS.format(query=query), headers=HEADERS, timeout=20)
@@ -51,7 +85,8 @@ def fetch_headlines(symbol: str, limit: int):
         items.append({
             "title": title,
             "link": item.findtext("link") or "",
-            "published": item.findtext("pubDate") or "",
+            "published": parse_date(item.findtext("pubDate")),
+            "source": (item.findtext("source") or "").strip(),
         })
         if len(items) >= limit:
             break
@@ -98,7 +133,10 @@ def main():
         scored = []
         for h in headlines:
             title = h["title"].rsplit(" - ", 1)[0]
-            scored.append({**h, "title": title, "compound": round(analyzer.polarity_scores(title)["compound"], 3)})
+            compound = round(analyzer.polarity_scores(title)["compound"], 3)
+            positive_words, negative_words, reason = explain(title, compound, analyzer)
+            scored.append({**h, "title": title, "compound": compound, "label": label_for(compound),
+                           "positiveWords": positive_words, "negativeWords": negative_words, "description": reason})
 
         if not scored:
             print(f"{symbol}: no headlines", flush=True)
@@ -115,7 +153,10 @@ def main():
             "neutral": labels.count("neutral"),
             "negative": labels.count("negative"),
             "emotion": dominant_emotion([s["title"] for s in scored]),
-            "sample": [{"title": s["title"], "compound": s["compound"], "link": s["link"]} for s in scored[:3]],
+            "sample": [
+                {k: s[k] for k in ("title", "source", "published", "compound", "label", "positiveWords", "negativeWords", "description", "link")}
+                for s in scored[:6]
+            ],
         })
         print(f"{symbol}: {len(scored)} headlines, avg {average:+.2f}", flush=True)
         time.sleep(1)

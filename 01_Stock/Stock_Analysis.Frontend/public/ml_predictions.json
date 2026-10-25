@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T08:10:17.029114+00:00",
+  "generatedAt": "2026-10-25T08:33:14.173374+00:00",
   "dataFrom": "2026-05-25",
   "dataTo": "2026-10-23",
   "tradingDays": 105,
@@ -58,6 +58,169 @@
     }
   ],
   "topPicksEdgePct": -0.252,
+  "dailyTest": [
+    {
+      "date": "2026-09-10",
+      "picksPct": 0.896,
+      "marketPct": -0.914
+    },
+    {
+      "date": "2026-09-11",
+      "picksPct": -1.071,
+      "marketPct": -0.371
+    },
+    {
+      "date": "2026-09-15",
+      "picksPct": 4.015,
+      "marketPct": 2.193
+    },
+    {
+      "date": "2026-09-16",
+      "picksPct": 3.68,
+      "marketPct": 3.282
+    },
+    {
+      "date": "2026-09-17",
+      "picksPct": 1.412,
+      "marketPct": 1.103
+    },
+    {
+      "date": "2026-09-18",
+      "picksPct": 0.229,
+      "marketPct": 0.284
+    },
+    {
+      "date": "2026-09-21",
+      "picksPct": -4.172,
+      "marketPct": -1.401
+    },
+    {
+      "date": "2026-09-22",
+      "picksPct": -2.618,
+      "marketPct": -1.748
+    },
+    {
+      "date": "2026-09-23",
+      "picksPct": -0.481,
+      "marketPct": -2.744
+    },
+    {
+      "date": "2026-09-24",
+      "picksPct": -3.381,
+      "marketPct": -2.704
+    },
+    {
+      "date": "2026-09-25",
+      "picksPct": -3.979,
+      "marketPct": -2.941
+    },
+    {
+      "date": "2026-09-28",
+      "picksPct": -2.775,
+      "marketPct": -0.029
+    },
+    {
+      "date": "2026-09-29",
+      "picksPct": -1.738,
+      "marketPct": 0.042
+    },
+    {
+      "date": "2026-09-30",
+      "picksPct": -3.208,
+      "marketPct": -2.336
+    },
+    {
+      "date": "2026-10-01",
+      "picksPct": -0.738,
+      "marketPct": -0.596
+    },
+    {
+      "date": "2026-10-05",
+      "picksPct": 0.0,
+      "marketPct": -0.251
+    },
+    {
+      "date": "2026-10-06",
+      "picksPct": 0.945,
+      "marketPct": -1.087
+    },
+    {
+      "date": "2026-10-07",
+      "picksPct": 0.239,
+      "marketPct": -0.367
+    },
+    {
+      "date": "2026-10-08",
+      "picksPct": -0.503,
+      "marketPct": 1.176
+    },
+    {
+      "date": "2026-10-09",
+      "picksPct": -0.327,
+      "marketPct": 1.084
+    },
+    {
+      "date": "2026-10-12",
+      "picksPct": 0.634,
+      "marketPct": -0.374
+    },
+    {
+      "date": "2026-10-13",
+      "picksPct": -3.981,
+      "marketPct": -3.696
+    },
+    {
+      "date": "2026-10-14",
+      "picksPct": -3.509,
+      "marketPct": -5.378
+    },
+    {
+      "date": "2026-10-15",
+      "picksPct": -10.251,
+      "marketPct": -6.852
+    }
+  ],
+  "featureWeights": [
+    {
+      "feature": "ret3",
+      "weight": -0.0841
+    },
+    {
+      "feature": "log_value7",
+      "weight": 0.0827
+    },
+    {
+      "feature": "log_avg_vol",
+      "weight": -0.0672
+    },
+    {
+      "feature": "close_vs_open",
+      "weight": 0.0585
+    },
+    {
+      "feature": "ret7",
+      "weight": -0.0365
+    },
+    {
+      "feature": "range7",
+      "weight": 0.0335
+    },
+    {
+      "feature": "vol_consistency",
+      "weight": 0.0232
+    },
+    {
+      "feature": "ret1",
+      "weight": -0.0169
+    }
+  ],
+  "dataStats": {
+    "labelledRows": 192562,
+    "stocks": 2583,
+    "upShare": 0.4466,
+    "trainUpShare": 0.4942,
+    "testUpShare": 0.3658
+  },
   "verdict": "ROC-AUC 0.549 is close to 0.5 (guessing), and the model's accuracy (53.0%) is below the majority-class baseline (63.4%). Its top-20 picks returned -1.28% versus -1.03% for all stocks over the test period. Treat this as an experiment with little or no predictive value.",
   "picks": [
     {

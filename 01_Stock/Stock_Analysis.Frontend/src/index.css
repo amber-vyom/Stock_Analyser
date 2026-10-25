@@ -50,3 +50,13 @@ body {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+:root[data-accent='emerald'] { --accent: #34d399; --accent-2: #22d3ee; }
+:root[data-accent='rose'] { --accent: #fb7185; --accent-2: #c084fc; }
+:root[data-accent='amber'] { --accent: #fbbf24; --accent-2: #fb923c; }
+:root[data-theme='light'][data-accent='emerald'] { --accent: #059669; --accent-2: #0891b2; }
+:root[data-theme='light'][data-accent='rose'] { --accent: #e11d48; --accent-2: #9333ea; }
+:root[data-theme='light'][data-accent='amber'] { --accent: #d97706; --accent-2: #ea580c; }
+
+::selection { background: color-mix(in srgb, var(--accent) 35%, transparent); }
+* { scrollbar-width: thin; scrollbar-color: color-mix(in srgb, var(--accent) 45%, transparent) transparent; }
