@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Info } from './ui'
 
 interface ModelResult {
   model: string
@@ -170,18 +169,18 @@ function MlPanel() {
 
       <div className="mini-stats">
         <div className="mini-stat">
-          <span>ROC-AUC <Info text="0.5 means no better than guessing; 1.0 is perfect. Anything near 0.5 is basically random." /></span>
+          <span>ROC-AUC</span>
           <strong>{best.rocAuc.toFixed(3)}</strong>
           <Gauge value={best.rocAuc} min={0.4} max={0.8} mark={0.5} label="ROC-AUC gauge with a marker at 0.5" />
         </div>
         <div className="mini-stat">
-          <span>Accuracy <Info text="Share of test cases where the up/down call was right. Compare with the 'always guess the majority' baseline." /></span>
+          <span>Accuracy</span>
           <strong>{(best.accuracy * 100).toFixed(1)}%</strong>
           <Gauge value={best.accuracy} min={0.4} max={0.8} mark={majority.accuracy} label="Accuracy gauge with the baseline marked" />
           <em>Baseline {(majority.accuracy * 100).toFixed(1)}%</em>
         </div>
         <div className="mini-stat">
-          <span>Top-20 average return <Info text={`Average ${data.horizonTradingDays}-day return of the 20 stocks the model liked most each day, versus all stocks.`} /></span>
+          <span>Top-20 average return</span>
           <strong className={(best.topPicksAvgReturnPct ?? 0) >= 0 ? 'pos' : 'neg'}>{pct(best.topPicksAvgReturnPct)}</strong>
           <em>All stocks {pct(best.allStocksAvgReturnPct)}</em>
         </div>
@@ -211,7 +210,7 @@ function MlPanel() {
 
         {weights.length > 0 && (
           <div className="exp-card">
-            <h4>What the model looks at <Info text="Standardised logistic-regression weights. Positive pushes the prediction up, negative pushes it down. Bigger bars matter more to the model." /></h4>
+            <h4>What the model looks at</h4>
             <ul className="weights">
               {weights.map((w) => (
                 <li key={w.feature}>
@@ -232,7 +231,7 @@ function MlPanel() {
 
       {data.dailyTest && data.dailyTest.length > 1 && (
         <div className="exp-card">
-          <h4>Test period: model's top picks vs all stocks <Info text="For each test day: the average 5-day return of the top-20 picks (bright line) against the average of every stock (dim line)." /></h4>
+          <h4>Test period: model's top picks vs all stocks</h4>
           <LineChart data={data.dailyTest} />
           <div className="legend"><span className="dot picks" /> Top-20 picks <span className="dot market" /> All stocks</div>
         </div>
@@ -335,12 +334,12 @@ function SentimentPanel() {
           <em>{summary.all} headlines read</em>
         </div>
         <div className="mini-stat">
-          <span>Average sentiment <Info text="From -1 (very negative) to +1 (very positive), averaged over the stocks." /></span>
+          <span>Average sentiment</span>
           <strong className={summary.avg >= 0 ? 'pos' : 'neg'}>{summary.avg >= 0 ? '+' : ''}{summary.avg.toFixed(2)}</strong>
           <Gauge value={summary.avg} min={-1} max={1} mark={0} label="Average sentiment gauge" />
         </div>
         <div className="mini-stat">
-          <span>Most common emotion <Info text="A crude keyword count: optimism, fear, anger or uncertainty." /></span>
+          <span>Most common emotion</span>
           <strong>{cap(summary.topEmotion)}</strong>
         </div>
         <div className="mini-stat wide">

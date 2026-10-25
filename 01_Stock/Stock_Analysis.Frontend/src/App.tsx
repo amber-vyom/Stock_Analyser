@@ -6,7 +6,6 @@ import {
   BackToTop,
   CountUp,
   DownloadIcon,
-  Info,
   Logo,
   MoonIcon,
   Reveal,
@@ -183,7 +182,6 @@ export default function App() {
   const [selected, setSelected] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const [snapshotDate, setSnapshotDate] = useState<string | null>(null)
   const [updating, setUpdating] = useState(false)
   const [updateMsg, setUpdateMsg] = useState<string | null>(null)
   const [theme, setTheme] = useState<Theme>(initialTheme)
@@ -221,7 +219,6 @@ export default function App() {
       if (STATIC) {
         const snapshot = await getJson<{ generatedAt: string; stocks: Stock[] }>(`${import.meta.env.BASE_URL}snapshot.json`)
         data = snapshot.stocks.slice(0, count)
-        setSnapshotDate(snapshot.generatedAt)
       } else {
         data = await getJson<Stock[]>(`/api/stocks/top?count=${count}`)
       }
@@ -339,13 +336,12 @@ export default function App() {
     URL.revokeObjectURL(url)
   }
 
-  const header = (key: SortKey, label: string, hint?: string) => (
+  const header = (key: SortKey, label: string) => (
     <th aria-sort={sortKey === key ? (sortAsc ? 'ascending' : 'descending') : 'none'}>
       <button className="sort" onClick={() => changeSort(key)}>
         {label}
         {sortKey === key ? (sortAsc ? ' ▲' : ' ▼') : ''}
       </button>
-      {hint && <Info text={hint} />}
     </th>
   )
 
@@ -404,12 +400,6 @@ export default function App() {
             )}
           </div>
           {updateMsg && <p className="banner">{updateMsg}</p>}
-          {STATIC && snapshotDate && (
-            <p className="banner">
-              You are viewing a saved snapshot from {new Date(snapshotDate).toLocaleString()}. Live updates only work
-              when the API runs on your own computer.
-            </p>
-          )}
 
           {loading && <Skeleton />}
           {error && (
@@ -428,11 +418,11 @@ export default function App() {
             <>
               <div className="stats">
                 <div className="stat">
-                  <span>Stocks ranked<Info text="Stocks that traded on all 7 days of the window." /></span>
+                  <span>Stocks ranked</span>
                   <strong><CountUp value={stocks.length} /></strong>
                 </div>
                 <div className="stat">
-                  <span>Best score<Info text="Out of 100. Higher means the stock did better on more of the checks." /></span>
+                  <span>Best score</span>
                   <strong><CountUp value={stocks[0].score} decimals={2} /></strong>
                   <em>{stocks[0].symbol}</em>
                 </div>
@@ -441,7 +431,7 @@ export default function App() {
                   <strong><CountUp value={avgScore} decimals={2} /></strong>
                 </div>
                 <div className="stat">
-                  <span>Average 7-day change<Info text="How far the price moved from the first day's open to the last day's close, averaged over these stocks." /></span>
+                  <span>Average 7-day change</span>
                   <strong className={avgChange >= 0 ? 'pos' : 'neg'}><CountUp value={avgChange} decimals={2} suffix="%" /></strong>
                 </div>
               </div>
@@ -513,10 +503,10 @@ export default function App() {
                         <tr>
                           {header('rank', '#')}
                           {header('symbol', 'Symbol')}
-                          {header('score', 'Score', 'Score out of 100 from ten weighted components.')}
-                          {header('filters', 'Checks', 'How many of the ten pass/fail checks the stock passed.')}
-                          {header('change', '7-day change', 'Price change from the first open to the last close.')}
-                          {header('volume', 'Avg volume', 'Average number of shares traded per day.')}
+                          {header('score', 'Score')}
+                          {header('filters', 'Checks')}
+                          {header('change', '7-day change')}
+                          {header('volume', 'Avg volume')}
                           <th>Days</th>
                         </tr>
                       </thead>

@@ -98,14 +98,6 @@ export function ScoreRing({ score, size = 84 }: { score: number; size?: number }
   )
 }
 
-export function Info({ text }: { text: string }) {
-  return (
-    <span className="info" tabIndex={0} role="note" aria-label={text} data-tip={text}>
-      ?
-    </span>
-  )
-}
-
 const iconProps = {
   width: 18,
   height: 18,
