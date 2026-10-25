@@ -5,3 +5,8 @@ node_modules/
 dist/
 *.user
 *.suo
+
+Stock_Data/
+__pycache__/
+*.pyc
+.venv/

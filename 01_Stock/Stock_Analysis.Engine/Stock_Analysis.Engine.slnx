@@ -1,6 +1,5 @@
-<Solution>
+﻿<Solution>
   <Project Path="../Stock_Analysis Web/Stock_Analysis Web.csproj" />
-  <Project Path="../Stock_Analysis.Desktop/Stock_Analysis.Desktop.csproj" />
   <Project Path="Stock_Analysis.Engine.csproj" />
   <Project Path="../Stock_Analysis.Tests/Stock_Analysis.Tests.csproj" />
 </Solution>

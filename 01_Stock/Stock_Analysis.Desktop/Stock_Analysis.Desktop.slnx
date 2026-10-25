@@ -1,5 +1,0 @@
-<Solution>
-  <Project Path="../Stock_Analysis Web/Stock_Analysis Web.csproj" />
-  <Project Path="../Stock_Analysis.Engine/Stock_Analysis.Engine.csproj" />
-  <Project Path="Stock_Analysis.Desktop.csproj" />
-</Solution>

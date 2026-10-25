@@ -18,7 +18,7 @@ This is a screening tool, not a prediction system. It does not use real-time dat
 - **Weighted score:** A configurable score out of 100 (`ScoringOptions`) that is separate from the pass/fail filters. Every stock shows a per-component score breakdown.
 - **Dashboard:** Sortable table, symbol search, minimum-filters filter, summary cards, score distribution chart, per-stock detail panel and a "How it works" section.
 - **Ranking:** A Priority Queue orders by score, then passed-filter count, then symbol. Stocks with fewer than seven trading days are excluded.
-- **Interfaces:** A React dashboard backed by an ASP.NET Core API. The "Update data from NSE" button runs the whole pipeline (download, raw data, processed data). The older Windows Forms app is still in the repo but is no longer the main interface.
+- **Interfaces:** A React dashboard backed by an ASP.NET Core API. The "Update data from NSE" button runs the whole pipeline (download, raw data, processed data).
 
 ## Architecture
 
@@ -35,11 +35,10 @@ React dashboard -> ASP.NET Core API -> Stock_Analysis.Engine -> SQL Server
 ```text
 01_Stock
 |-- Stock_Analysis.Engine     business logic (Analysis, Database, DSA, ETL, Models, NSE, Services)
-|-- Stock_Analysis.Desktop    Windows Forms app
 |-- Stock_Analysis Web        ASP.NET Core API
 |-- Stock_Analysis.Frontend   React + TypeScript dashboard (Vite)
 |-- Stock_Analysis.Tests      xUnit tests
-`-- Stock_Data                downloaded NSE reports
+`-- Stock_Data                downloaded NSE reports (not in git)
 ```
 
 ## Data structures and algorithms used
@@ -95,7 +94,7 @@ To refresh the hosted site, re-run the export and push again.
 
 ## Status and roadmap
 
-Done: download, parse, aggregate, store, filter, score, rank, desktop app, API, dashboard, unit tests for scoring, ranking, aggregation and report-file selection, and a GitHub Actions workflow.
+Done: download, parse, aggregate, store, filter, score, rank, API, dashboard, unit tests for scoring, ranking, aggregation and report-file selection, and a GitHub Actions workflow.
 
 Planned:
 
