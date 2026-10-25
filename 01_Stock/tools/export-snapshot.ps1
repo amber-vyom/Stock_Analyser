@@ -5,8 +5,7 @@ param(
 
 $stockRoot = Split-Path -Parent $PSScriptRoot
 $targets = @(
-    (Join-Path $stockRoot "Stock_Analysis.Frontend\public\snapshot.json"),
-    (Join-Path $stockRoot "Stock_Analysis.Streamlit\snapshot.json")
+    (Join-Path $stockRoot "Stock_Analysis.Frontend\public\snapshot.json")
 )
 
 $response = Invoke-WebRequest -Uri "$ApiUrl/api/snapshot?count=$Count" -UseBasicParsing

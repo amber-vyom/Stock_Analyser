@@ -2,7 +2,7 @@
 
 A rule-based NSE stock screening and ranking system built with C# and .NET. It downloads NSE BhavCopy reports, stores them in SQL Server, aggregates a rolling seven-trading-day window, applies ten screening filters, computes a weighted score out of 100, and ranks stocks with a Priority Queue.
 
-**Live demos (static snapshot):** [Netlify dashboard](https://stock-analyser-vyom.netlify.app/) · [Streamlit app](https://stock-analyser-vyom.streamlit.app/)
+**Live demo (static snapshot):** [stock-analyser-vyom.netlify.app](https://stock-analyser-vyom.netlify.app/)
 
 ![Dashboard](docs/dashboard.jpg)
 
@@ -77,9 +77,9 @@ cd 01_Stock/Stock_Analysis.Frontend && npm install && npm run dev
 
 Open http://localhost:5173. The downloaded-report folder defaults to the path in `NseDataPaths.cs`; set the `STOCK_DATA_DIR` environment variable to override it.
 
-## Hosting (Netlify and Streamlit)
+## Hosting (Netlify)
 
-Netlify and Streamlit Community Cloud cannot reach a SQL Server running on a personal computer, so the hosted versions show a static snapshot of the ranking instead of live data.
+Netlify cannot reach a SQL Server running on a personal computer, so the hosted site shows a static snapshot of the ranking instead of live data.
 
 1. Start the API locally, then export the snapshot:
 
@@ -87,13 +87,11 @@ Netlify and Streamlit Community Cloud cannot reach a SQL Server running on a per
    powershell -File 01_Stock/tools/export-snapshot.ps1
    ```
 
-   This writes `snapshot.json` into `Stock_Analysis.Frontend/public` and `Stock_Analysis.Streamlit`. Commit and push both files.
+   This writes `snapshot.json` into `Stock_Analysis.Frontend/public`. Commit and push it.
 
 2. **Netlify:** import the GitHub repo. `netlify.toml` sets the base folder, build command and `VITE_STATIC=true`, so the site reads `snapshot.json` and hides the "Update data" button.
 
-3. **Streamlit Community Cloud:** create an app from the same repo with the main file `01_Stock/Stock_Analysis.Streamlit/streamlit_app.py`. Dependencies come from `requirements.txt` in that folder.
-
-To refresh the hosted sites, re-run the export and push again.
+To refresh the hosted site, re-run the export and push again.
 
 ## Status and roadmap
 
