@@ -366,6 +366,7 @@ export default function App() {
                 {s.label}
               </a>
             ))}
+            <a href="#/learn">Learn</a>
           </div>
           <div className="nav-actions">
             <span className={`badge ${STATIC ? 'badge-snapshot' : 'badge-live'}`}>{STATIC ? 'Snapshot' : 'Live'}</span>
@@ -393,6 +394,7 @@ export default function App() {
           <div className="hero-actions">
             <button className="primary" onClick={() => goTo('rankings')}>See the rankings</button>
             <button onClick={() => goTo('how')}>Methodology</button>
+            <button onClick={() => { window.location.hash = '#/learn' }}>Learn the basics</button>
             {!STATIC && (
               <button onClick={updateData} disabled={updating || loading}>
                 {updating ? 'Updating… (can take a few minutes)' : 'Update data from NSE'}
@@ -712,6 +714,7 @@ export default function App() {
                   <a href={`#${s.id}`} onClick={(e) => { e.preventDefault(); goTo(s.id) }}>{s.label}</a>
                 </li>
               ))}
+              <li><a href="#/learn">Learn the stock market</a></li>
             </ul>
           </div>
           <div>
