@@ -277,3 +277,52 @@ ul.mistakes { margin: 0; padding-left: 20px; display: grid; gap: 8px; max-width:
 a.resource { display: flex; flex-direction: column; gap: 4px; color: var(--text); text-decoration: none; transition: border-color 0.15s; }
 a.resource:hover { border-color: var(--accent); }
 .back-link { margin-top: 24px; }
+
+/* ---------- algorithms page ---------- */
+.demos { display: grid; gap: 16px; }
+.demo h3 { font-size: 17px; }
+.demo-controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 12px 0; }
+.demo-note { margin: 8px 0; padding: 10px 12px; border-left: 3px solid var(--accent); background: color-mix(in srgb, var(--accent) 6%, transparent); font-size: 14px; min-height: 44px; }
+.demo-pick { display: inline-block; margin-top: 10px; font-size: 14px; }
+.tree-wrap { position: relative; margin: 12px 0; }
+.tree { position: absolute; inset: 0; width: 100%; height: 100%; }
+.tree-edge { stroke: var(--line); stroke-width: 1.5; }
+.tree-layer { position: absolute; inset: 0; }
+.tree-node { position: absolute; transform: translate(-50%, -50%); width: 64px; text-align: center; background: var(--card-solid); border: 1px solid var(--line); border-radius: 8px; padding: 3px 4px; line-height: 1.2; transition: border-color 0.2s, background 0.2s; }
+.tree-node strong { display: block; font-size: 12px; }
+.tree-node span { font-size: 11px; color: var(--muted); }
+.tree-node.hot { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 18%, var(--card-solid)); }
+.array-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+.cell { min-width: 64px; text-align: center; border: 1px solid var(--line); border-radius: 6px; padding: 4px 6px; background: var(--bg-alt); transition: all 0.2s; }
+.cell small { display: block; font-size: 10px; color: var(--muted); }
+.cell strong { display: block; font-size: 12px; }
+.cell span { font-size: 11px; color: var(--muted); }
+.cell.hot { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 18%, var(--bg-alt)); }
+.cell.found { border-color: var(--good); background: color-mix(in srgb, var(--good) 18%, var(--bg-alt)); }
+.cell.dim { opacity: 0.3; }
+.bars { display: flex; align-items: flex-end; gap: 8px; height: 220px; margin: 12px 0; }
+.bar-col { flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; min-width: 0; }
+.bar-fill { width: 100%; background: color-mix(in srgb, var(--accent) 45%, transparent); border-radius: 3px 3px 0 0; transition: height 0.4s ease; }
+.bar-fill.hot { background: var(--accent); }
+.bar-val { font-size: 11px; color: var(--muted); }
+.bar-label { font-size: 11px; margin-top: 4px; font-weight: 600; }
+code { font-size: 12.5px; background: color-mix(in srgb, var(--text) 8%, transparent); padding: 1px 6px; border-radius: 4px; }
+
+/* ---------- compare ---------- */
+.compare-btn { margin-top: 12px; width: 100%; }
+.compare { margin-top: 20px; }
+.compare-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.compare-header h3 { margin: 0; }
+.compare td.better { color: var(--good); font-weight: 600; }
+.compare tr.sub td { font-size: 13px; color: var(--muted); }
+.compare tr.sub td.better { color: var(--good); }
+
+/* ---------- guided tour ---------- */
+.tour { position: fixed; inset: 0; z-index: 60; pointer-events: none; }
+.tour-spot { position: fixed; border-radius: 10px; box-shadow: 0 0 0 9999px rgba(5, 8, 12, 0.62), 0 0 0 2px var(--accent); transition: all 0.25s ease; pointer-events: none; }
+.tour-pop { position: fixed; width: min(340px, calc(100vw - 24px)); background: var(--card-solid); border: 1px solid var(--line); border-radius: 10px; padding: 16px; box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45); pointer-events: auto; transition: top 0.25s ease, left 0.25s ease; }
+.tour-pop h3 { margin: 0 0 6px; font-size: 16px; }
+.tour-pop p { margin: 0 0 12px; font-size: 14px; color: var(--muted); }
+.tour-pop p.tour-step { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+.tour-actions { display: flex; gap: 8px; align-items: center; }
+.tour-spacer { flex: 1; }

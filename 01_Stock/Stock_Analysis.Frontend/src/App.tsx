@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import './App.css'
 import Experiments from './Experiments'
+import Tour from './Tour'
 import {
   Background,
   BackToTop,
@@ -131,6 +132,103 @@ function initialTheme(): Theme {
   return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
 }
 
+const COMPARE_ROWS: {
+  label: string
+  value: (s: Stock) => number
+  show: (s: Stock) => string
+  better: 'high' | 'low' | null
+}[] = [
+  { label: 'Score', value: (s) => s.score, show: (s) => `${s.score.toFixed(2)} / 100`, better: 'high' },
+  { label: 'Rank', value: (s) => s.rank, show: (s) => `#${s.rank}`, better: 'low' },
+  { label: 'Checks passed', value: (s) => s.passedFilters, show: (s) => `${s.passedFilters} / 10`, better: 'high' },
+  { label: '7-day change', value: (s) => s.metrics.priceChangePercentage, show: (s) => `${num(s.metrics.priceChangePercentage)}%`, better: 'high' },
+  {
+    label: 'Price range (high vs low)',
+    value: (s) => (s.metrics.lowestPrice > 0 ? ((s.metrics.highestPrice - s.metrics.lowestPrice) / s.metrics.lowestPrice) * 100 : 0),
+    show: (s) => `${num(s.metrics.lowestPrice > 0 ? ((s.metrics.highestPrice - s.metrics.lowestPrice) / s.metrics.lowestPrice) * 100 : 0)}%`,
+    better: 'low',
+  },
+  { label: 'Avg daily volume', value: (s) => s.metrics.averageDailyVolume, show: (s) => num(s.metrics.averageDailyVolume, 0), better: 'high' },
+  { label: 'Traded value', value: (s) => s.metrics.totalTradedValue, show: (s) => crore(s.metrics.totalTradedValue), better: 'high' },
+  { label: 'Volume steadiness', value: (s) => s.metrics.volumeConsistency, show: (s) => `${num(s.metrics.volumeConsistency, 0)} / 100`, better: 'high' },
+  { label: 'Avg close', value: (s) => s.metrics.averageClosePrice, show: (s) => num(s.metrics.averageClosePrice), better: null },
+]
+
+function ComparePanel({
+  stocks,
+  onRemove,
+  onClear,
+}: {
+  stocks: Stock[]
+  onRemove: (symbol: string) => void
+  onClear: () => void
+}) {
+  const [a, b] = stocks
+  const winner = (row: (typeof COMPARE_ROWS)[number]) => {
+    if (!a || !b || !row.better) return -1
+    const x = row.value(a)
+    const y = row.value(b)
+    if (x === y) return -1
+    return (row.better === 'high' ? x > y : x < y) ? 0 : 1
+  }
+
+  return (
+    <div className="card compare" id="compare">
+      <div className="compare-header">
+        <h3>Compare stocks</h3>
+        <button onClick={onClear}>Clear</button>
+      </div>
+      {stocks.length < 2 && (
+        <p className="muted">Select another stock in the table, then choose "Add to comparison" in its details.</p>
+      )}
+      <div className="table-card">
+        <table>
+          <thead>
+            <tr>
+              <th>Measure</th>
+              {stocks.map((s) => (
+                <th key={s.symbol}>
+                  {s.symbol}{' '}
+                  <button className="link-btn" onClick={() => onRemove(s.symbol)} aria-label={`Remove ${s.symbol}`}>remove</button>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {COMPARE_ROWS.map((row) => {
+              const w = winner(row)
+              return (
+                <tr key={row.label} className="static-row">
+                  <td>{row.label}</td>
+                  {stocks.map((s, i) => (
+                    <td key={s.symbol} className={w === i ? 'better' : ''}>{row.show(s)}</td>
+                  ))}
+                </tr>
+              )
+            })}
+            {a &&
+              a.breakdown.map((item, idx) => (
+                <tr key={item.name} className="static-row sub">
+                  <td>Score: {item.name}</td>
+                  {stocks.map((s, i) => {
+                    const pts = s.breakdown[idx]?.points ?? 0
+                    const other = stocks[1 - i]?.breakdown[idx]?.points
+                    return (
+                      <td key={s.symbol} className={other !== undefined && pts > other ? 'better' : ''}>
+                        {pts.toFixed(1)} / {item.max}
+                      </td>
+                    )
+                  })}
+                </tr>
+              ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="muted">Green marks the stronger value for each row. For price range, a smaller gap counts as stronger.</p>
+    </div>
+  )
+}
+
 function Histogram({
   stocks,
   active,
@@ -186,6 +284,8 @@ export default function App() {
   const [updateMsg, setUpdateMsg] = useState<string | null>(null)
   const [theme, setTheme] = useState<Theme>(initialTheme)
   const [activeSection, setActiveSection] = useState('overview')
+  const [compare, setCompare] = useState<string[]>([])
+  const [tourOpen, setTourOpen] = useState(false)
   const searchRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
@@ -303,6 +403,9 @@ export default function App() {
     })
   }, [stocks, search, minFilters, bucket, sortKey, sortAsc])
 
+  const toggleCompare = (symbol: string) =>
+    setCompare((list) => (list.includes(symbol) ? list.filter((s) => s !== symbol) : list.length >= 2 ? list : [...list, symbol]))
+
   const current = stocks.find((s) => s.symbol === selected)
   const avgScore = stocks.length ? stocks.reduce((t, s) => t + s.score, 0) / stocks.length : 0
   const avgChange = stocks.length
@@ -312,6 +415,26 @@ export default function App() {
   const mostTraded = [...stocks].sort((a, b) => b.metrics.totalTradedValue - a.metrics.totalTradedValue).slice(0, 5)
   const podium = stocks.slice(0, 3)
   const ready = !loading && !error && stocks.length > 0
+
+  const closeTour = useCallback(() => {
+    setTourOpen(false)
+    try {
+      localStorage.setItem('tourSeen', '1')
+    } catch {
+      // ignore
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!ready) return
+    try {
+      if (localStorage.getItem('tourSeen')) return
+    } catch {
+      return
+    }
+    const timer = window.setTimeout(() => setTourOpen(true), 1500)
+    return () => window.clearTimeout(timer)
+  }, [ready])
 
   const exportCsv = () => {
     const rows = [
@@ -367,6 +490,7 @@ export default function App() {
               </a>
             ))}
             <a href="#/learn">Learn</a>
+            <a href="#/algorithms">Algorithms</a>
           </div>
           <div className="nav-actions">
             <span className={`badge ${STATIC ? 'badge-snapshot' : 'badge-live'}`}>{STATIC ? 'Snapshot' : 'Live'}</span>
@@ -395,6 +519,7 @@ export default function App() {
             <button className="primary" onClick={() => goTo('rankings')}>See the rankings</button>
             <button onClick={() => goTo('how')}>Methodology</button>
             <button onClick={() => { window.location.hash = '#/learn' }}>Learn the basics</button>
+            {ready && <button onClick={() => setTourOpen(true)}>Take a tour</button>}
             {!STATIC && (
               <button onClick={updateData} disabled={updating || loading}>
                 {updating ? 'Updating… (can take a few minutes)' : 'Update data from NSE'}
@@ -558,6 +683,17 @@ export default function App() {
                           <ScoreRing score={current.score} size={92} />
                         </div>
                         <p className="plain">{summarise(current)}</p>
+                        <button
+                          className="compare-btn"
+                          onClick={() => toggleCompare(current.symbol)}
+                          disabled={!compare.includes(current.symbol) && compare.length >= 2}
+                        >
+                          {compare.includes(current.symbol)
+                            ? 'Remove from comparison'
+                            : compare.length >= 2
+                              ? 'Comparison full (2 stocks)'
+                              : 'Add to comparison'}
+                        </button>
 
                         <h4>Checks ({current.passedFilters}/10)</h4>
                         <ul className="filters">
@@ -594,6 +730,14 @@ export default function App() {
                     )}
                   </aside>
                 </div>
+
+                {compare.length > 0 && (
+                  <ComparePanel
+                    stocks={compare.map((sym) => stocks.find((s) => s.symbol === sym)).filter((s): s is Stock => !!s)}
+                    onRemove={toggleCompare}
+                    onClear={() => setCompare([])}
+                  />
+                )}
               </section>
             </Reveal>
 
@@ -715,6 +859,7 @@ export default function App() {
                 </li>
               ))}
               <li><a href="#/learn">Learn the stock market</a></li>
+              <li><a href="#/algorithms">Algorithm demos</a></li>
             </ul>
           </div>
           <div>
@@ -743,6 +888,7 @@ export default function App() {
       </footer>
 
       <BackToTop />
+      <Tour open={tourOpen} onClose={closeTour} />
     </>
   )
 }

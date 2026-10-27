@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import App from './App'
+import Algorithms from './Algorithms'
 import Learn from './Learn'
 
 export default function Router() {
@@ -11,5 +12,7 @@ export default function Router() {
     return () => window.removeEventListener('hashchange', onChange)
   }, [])
 
-  return hash.startsWith('#/learn') ? <Learn /> : <App />
+  if (hash.startsWith('#/learn')) return <Learn />
+  if (hash.startsWith('#/algorithms')) return <Algorithms />
+  return <App />
 }
